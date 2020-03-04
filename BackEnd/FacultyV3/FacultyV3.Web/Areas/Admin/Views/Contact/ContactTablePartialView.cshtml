@@ -1,0 +1,67 @@
+﻿
+
+@model List<FacultyV3.Core.Models.Entities.Contact>
+
+
+
+<table class="table mb-0" id="categoryTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:5%;">
+                #
+            </th>
+            <th style="width:30%;">
+                Tên
+            </th>
+            <th>
+                Ngày tạo
+            </th>
+            <th>
+                Ngày cập nhật
+            </th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            var index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @(index++)
+                    </th>
+                    <td>@item.Meta_Name</td>
+
+                    <td>@item.Create_At.ToShortDateString()</td>
+                    <td>@item.Update_At.ToShortDateString()</td>
+                    <td>
+                        <div class="button-list">
+                            @{
+                                var uEdit = @Url.Action("AddOrEdit", "Contact") + "/" + item.Id;
+                                var urlEdit = @"Popup('" + uEdit + "')";
+                                <a title="Chỉnh sửa" onclick="@urlEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                    <i class="fa fa-edit" style="color: white"></i>
+                                </a>
+
+                                @*var uDelete = @Url.Action("Delete", "Contact") + "/" + item.Id;
+                                var urluDelete = @"Delete('" + uDelete + "')";
+
+                                <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
+                                    <i class="fa fa-trash" style="color: white"></i>
+                                </a>*@
+                            }
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+
+

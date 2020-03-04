@@ -1,0 +1,42 @@
+﻿
+@model FacultyV3.Web.ViewModels.ContactViewModel
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Cập nhật Liên hệ</h4>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                @using (@Html.BeginForm("AddOrUpdate", "Contact", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Meta Key <span class="text-danger">*</span></label>
+                        @Html.EditorFor(model => model.Meta_Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Hãy nhập tên", required = "required" , @disabled = "disabled" } })
+                        @Html.ValidationMessageFor(x => x.Meta_Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Meta Value <span class="text-danger">*</span></label>
+                        @Html.TextAreaFor(model => model.Meta_Value, new { placeholder = "Hãy nhập thông tin chi tiết", @class = "form-control", required = "required", @style = "height: 100px" })
+                        @Html.ValidationMessageFor(x => x.Meta_Value, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group text-right mb-0">
+                        <button class="btn btn-primary" type="submit">Lưu</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Đóng</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
