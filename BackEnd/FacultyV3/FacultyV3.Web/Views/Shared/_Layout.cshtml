@@ -1,42 +1,127 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khoa Kỹ thuật - Công nghệ</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/Client/assets/img/logo/logokonen.ico" type="image/x-icon" />
+
+    <!-- Font awesome -->
+    <link href="~/Content/Client/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="~/Content/Client/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="~/Content/Client/assets/css/slick.css" />
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="~/Content/Client/assets/css/jquery.fancybox.css" type="text/css" media="screen" />
+    <!-- Theme color -->
+    <link id="switcher" href="~/Content/Client/assets/css/theme-color/default-theme.css" rel="stylesheet" />
+
+    <!-- Main style sheet -->
+    <link href="~/Content/Client/assets/css/style.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    @*<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700" rel="stylesheet" type="text/css" />*@
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- Start header  -->
+    <!-- <header id="mu-header">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="mu-header-area">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="mu-header-top-left">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="mu-header-top-right">
+                                    <nav>
+                                        <ul class="mu-top-social-nav">
+                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-youtube"></span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+        </div>
+    </header> -->
+    <header>
+        <div class="container">
+            <div class="row" style="color: slategrey; width: 10px;"></div>
+        </div>
+    </header>
+    <!-- End header  -->
+    <!-- Start menu -->
+    @{
+        Html.RenderAction("_menu", "Home");
+    }
+    <!-- End menu -->
+    <!-- Start search box -->
+    <div id="mu-search">
+        <div class="mu-search-area">
+            <button class="mu-search-close">
+                <span class="fa fa-close"></span>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="mu-search-form">
+                            <input type="search" placeholder="Type Your Keyword(s) & Hit Enter" />
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <!-- End search box -->
+    @RenderBody();
+    <!-- Start footer -->
+    @{
+        Html.RenderAction("_footer", "Home");
+    }
+    <!-- End footer -->
+    <!-- start Icons Nav Left-->
+    @{
+        Html.RenderAction("_sticky", "Home");
+    }
+    <!-- end Icons Nav Left-->
+    <!-- jQuery library -->
+    <script src="~/Content/Client/assets/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Content/Client/assets/js/bootstrap.js"></script>
+    <!-- Slick slider -->
+    <script type="text/javascript" src="~/Content/Client/assets/js/slick.js"></script>
+    <!-- Counter -->
+    <script type="text/javascript" src="~/Content/Client/assets/js/waypoints.js"></script>
+    <script type="text/javascript" src="~/Content/Client/assets/js/jquery.counterup.js"></script>
+    <!-- Mixit slider -->
+    <script type="text/javascript" src="~/Content/Client/assets/js/jquery.mixitup.js"></script>
+    <!-- Add fancyBox -->
+    <script type="text/javascript" src="~/Content/Client/assets/js/jquery.fancybox.pack.js"></script>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!-- Custom js -->
+    <script src="~/Content/Client/assets/js/custom.js"></script>
 </body>
+
 </html>

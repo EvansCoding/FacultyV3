@@ -21,7 +21,7 @@ namespace FacultyV3.Core.Services
         {
             try
             {
-                return context.Services
+                return context.Services.OrderBy(x => x.Meta_Name)
                     .Select(x => x).ToList();
             }
             catch (Exception)

@@ -58,6 +58,9 @@ namespace FacultyV3.Core.Ioc
             Container.BindInRequestScope<IStickyService, StickyService>();
             Container.BindInRequestScope<IContactService, ContactService>();
             Container.BindInRequestScope<IAdsService, AdsService>();
+            Container.BindInRequestScope<ICategoryMenuService, CategoryMenuService>();
+            Container.BindInRequestScope<ICategoryNewsService, CategoryNewsService>();
+            Container.BindInRequestScope<IDetailMenuService, DetailMenuService>();
         }
     }
 

@@ -11,5 +11,7 @@ namespace FacultyV3.Core.Interfaces.IServices
     {
         Lecturer GetLecturerByID(string id);
         IEnumerable<Lecturer> PageList(string name, int page, int pageSize);
+        List<Lecturer> GetStudentOrderBySerial(int amount);
+
     }
 }

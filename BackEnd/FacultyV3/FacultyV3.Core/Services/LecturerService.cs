@@ -38,5 +38,16 @@ namespace FacultyV3.Core.Services
             }
             return null;
         }
+        public List<Lecturer> GetStudentOrderBySerial(int amount)
+        {
+            try
+            {
+                return context.Lecturers.OrderBy(x => x.Serial).Take(amount).Select(x => x).ToList();
+            }
+            catch (Exception)
+            {
+            }
+            return null;
+        }
     }
 }

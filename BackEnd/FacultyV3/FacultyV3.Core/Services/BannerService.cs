@@ -17,13 +17,13 @@ namespace FacultyV3.Core.Services
             this.context = context;
         }
 
-        public List<Banner> GetBannersOrderBySerial()
+        public List<Banner> GetBannersOrderBySerial(int amount)
         {
             try
             {
                 return context.Banners
                     .OrderBy(x => x.Serial)
-                    .Select(x => x)
+                    .Select(x => x).Take(amount)
                     .ToList();
             }
             catch (Exception)

@@ -77,28 +77,38 @@
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="@Url.Action("#","#", new { Area = "Admin"})">Thanh công cụ</a></li>
-                                <li><a href="@Url.Action("BannerView","Banner", new { Area = "Admin"})">Banner</a></li>
-                                <li><a href="@Url.Action("DescriptionView","Description", new { Area = "Admin"})">Mô tả</a></li>
                                 <li><a href="@Url.Action("About_UsView","About_Us", new { Area = "Admin"})">Về chúng tôi</a></li>
+                                <li><a href="@Url.Action("AdsView","Ads", new { Area = "Admin"})">Quảng cáo</a></li>
                                 <li><a href="@Url.Action("CountView","Count", new { Area = "Admin"})">Số liệu</a></li>
+                                <li><a href="@Url.Action("ContactView","Contact", new { Area = "Admin"})">Liên hệ</a></li>
+                                <li><a href="@Url.Action("DescriptionView","Description", new { Area = "Admin"})">Mô tả</a></li>
+                                <li><a href="@Url.Action("StickyView","Sticky", new { Area = "Admin"})">Sticky</a></li>
+                                <li><a href="@Url.Action("BannerView","Banner", new { Area = "Admin"})">Banner</a></li>
+                                <li><a href="@Url.Action("VideoView","Video", new { Area = "Admin"})">Video</a></li>
                                 <li><a href="@Url.Action("LecturerView","Lecturer", new { Area = "Admin"})">Giảng viên</a></li>
                                 <li><a href="@Url.Action("StudentView","Student", new { Area = "Admin"})">Sinh viên</a></li>
-                                <li><a href="@Url.Action("VideoView","Video", new { Area = "Admin"})">Video</a></li>
-                                <li><a href="@Url.Action("StickyView","Sticky", new { Area = "Admin"})">Sticky</a></li>
-                                <li><a href="@Url.Action("ContactView","Contact", new { Area = "Admin"})">Liên hệ</a></li>
-                                <li><a href="@Url.Action("AdsView","Ads", new { Area = "Admin"})">Quảng cáo</a></li>
                             </ul>
                         </li>
                         <li>
                             <a class="waves-effect">
                                 <i class="ion-md-basket"></i>
-                                <span> Nội dung </span>
+                                <span> Thanh công cụ </span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
-                                <li><a href="@Url.Action("ProductView","Product", new { Area = "Admin"})">Danh mục</a></li>
-                                <li><a href="@Url.Action("ProductView","ProductView", new { Area = "Admin"})">Bài viết</a></li>
+                                <li><a href="@Url.Action("CategoryMenuView","CategoryMenu", new { Area = "Admin"})">Danh mục</a></li>
+                                <li><a href="@Url.Action("Detail_MenuView","Detail_Menu", new { Area = "Admin"})">Nội dung</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="waves-effect">
+                                <i class="ion-md-basket"></i>
+                                <span> Tin tức </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("CategoryNewsView","CategoryNews", new { Area = "Admin"})">Danh mục</a></li>
+                                <li><a href="@Url.Action("#","#", new { Area = "Admin"})">Bài viết</a></li>
                             </ul>
                         </li>
                     </ul>

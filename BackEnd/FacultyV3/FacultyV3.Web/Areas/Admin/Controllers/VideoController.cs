@@ -89,12 +89,9 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                         MessageType = GenericMessages.error
                     };
                 }
-
-                return RedirectToAction("VideoView", "Video");
             }
             else
             {
-                
                 try
                 {
                     var Video = videoService.GetVideoByID(model.Id);
@@ -110,7 +107,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
 
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa thành công!",
+                        Message = "Cập nhật thành công!",
                         MessageType = GenericMessages.success
                     };
                 }
@@ -118,12 +115,12 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa thất bại!",
+                        Message = "Cập nhật thất bại!",
                         MessageType = GenericMessages.error
                     };
                 }
-                return RedirectToAction("VideoView", "Video");
             }
+            return RedirectToAction("VideoView", "Video");
         }
 
         [HttpPost]

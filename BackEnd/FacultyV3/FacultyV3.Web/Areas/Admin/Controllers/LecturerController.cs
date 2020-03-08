@@ -54,7 +54,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             return PartialView("CRUDLecturer", new LecturerViewModel());
         }
 
-
         [HttpPost]
         public ActionResult AddOrUpdate(LecturerViewModel model)
         {
@@ -93,7 +92,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 }
             }
             else
-            {                
+            {
                 try
                 {
                     var lecturer = lecturerService.GetLecturerByID(model.Id);
@@ -111,7 +110,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
 
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa thành công!",
+                        Message = "Cập nhật thành công!",
                         MessageType = GenericMessages.success
                     };
                 }
@@ -119,7 +118,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa thất bại!",
+                        Message = "Cập nhật thất bại!",
                         MessageType = GenericMessages.error
                     };
                 }

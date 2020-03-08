@@ -18,7 +18,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             this.bannerService = bannerService;
         }
 
-        // GET: Admin/Banner
         public ActionResult BannerView()
         {
             return View();
@@ -54,14 +53,11 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             return PartialView("CRUDBanner", new BannerViewModel());
         }
 
-
         [HttpPost]
         public ActionResult AddOrUpdate(BannerViewModel model)
         {
-
             if (model.Id == null)
             {
-
                 Banner banner = new Banner()
                 {
                     Title = model.Title,
@@ -108,7 +104,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     context.SaveChanges();
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa Banner thành công!",
+                        Message = "Cập nhật Banner thành công!",
                         MessageType = GenericMessages.success
                     };
                 }
@@ -116,7 +112,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa Banner thất bại!",
+                        Message = "Cập nhật Banner thất bại!",
                         MessageType = GenericMessages.error
                     };
                 }
@@ -127,24 +123,19 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Delete(string Id)
         {
-            if (Id.Equals(""))
+            try
             {
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+                var banner = context.Banners.Find(new Guid(Id));
+                context.Banners.Remove(banner);
+                context.SaveChanges();
+                return Json(new { success = true }, JsonRequestBehavior.AllowGet);
             }
-            else
+            catch (Exception)
             {
-                try
-                {
-                    var banner = context.Banners.Find(new Guid(Id));
-                    context.Banners.Remove(banner);
-                    context.SaveChanges();
-                    return Json(new { success = true }, JsonRequestBehavior.AllowGet);
-                }
-                catch (Exception)
-                {
-                    return Json(new { success = false }, JsonRequestBehavior.AllowGet);
-                }
+
             }
+
+            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
     }
 }

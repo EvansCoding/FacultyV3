@@ -37,20 +37,27 @@
                     <td>@item.Update_At.ToShortDateString()</td>
                     <td>
                         <div class="button-list">
+
                             @{
                                 var uEdit = @Url.Action("AddOrEdit", "Contact") + "/" + item.Id;
                                 var urlEdit = @"Popup('" + uEdit + "')";
+                            }
+
+
+                            @if (item.Meta_Name.Equals("Hình ảnh"))
+                            {
+                                <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                    <i class="fa fa-edit" style="color: white"></i>
+                                </a>
+                            }
+                            else
+                            {
+
                                 <a title="Chỉnh sửa" onclick="@urlEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
                                     <i class="fa fa-edit" style="color: white"></i>
                                 </a>
-
-                                @*var uDelete = @Url.Action("Delete", "Contact") + "/" + item.Id;
-                                var urluDelete = @"Delete('" + uDelete + "')";
-
-                                <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
-                                    <i class="fa fa-trash" style="color: white"></i>
-                                </a>*@
                             }
+
                         </div>
 
                     </td>

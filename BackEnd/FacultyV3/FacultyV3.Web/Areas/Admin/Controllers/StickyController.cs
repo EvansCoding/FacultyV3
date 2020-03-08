@@ -1,6 +1,5 @@
 ﻿using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
-using FacultyV3.Core.Models.Entities;
 using FacultyV3.Web.Common;
 using FacultyV3.Web.ViewModels;
 using System;
@@ -16,7 +15,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.stickyService = stickyService;
         }
-        
+
         public ActionResult StickyView()
         {
             return View();
@@ -48,63 +47,21 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             return PartialView("CRUDSticky", new StickyViewModel());
         }
 
-
         [HttpPost, ValidateInput(false)]
         public ActionResult AddOrUpdate(StickyViewModel model)
         {
-            if (model.Id == null)
-            {
-                Stickey Stickey = new Stickey()
-                {
-                    Meta_Name = model.Meta_Name,
-                    Meta_Value = model.Meta_Value,
-                    Create_At = DateTime.Now,
-                    Update_At = DateTime.Now
-                };
-
-                try
-                {
-                    context.Stickeys.Add(Stickey);
-                    context.SaveChanges();
-
-                    return Json(new { success = true }, JsonRequestBehavior.AllowGet);
-                }
-                catch (Exception)
-                {
-                }
-            }
-            else
-            {
-                try
-                {
-                    var stickey = stickyService.GetStickyByID(model.Id);
-                    stickey.Meta_Name = model.Meta_Name;
-                    stickey.Meta_Value = model.Meta_Value;
-                    stickey.Update_At = DateTime.Now;
-                    context.SaveChanges();
-                    return Json(new { success = true }, JsonRequestBehavior.AllowGet);
-                }
-                catch (Exception)
-                {
-                }
-            }
-            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public ActionResult Delete(string Id)
-        {
             try
             {
-                var stickey = context.Stickeys.Find(new Guid(Id));
-                context.Stickeys.Remove(stickey);
+                var stickey = stickyService.GetStickyByID(model.Id);
+                stickey.Meta_Value = model.Meta_Value;
+                stickey.Update_At = DateTime.Now;
                 context.SaveChanges();
                 return Json(new { success = true }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception)
             {
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
             }
+            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -38,5 +38,16 @@ namespace FacultyV3.Core.Services
             }
             return null;
         }
+        public List<Video> GetVideosOrderBySerial(int amount)
+        {
+            try
+            {
+                return context.Videos.OrderBy(x => x.Serial).Select(x => x).ToList();
+            }
+            catch (Exception)
+            {
+            }
+            return null;
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace FacultyV3.Core.Data.Mapping
             Property(x => x.Status).IsRequired();
             Property(x => x.Url_Image).IsRequired().HasMaxLength(300);
             Property(x => x.Url_Video).IsRequired().HasMaxLength(300);
+            Property(x => x.Url_LinkGoogle).IsOptional();
             Property(x => x.Create_At).IsRequired();
             Property(x => x.Update_At).IsRequired();
         }

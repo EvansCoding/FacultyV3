@@ -7,5 +7,6 @@ namespace FacultyV3.Core.Interfaces.IServices
     {
         Video GetVideoByID(string id);
         IEnumerable<Video> PageList(string name, int page, int pageSize);
+        List<Video> GetVideosOrderBySerial(int amount);
     }
 }

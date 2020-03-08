@@ -104,15 +104,12 @@
                     if (data.success) {
                         $('#exampleModal').modal('toggle');
                         $("#tableAjax").load("@Url.Action("LoadTable", "Sticky")");
-                        swal("Thêm mô tả thành công", {
-                            icon: "success",
-                        });
+                        swal("Cập nhật thành công", "Nhấn nút dưới để thoát ra!", "success");
+     
                     } else {
                         $('#exampleModal').modal('toggle');
                         $("#tableAjax").load("@Url.Action("LoadTable", "Sticky")");
-                        swal("Thêm mô tả thất bại", {
-                            icon: "error",
-                        });
+                        swal("Cập nhật thất bại", "Nhấn nút dưới để thoát ra!", "error");
                     }
                 }
             });

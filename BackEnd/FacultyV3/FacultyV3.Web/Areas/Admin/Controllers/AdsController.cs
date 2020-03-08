@@ -42,61 +42,29 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddOrUpdate(AdsViewModel model)
         {
-            if (model.Id == null)
+            try
             {
-                Ads ads = new Ads()
+                var Ads = adsService.GetAdsByID(model.Id);
+                Ads.Url_Image = model.Url_Image;
+                Ads.Url_Link = model.Url_Link;
+                Ads.Status = model.Status.Equals(Status.Publish.ToString()) ? true : false;
+                Ads.Update_At = DateTime.Now;
+
+                context.SaveChanges();
+                TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                 {
-                    Url_Image = model.Url_Image,
-                    Url_Link = model.Url_Link,
-                    Status = model.Status.Equals(Status.Publish.ToString()) ? true : false,
-                    Create_At = DateTime.Now,
-                    Update_At = DateTime.Now
+                    Message = "Cập nhật thành công",
+                    MessageType = GenericMessages.success
                 };
-
-                try
-                {
-                    context.Adss.Add(ads);
-                    context.SaveChanges();
-
-                    TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
-                    {
-                        Message = "Thêm thành công",
-                        MessageType = GenericMessages.success
-                    };
-                    return RedirectToAction("AdsView", "Ads");
-                }
-                catch (Exception)
-                {
-                }
             }
-            else
+            catch (Exception)
             {
-                try
+                TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                 {
-                    var Ads = adsService.GetAdsByID(model.Id);
-                    Ads.Url_Image = model.Url_Image;
-                    Ads.Url_Link = model.Url_Link;
-                    Ads.Status = model.Status.Equals(Status.Publish.ToString()) ? true : false;
-                    Ads.Update_At = DateTime.Now;
-
-                    context.SaveChanges();
-                    TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
-                    {
-                        Message = "Cập nhật thành công",
-                        MessageType = GenericMessages.success
-                    };
-                    return RedirectToAction("AdsView", "Ads");
-                }
-                catch (Exception)
-                {
-                }
+                    Message = "Lưu thất bại",
+                    MessageType = GenericMessages.error
+                };
             }
-
-            TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
-            {
-                Message = "Lưu thất bại",
-                MessageType = GenericMessages.error
-            };
             return RedirectToAction("AdsView", "Ads");
         }
     }

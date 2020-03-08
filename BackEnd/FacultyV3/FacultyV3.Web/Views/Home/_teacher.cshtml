@@ -1,0 +1,127 @@
+﻿@model List<FacultyV3.Core.Models.Entities.Lecturer>
+<section id="mu-our-teacher">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-our-teacher-area">
+                    <!-- begain title -->
+                    <div class="mu-title">
+                        <h2>Giảng Viên</h2>
+                        <p>
+                            Một số giảng viên của Khoa Kỹ thuật - Công nghệ
+                        </p>
+                    </div>
+                    <!-- end title -->
+                    <!-- begain our teacher content -->
+
+                    <div class="mu-our-teacher-content">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-3 col-md-3  col-sm-6">
+                                    <div class="mu-our-teacher-single">
+                                        <figure class="mu-our-teacher-img">
+                                            <img src="@item.Url_Image" alt="teacher img" width="260px" height="265px"/>
+                                            <div class="mu-our-teacher-social">
+                                                <a href="@item.Url_Facebook"><span class="fa fa-facebook"></span></a>
+                                                @{ 
+                                                    var phone = "tel:" + item.Phone;
+                                                    var email = "mailto:" + item.Email;
+                                                }
+                                                <a href="@phone"><span class="fa fa-phone"></span></a>
+                                                <a href="@email">
+                                                    <span class="fa fa-google-plus"></span>
+                                                </a>
+                                            </div>
+                                        </figure>
+                                        <div class="mu-ourteacher-single-content">
+                                            <h4>@item.FullName</h4>
+                                            <span>@item.Degree</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            @*<div class="col-lg-3 col-md-3  col-sm-6">
+                                <div class="mu-our-teacher-single">
+                                    <figure class="mu-our-teacher-img">
+                                        <img src="~/Content/Client/assets/img/teachers/teacher-01.png" alt="teacher img" />
+                                        <div class="mu-our-teacher-social">
+                                            <a href="#"><span class="fa fa-facebook"></span></a>
+
+                                            <a href="#"><span class="fa fa-phone"></span></a>
+                                            <a href="#">
+                                                <span class="fa fa-google-plus"></span>
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="mu-ourteacher-single-content">
+                                        <h4>Brian Dean</h4>
+                                        <span>Math Teacher</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="mu-our-teacher-single">
+                                    <figure class="mu-our-teacher-img">
+                                        <img src="~/Content/Client/assets/img/teachers/teacher-02.png" alt="teacher img" />
+                                        <div class="mu-our-teacher-social">
+                                            <a href="#"><span class="fa fa-facebook"></span></a>
+
+                                            <a href="#"><span class="fa fa-phone"></span></a>
+                                            <a href="#">
+                                                <span class="fa fa-google-plus"></span>
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="mu-ourteacher-single-content">
+                                        <h4>James Hein</h4>
+                                        <span>Physics Teacher</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="mu-our-teacher-single">
+                                    <figure class="mu-our-teacher-img">
+                                        <img src="~/Content/Client/assets/img/teachers/teacher-03.png" alt="teacher img" />
+                                        <div class="mu-our-teacher-social">
+                                            <a href="#"><span class="fa fa-facebook"></span></a>
+
+                                            <a href="#"><span class="fa fa-phone"></span></a>
+                                            <a href="#">
+                                                <span class="fa fa-google-plus"></span>
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="mu-ourteacher-single-content">
+                                        <h4>Rebeca Michel</h4>
+                                        <span>English Teacher</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="mu-our-teacher-single">
+                                    <figure class="mu-our-teacher-img">
+                                        <img src="~/Content/Client/assets/img/teachers/teacher-04.png" alt="teacher img" />
+                                        <div class="mu-our-teacher-social">
+                                            <a href="#"><span class="fa fa-facebook"></span></a>
+
+                                            <a href="#"><span class="fa fa-phone"></span></a>
+                                            <a href="#">
+                                                <span class="fa fa-google-plus"></span>
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="mu-ourteacher-single-content">
+                                        <h4>John Doe</h4>
+                                        <span>Biology Teacher</span>
+                                    </div>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                    <!-- End our teacher content -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

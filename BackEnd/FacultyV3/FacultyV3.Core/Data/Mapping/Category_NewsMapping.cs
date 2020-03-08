@@ -11,6 +11,7 @@ namespace FacultyV3.Core.Data.Mapping
             Property(x => x.Id).IsRequired();
             Property(x => x.Meta_Name).IsRequired().HasMaxLength(200);
             Property(x => x.Meta_Value).IsRequired().HasMaxLength(200);
+            Property(x => x.Serial).IsRequired();
             Property(x => x.Create_At).IsRequired();
             Property(x => x.Update_At).IsRequired();
 

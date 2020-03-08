@@ -1,7 +1,6 @@
 ﻿using FacultyV3.Core.Constants;
 using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
-using FacultyV3.Core.Models.Entities;
 using FacultyV3.Web.Common;
 using FacultyV3.Web.ViewModels;
 using System;
@@ -41,61 +40,29 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult AddOrUpdate(About_UsViewModel model)
         {
-            if (model.Id == null)
+            try
             {
-                About_Us about_Us = new About_Us()
+                var about_Us = about_UsService.GetAbout_UsByID(model.Id);
+                about_Us.Content = model.Content;
+                about_Us.Url_Image = model.Url_Image;
+                about_Us.Url_Video = model.Url_Video;
+                about_Us.Update_At = DateTime.Now;
+
+                context.SaveChanges();
+                TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                 {
-                    Content = model.Content,
-                    Url_Image = model.Url_Image,
-                    Url_Video = model.Url_Video,
-                    Create_At = DateTime.Now,
-                    Update_At = DateTime.Now
+                    Message = "Cập nhật thành công",
+                    MessageType = GenericMessages.success
                 };
-
-                try
-                {
-                    context.About_Us.Add(about_Us);
-                    context.SaveChanges();
-
-                    TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
-                    {
-                        Message = "Thêm thành công",
-                        MessageType = GenericMessages.success
-                    };
-                    return RedirectToAction("About_UsView", "About_Us");
-                }
-                catch (Exception)
-                {
-                }
             }
-            else
+            catch (Exception)
             {
-                try
+                TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                 {
-                    var about_Us = about_UsService.GetAbout_UsByID(model.Id);
-                    about_Us.Content = model.Content;
-                    about_Us.Url_Image = model.Url_Image;
-                    about_Us.Url_Video = model.Url_Video;
-                    about_Us.Update_At = DateTime.Now;
-
-                    context.SaveChanges();
-                    TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
-                    {
-                        Message = "Cập nhật thành công",
-                        MessageType = GenericMessages.success
-                    };
-                    return RedirectToAction("About_UsView", "About_Us");
-                }
-                catch (Exception)
-                {
-                }
+                    Message = "Lưu thất bại",
+                    MessageType = GenericMessages.error
+                };
             }
-
-            TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
-            {
-                Message = "Lưu thất bại",
-                MessageType = GenericMessages.error
-            };
             return RedirectToAction("About_UsView", "About_Us");
         }
     }

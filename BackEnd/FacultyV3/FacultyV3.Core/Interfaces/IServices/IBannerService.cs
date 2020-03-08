@@ -10,6 +10,6 @@ namespace FacultyV3.Core.Interfaces.IServices
         Banner GetBannerByName(string name);
         Banner GetBannerByID(string id);
         IEnumerable<Banner> PageList(string name, int page, int pageSize);
-        List<Banner> GetBannersOrderBySerial();
+        List<Banner> GetBannersOrderBySerial(int amount);
     }
 }

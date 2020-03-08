@@ -26,7 +26,7 @@
 
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Liên kết <span class="text-danger">*</span></label>
-                        @Html.EditorFor(model => model.Meta_Value, new { htmlAttributes = new { @class = "form-control",@Value = "#", required = "required" } })
+                        @Html.EditorFor(model => model.Meta_Value, new { htmlAttributes = new { @class = "form-control",placehodler = "#", required = "required" } })
                         @Html.ValidationMessageFor(x => x.Meta_Value, "", new { @class = "text-danger" })
                     </div>
 

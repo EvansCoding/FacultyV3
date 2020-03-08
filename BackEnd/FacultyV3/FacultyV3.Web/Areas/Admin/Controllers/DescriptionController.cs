@@ -1,6 +1,5 @@
 ﻿using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
-using FacultyV3.Core.Models.Entities;
 using FacultyV3.Web.Common;
 using FacultyV3.Web.ViewModels;
 using System;
@@ -47,69 +46,24 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             {
             }
             return PartialView("CRUDDescription", new DescriptionViewModel());
-
         }
-
 
         [HttpPost]
         public ActionResult AddOrUpdate(DescriptionViewModel model)
         {
-            if (model.Id == null)
-            {
-                Service service = new Service()
-                {
-                    Meta_Name = model.Meta_Name,
-                    Meta_Value = model.Meta_Value,
-                    Create_At = DateTime.Now,
-                    Update_At = DateTime.Now
-                };
-
-                try
-                {
-                    context.Services.Add(service);
-                    context.SaveChanges();
-
-                    return Json(new { success = true }, JsonRequestBehavior.AllowGet);
-                }
-                catch (Exception)
-                {
-                }
-
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
-            }
-            else
-            {
-                try
-                {
-                    var service = descriptionService.GetServiceByID(model.Id);
-                    service.Meta_Name = model.Meta_Name;
-                    service.Meta_Value = model.Meta_Value;
-                    service.Update_At = DateTime.Now;
-
-                    context.SaveChanges();
-                    return Json(new { success = true }, JsonRequestBehavior.AllowGet);
-                }
-                catch (Exception)
-                {
-                }
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
-            }
-        }
-
-        [HttpPost]
-        public ActionResult Delete(string Id)
-        {
             try
             {
-                var service = context.Services.Find(new Guid(Id));
-                context.Services.Remove(service);
+                var service = descriptionService.GetServiceByID(model.Id);
+                service.Meta_Value = model.Meta_Value;
+                service.Update_At = DateTime.Now;
+
                 context.SaveChanges();
                 return Json(new { success = true }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception)
             {
-                return Json(new { success = false }, JsonRequestBehavior.AllowGet);
             }
+            return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
     }
 }

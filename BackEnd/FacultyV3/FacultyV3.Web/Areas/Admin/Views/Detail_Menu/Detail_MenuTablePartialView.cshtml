@@ -1,0 +1,139 @@
+﻿@model PagedList.IPagedList<FacultyV3.Core.Models.Entities.Detail_Menu>
+
+@using PagedList.Mvc;
+
+<style>
+</style>
+<table class="table mb-0" id="postTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:5%;">
+                #
+            </th>
+            <th style="width:25%;">
+                Tên
+            </th>
+            <th>
+                Ảnh
+            </th>
+            <th style="width:8%;">
+                Số thứ tự
+            </th>
+            <th style="width:8%;">
+                Trạng thái
+            </th>
+
+            <th style="width:8%;">
+                Ngày tạo
+            </th>
+            <th style="width:8%;">
+                Ngày cập nhật
+            </th>
+            <th style="width:10%;">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            var index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10))))
+                    </th>
+                    <td>
+                        @item.Title
+                        @{
+                            var uLink = Url.Action("DetailPost", "Detail_Menu", new { Area = String.Empty, id = item.Id });
+                            var urluLink = @"GetDetail('" + uLink + "')";
+                        }
+                        <a onclick="@urluLink" style="cursor:pointer">
+                            <span class="badge badge-info"><i class="mdi mdi-link"></i></span>
+                        </a>
+                    </td>
+
+                    <td>
+                        @if (item.Url_Image == null)
+                        {
+                            <img src="~/Content/image.png" style="width: 200px; height: 100px" alt="" />
+                        }
+                        else
+                        {
+                            <img src="@item.Url_Image" style="width: 200px; height: 100px" alt="@item.Url_Image" />
+                        }
+                    </td>
+
+                    <td>@item.Serial</td>
+
+                    <td>
+                        <div>
+                            @{
+                                var uPublish = @Url.Action("Publish", "Detail_Menu") + "/" + item.Id;
+                                var urluPublish = @"Publish('" + uPublish + "')";
+                            }
+                            @if (item.Status)
+                            {
+                                <a onclick="@urluPublish" style="cursor:pointer">
+                                    <span class="badge badge-primary">Công khai</span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a onclick="@urluPublish" style="cursor:pointer">
+                                    <span class="badge badge-warning">Đã ẩn</span>
+                                </a>
+                            }
+
+                        </div>
+                    </td>
+
+                    <td>@item.Create_At</td>
+                    <td>@item.Update_At</td>
+                    <td>
+                        <div class="button-list">
+                            @{
+                                var uEdit = @Url.Action("AddOrEdit", "Detail_Menu") + "/" + item.Id;
+                                var urlEdit = @"Popup('" + uEdit + "')";
+                                <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm cursor:pointer" style="cursor:pointer">
+                                    <i class="fa fa-edit" style="color: white"></i>
+                                </a>
+
+                                var uDelete = @Url.Action("Delete", "Detail_Menu") + "/" + item.Id;
+                                var urluDelete = @"Delete('" + uDelete + "')";
+
+                                <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete" style="cursor:pointer">
+                                    <i class="fa fa-trash" style="color: white"></i>
+                                </a>
+                            }
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script src="~/Content/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("nav ul li a").addClass("page-link");
+        $("nav ul ").addClass("justify-content-end");
+    })
+</script>
+<hr />
+<div style="float: right">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
+</div>
+
+<div class="clearfix"></div>
+<br />
+
+<nav>
+    @Html.PagedListPager(Model, page => Url.Action("Detail_MenuView", "Detail_Menu", new { page }),
+    new PagedListRenderOptions
+    {
+        LiElementClasses = new string[] { "page-item" }
+    })
+</nav>

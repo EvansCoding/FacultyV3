@@ -56,3 +56,7 @@ D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\bin\D
 D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize2.resources
 D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize4.resources
 D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize5.resources
+D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_7.resources
+D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_9.resources
+D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_10.resources
+D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_11.resources

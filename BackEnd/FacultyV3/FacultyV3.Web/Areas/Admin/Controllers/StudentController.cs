@@ -50,7 +50,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             return PartialView("CRUDStudent", new StudentViewModel());
         }
 
-
         [HttpPost]
         public ActionResult AddOrUpdate(StudentViewModel model)
         {
@@ -85,12 +84,9 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                         MessageType = GenericMessages.error
                     };
                 }
-
-                return RedirectToAction("StudentView", "Student");
             }
             else
             {
-                
                 try
                 {
                     var student = studentService.GetStudentByID(model.Id);
@@ -104,7 +100,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
 
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa thành công!",
+                        Message = "Cập nhật thành công!",
                         MessageType = GenericMessages.success
                     };
                 }
@@ -112,12 +108,12 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
-                        Message = "Sửa thất bại!",
+                        Message = "Cập nhật thất bại!",
                         MessageType = GenericMessages.error
                     };
                 }
-                return RedirectToAction("StudentView", "Student");
             }
+            return RedirectToAction("StudentView", "Student");
         }
 
         [HttpPost]

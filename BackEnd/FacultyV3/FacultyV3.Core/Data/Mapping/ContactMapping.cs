@@ -10,7 +10,7 @@ namespace FacultyV3.Core.Data.Mapping
             HasKey(x => x.Id);
             Property(x => x.Id).IsRequired();
             Property(x => x.Meta_Name).IsRequired().HasMaxLength(100);
-            Property(x => x.Meta_Value).IsRequired().HasMaxLength(300);
+            Property(x => x.Meta_Value).IsRequired();
             Property(x => x.Create_At).IsRequired();
             Property(x => x.Update_At).IsRequired();
         }
