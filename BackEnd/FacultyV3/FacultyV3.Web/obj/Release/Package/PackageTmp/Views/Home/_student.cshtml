@@ -1,0 +1,85 @@
+﻿@model List<FacultyV3.Core.Models.Entities.Student>
+<section id="mu-testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-testimonial-area">
+                    <div id="mu-testimonial-slide" class="mu-testimonial-content">
+
+                        @foreach (var item in Model)
+                        {
+                            <!-- start testimonial single item -->
+                            <div class="mu-testimonial-item">
+                                <div class="mu-testimonial-quote">
+                                    <blockquote>
+                                        <p>
+                                           @item.Content
+                                        </p>
+                                    </blockquote>
+                                </div>
+                                <div class="mu-testimonial-img">
+                                    <img src="@item.Url_Image" alt="img" />
+                                </div>
+                                <div class="mu-testimonial-info">
+                                    <h4>@item.FullName</h4>
+                                </div>
+                            </div>
+                            <!-- end testimonial single item -->
+                        }
+                        <!-- start testimonial single item -->
+                        @*<div class="mu-testimonial-item">
+                            <div class="mu-testimonial-quote">
+                                <blockquote>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum soluta aperiam blanditiis obcaecati eveniet aliquam consequatur nobis eaque id.
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="mu-testimonial-img">
+                                <img src="~/Content/Client/assets/img/testimonial-1.png" alt="img" />
+                            </div>
+                            <div class="mu-testimonial-info">
+                                <h4>Nguyễn Tuấn Kiệt</h4>
+                            </div>
+                        </div>*@
+                        <!-- end testimonial single item -->
+                        <!-- start testimonial single item -->
+                        @*<div class="mu-testimonial-item">
+                            <div class="mu-testimonial-quote">
+                                <blockquote>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum soluta aperiam blanditiis obcaecati eveniet aliquam consequatur nobis eaque id.
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="mu-testimonial-img">
+                                <img src="~/Content/Client/assets/img/testimonial-3.png" alt="img" />
+                            </div>
+                            <div class="mu-testimonial-info">
+                                <h4>Võ Thái An</h4>
+                            </div>
+                        </div>*@
+                        <!-- end testimonial single item -->
+                        <!-- start testimonial single item -->
+                        @*<div class="mu-testimonial-item">
+                            <div class="mu-testimonial-quote">
+                                <blockquote>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum soluta aperiam blanditiis obcaecati eveniet aliquam consequatur nobis eaque id.
+                                    </p>
+                                </blockquote>
+                            </div>
+                            <div class="mu-testimonial-img">
+                                <img src="~/Content/Client/assets/img/testimonial-2.png" alt="img" />
+                            </div>
+                            <div class="mu-testimonial-info">
+                                <h4>Hồ Ngọc Tư Duy</h4>
+                            </div>
+                        </div>*@
+                        <!-- end testimonial single item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

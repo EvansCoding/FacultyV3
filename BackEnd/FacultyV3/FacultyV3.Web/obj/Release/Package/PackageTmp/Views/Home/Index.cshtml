@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Trang chủ Khoa Kỹ thuật - Công nghệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start Slider -->
+@{
+    Html.RenderAction("_slider", "Home");
+}
+<!-- End Slider -->
+
+<!-- Start service  -->
+@{
+    Html.RenderAction("_description", "Home");
+}
+<!-- End service  -->
+
+<!-- Start about us -->
+@{
+    Html.RenderAction("_aboutus", "Home");
+}
+<!-- End about us -->
+
+<!-- Start about us counter -->
+@{
+    Html.RenderAction("_counter", "Home");
+}
+<!-- End about us counter -->
+
+<!-- Start latest news section -->
+@{
+    Html.RenderAction("_generalNews", "Home");
+}
+<!-- End latest news section -->
+
+<!-- Start our teacher -->
+@{
+    Html.RenderAction("_teacher", "Home");
+}
+<!-- End our teacher -->
+
+<!-- Start student -->
+@{
+    Html.RenderAction("_student", "Home");
+}
+<!-- End student -->
+
+<!-- Start news section -->
+@{
+    Html.RenderAction("_news", "Home");
+}
+<!-- End news section -->
+
+<!-- Start from video -->
+@{
+    Html.RenderAction("_video", "Home");
+}
+<!-- End from video -->

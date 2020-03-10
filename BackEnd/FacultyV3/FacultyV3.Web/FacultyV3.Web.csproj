@@ -1114,6 +1114,7 @@
     <Content Include="Views\Detail_Menu\ListDetailMenu.cshtml" />
     <Content Include="Views\Detail_News\DetailNews.cshtml" />
     <Content Include="Views\Detail_News\ListDetailNews.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

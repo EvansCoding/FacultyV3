@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewBag.Title = "Detail_NewsView";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@model  FacultyV3.Web.ViewModels.DetailViewModel
+
+
+@using FacultyV3.Core.Models.Enums;
+
+<div id="data1">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h4 class="page-title">Danh sách bài viết</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h6 class="">Tìm kiếm</h6>
+
+                            @using (@Html.BeginForm("SearchCategory", "CategoryMenu", FormMethod.Post, new { onsubmit = "return SubmitSearch(this)" }))
+                            {
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto">
+                                        <input id="search" class="form-control" type="text" name="search" placeholder="Từ khóa bất kỳ" />
+                                    </div>
+                                    <div class="col-auto">
+                                        @if (ViewBag.ListOfCategory != null)
+                                        {
+                                            @Html.DropDownListFor(model => model.CategoryID, ViewBag.ListOfCategory as SelectList, "----Lựa Chọn----", new { @id = "DropDwnCategory", @class = "form-control", @name = "category" })
+                                        }
+
+                                    </div>
+
+                                    <div class="col-auto">
+
+                                        @Html.DropDownListFor(model => model.Status, new SelectList(Enum.GetValues(typeof(Status))), "----Lựa Chọn----", new { @id = "DropDwnState", @class = "form-control", @name = "state" })
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" id="searchByName" class="btn btn-icon waves-effect waves-light btn-primary">
+                                            <i class="fas fa-search "></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-icon waves-effect waves-light btn-success" onclick="window.location.href='@Url.Action("AddOrEdit","Detail_News")'">
+                                            <i class="fas fa-plus "></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" id="tableAjax">
+                        @{
+                            Html.RenderAction("LoadTable", "Detail_News");
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#search').keypress(function () {
+                var name = $(this).val();
+
+                $.ajax({
+                    type: "get",
+                    url: "/Admin/Detail_News/LoadTable?search=" + name,
+                    contentType: "html",
+                    success: function (response) {
+                        $('#tableAjax').html(response);
+                    }
+                })
+            });
+            $("nav ul li a").addClass("page-link");
+            $("nav ul ").addClass("justify-content-end");
+        })
+
+        function SubmitSearch(form) {
+            var name = $("#search").val();
+            var category = $("#DropDwnCategory").val();
+            var state = $("#DropDwnState").val();
+            console.log("/Admin/Detail_News/LoadTable?search=" + name + "&category=" + category);
+            post_url = $(form).attr("action");
+            $.ajax({
+                type: "Get",
+                url: "/Admin/Detail_News/LoadTable?search=" + name + "&category=" + category + "&state=" + state,
+                contentType: "html",
+                success: function (response) {
+                    $('#tableAjax').html(response);
+                }
+            });
+            return false;
+        }
+
+        function Delete(url) {
+            swal({
+                title: "Bạn chắc chắn muốn xóa?",
+                text: "Nếu xóa dữ liệu sẽ không thể phục hồi được!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        success: function (data) {
+                            if (data.success) {
+                                $("#tableAjax").load("@Url.Action("LoadTable", "Detail_News")");
+                                swal("Xóa thành công", {
+                                    icon: "success",
+                                });
+                            } else {
+                                $("#tableAjax").load("@Url.Action("LoadTable", "Post")");
+                                swal("Xóa thất bại", {
+                                    icon: "error",
+                                });
+                            }
+                        }
+                    });
+                }
+                else {
+                     swal("Dữ liệu vẫn an toàn!");
+                }
+            });
+        }
+
+        function Publish(url) {
+            console.log(url);
+                $.ajax({
+                    type: "POST",
+                        url: url,
+                        success: function (data) {
+                            if (data.success) {
+                                $("#tableAjax").load("@Url.Action("LoadTable", "Detail_News")");
+                                swal(data.message, "Nhấn vào nút dưới để thoát ra!", "success");
+                            } else {
+                                $("#tableAjax").load("@Url.Action("LoadTable", "Detail_News")");
+                                swal(data.message, "Nhấn vào nút dưới để thoát ra!", "error");
+                            }
+                        }
+                    });
+        }
+
+        function GetDetail(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+}
+
+
+
