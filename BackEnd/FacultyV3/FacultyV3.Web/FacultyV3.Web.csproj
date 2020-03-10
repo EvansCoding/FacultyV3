@@ -215,12 +215,16 @@
     <Compile Include="Areas\Admin\Controllers\CountController.cs" />
     <Compile Include="Areas\Admin\Controllers\DescriptionController.cs" />
     <Compile Include="Areas\Admin\Controllers\Detail_MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Detail_NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\LecturerController.cs" />
     <Compile Include="Areas\Admin\Controllers\StickyController.cs" />
     <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
     <Compile Include="Areas\Admin\Controllers\VideoController.cs" />
     <Compile Include="Common\BaseController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\Detail_MenuController.cs" />
+    <Compile Include="Controllers\Detail_NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -521,6 +525,7 @@
     <Content Include="Content\Client\assets\js\jquery.mixitup.js" />
     <Content Include="Content\Client\assets\js\slick.js" />
     <Content Include="Content\Client\assets\js\waypoints.js" />
+    <Content Include="Content\image.png" />
     <Content Include="Content\jquery-3.4.1.min.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -1078,6 +1083,9 @@
     <Content Include="Areas\Admin\Views\Detail_Menu\Detail_MenuView.cshtml" />
     <Content Include="Areas\Admin\Views\Detail_Menu\CRUDDetail_Menu.cshtml" />
     <Content Include="Areas\Admin\Views\Detail_Menu\Detail_MenuTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Detail_News\Detail_NewsView.cshtml" />
+    <Content Include="Areas\Admin\Views\Detail_News\Detail_NewsTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Detail_News\CRUDDetail_News.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
@@ -1100,6 +1108,12 @@
     <Content Include="Views\Home\_generalNews.cshtml" />
     <Content Include="Views\Shared\_sticky.cshtml" />
     <Content Include="Views\Contact\ContactView.cshtml" />
+    <Content Include="Views\Detail_Menu\DetailMenu.cshtml" />
+    <Content Include="Views\Common\_leftCategory.cshtml" />
+    <Content Include="Views\Detail_Menu\_relatedDetail.cshtml" />
+    <Content Include="Views\Detail_Menu\ListDetailMenu.cshtml" />
+    <Content Include="Views\Detail_News\DetailNews.cshtml" />
+    <Content Include="Views\Detail_News\ListDetailNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

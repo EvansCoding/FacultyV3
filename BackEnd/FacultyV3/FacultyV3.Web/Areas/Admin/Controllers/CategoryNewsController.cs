@@ -66,18 +66,19 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             var parent = categoryNewsService.GetCategoryByID(model.ParentID);
             var meta_name = context.Category_News.Where(x => x.Meta_Name.Contains(model.Meta_Name)).ToList();
 
-            if (meta_name.Count > 0)
-            {
-                TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
-                {
-                    Message = "Tên danh mục đã tồn tại!",
-                    MessageType = GenericMessages.error
-                };
-
-                return RedirectToAction("CategoryNewsView", "CategoryNews"); ;
-            }
             if (model.Id == null )
             {
+                if (meta_name.Count > 0)
+                {
+                    TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
+                    {
+                        Message = "Tên danh mục đã tồn tại!",
+                        MessageType = GenericMessages.error
+                    };
+
+                    return RedirectToAction("CategoryNewsView", "CategoryNews"); ;
+                }
+
                 try
                 {
                     Category_News category = new Category_News()

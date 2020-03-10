@@ -30,6 +30,9 @@
 </head>
 
 <body>
+    <div id="popup" style="display: block;">
+        <img src="/assets/img/about-us.jpg" />
+    </div>
     <!--START SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#">
         <i class="fa fa-angle-up"></i>
@@ -909,6 +912,12 @@
 
     <!-- Custom js -->
     <script src="assets/js/custom.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            // on window finish load
+            $("#popup").css("display", "none"); // turn off the popup
+        });
+    </script>
 </body>
 
 </html>

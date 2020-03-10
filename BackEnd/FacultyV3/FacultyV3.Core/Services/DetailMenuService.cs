@@ -24,7 +24,7 @@ namespace FacultyV3.Core.Services
         {
             if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(state) && string.IsNullOrEmpty(category))
             {
-                return context.Detail_Menus.OrderBy(x => x.Title).ToPagedList(page, pageSize);
+                return context.Detail_Menus.Include(x => x.Category_Menu).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
             }
 
             if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(state) && !string.IsNullOrEmpty(category))
@@ -34,7 +34,7 @@ namespace FacultyV3.Core.Services
                 {
                     Guid CategoryID = new Guid(category);
 
-                    return context.Detail_Menus.Where(x => x.Title.Contains(name) && x.Category_Menu.Id == CategoryID && x.Status == status).OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
+                    return context.Detail_Menus.Include(x => x.Category_Menu).Include(x => x.Account).Where(x => x.Title.Contains(name) && x.Category_Menu.Id == CategoryID && x.Status == status).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
                 }
                 catch (Exception)
                 {
@@ -43,8 +43,8 @@ namespace FacultyV3.Core.Services
 
             if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(state) || !string.IsNullOrEmpty(category))
             {
-                var posts = context.Detail_Menus.OrderBy(x => x.Title).ToList();
-                Console.WriteLine(posts.First().Id);
+                var posts = context.Detail_Menus.Include(x => x.Category_Menu).Include(x => x.Account).OrderBy(x => x.Title).ToList();
+
                 if (!string.IsNullOrEmpty(name))
                     posts = posts.Where(x => x.Title.Contains(name)).ToList();
                 if (!string.IsNullOrEmpty(state))
@@ -66,7 +66,7 @@ namespace FacultyV3.Core.Services
                 return posts.ToPagedList(page, pageSize);
             }
 
-            return context.Detail_Menus.OrderBy(x => x.Title).ToPagedList(page, pageSize);
+            return context.Detail_Menus.Include(x => x.Category_Menu).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
         }
 
         public Detail_Menu GetPostByID(string id)
@@ -74,7 +74,7 @@ namespace FacultyV3.Core.Services
             try
             {
                 Guid ID = new Guid(id);
-                return context.Detail_Menus.Find(ID);
+                return context.Detail_Menus.Include(x => x.Account).Include(x => x.Category_Menu).Where(x => x.Id == ID).SingleOrDefault(  );
 
             }
             catch (Exception)
@@ -94,12 +94,26 @@ namespace FacultyV3.Core.Services
         public List<Detail_Menu> GetPostsByName(string name)
         {
             return context.Detail_Menus.Where(x => x.Title == name)
-                           .OrderBy(x => x.Update_At)
+                           .OrderByDescending(x => x.Update_At)
                            .Include(x => x.Category_Menu)
                            .Include(x => x.Account)
                            .ToList();
         }
 
+        public List<Detail_Menu> GetPostsByCategory(string category)
+        {
+            try
+            {
+                return context.Detail_Menus
+                    .Include(x => x.Account)
+                    .Include(x => x.Category_Menu)
+                    .Where(x => x.Category_Menu.Meta_Name.Equals(category)).ToList();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

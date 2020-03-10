@@ -25,10 +25,11 @@ namespace FacultyV3.Web.Controllers
         private readonly IStudentService studentService;
         private readonly IVideoService videoService;
         private readonly IAdsService adsService;
+        private readonly IDetailNewsService detailNewsService;
 
         public HomeController(IDataContext context, IAbout_UsService about_UsService, IBannerService bannerService, ICategoryMenuService categoryMenuService, 
             ICategoryNewsService categoryNewsService, IContactService contactService, ICountService countService, IDescriptionService descriptionService, 
-            ILecturerService lecturerService, IStickyService stickyService, IStudentService studentService, IVideoService videoService, IAdsService adsService)
+            ILecturerService lecturerService, IStickyService stickyService, IStudentService studentService, IVideoService videoService, IAdsService adsService, IDetailNewsService detailNewsService)
         {
             this.context = context;
             this.about_UsService = about_UsService;
@@ -43,6 +44,7 @@ namespace FacultyV3.Web.Controllers
             this.studentService = studentService;
             this.videoService = videoService;
             this.adsService = adsService;
+            this.detailNewsService = detailNewsService;
         }
         public ActionResult Index()
         {
@@ -71,11 +73,13 @@ namespace FacultyV3.Web.Controllers
 
         public ActionResult _generalNews()
         {
-            return PartialView();
+            var model = detailNewsService.GetPostTop(6);
+            return PartialView(model);
         }
 
         public ActionResult _news()
         {
+  
             return PartialView();
         }
 

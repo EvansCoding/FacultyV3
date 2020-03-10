@@ -31,7 +31,7 @@ namespace FacultyV3.Core.Services
             try
             {
                 Guid ID = new Guid(id);
-                return context.Category_Menus.Find(ID);
+                return context.Category_Menus.Include(x => x.Parent).Where(x => x.Id == ID).SingleOrDefault();
             }
             catch (Exception)
             {

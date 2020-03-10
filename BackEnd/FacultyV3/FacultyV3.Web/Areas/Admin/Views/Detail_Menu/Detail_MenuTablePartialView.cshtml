@@ -13,20 +13,16 @@
             <th style="width:25%;">
                 Tên
             </th>
-            <th>
+            <th style="width:20%;">
                 Ảnh
             </th>
-            <th style="width:8%;">
-                Số thứ tự
+            <th>
+                Danh mục
             </th>
-            <th style="width:8%;">
+            <th style="width:14%;">
                 Trạng thái
             </th>
-
-            <th style="width:8%;">
-                Ngày tạo
-            </th>
-            <th style="width:8%;">
+            <th style="width:12%;">
                 Ngày cập nhật
             </th>
             <th style="width:10%;">Thao tác</th>
@@ -44,7 +40,7 @@
                     <td>
                         @item.Title
                         @{
-                            var uLink = Url.Action("DetailPost", "Detail_Menu", new { Area = String.Empty, id = item.Id });
+                            var uLink = Url.Action("DetailMenu", "Detail_Menu", new { Area = String.Empty, id = item.Id });
                             var urluLink = @"GetDetail('" + uLink + "')";
                         }
                         <a onclick="@urluLink" style="cursor:pointer">
@@ -53,7 +49,7 @@
                     </td>
 
                     <td>
-                        @if (item.Url_Image == null)
+                        @if (item.Url_Image.Equals("#"))
                         {
                             <img src="~/Content/image.png" style="width: 200px; height: 100px" alt="" />
                         }
@@ -63,7 +59,7 @@
                         }
                     </td>
 
-                    <td>@item.Serial</td>
+                    <td>@item.Category_Menu.Meta_Name</td>
 
                     <td>
                         <div>
@@ -87,7 +83,6 @@
                         </div>
                     </td>
 
-                    <td>@item.Create_At</td>
                     <td>@item.Update_At</td>
                     <td>
                         <div class="button-list">
@@ -114,6 +109,7 @@
         }
     </tbody>
 </table>
+
 
 <script src="~/Content/jquery-3.4.1.min.js"></script>
 <script>

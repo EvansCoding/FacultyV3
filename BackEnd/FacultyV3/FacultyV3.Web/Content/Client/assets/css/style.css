@@ -786,7 +786,7 @@ img {
 ====================*/
 
 #mu-latest-courses {
-    background-image: url("/assets/img/3254161.jpg");
+    /*background-image: url("/assets/img/3254161.jpg");*/
     background-color: #00B8FD;
     display: inline;
     float: left;
@@ -1062,7 +1062,7 @@ img {
 
 #mu-testimonial {
     background-attachment: fixed;
-    background-image: url("../img/image_1.png");
+    background-image: url("../img/bgstudent.png");
     background-position: center center;
     background-size: cover;
     display: inline;

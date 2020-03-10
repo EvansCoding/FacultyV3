@@ -26,7 +26,8 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
 
         public ActionResult AddOrEdit(string Id = "")
         {
-            List<Category_Menu> ListParent = context.Category_Menus.Where(x => !x.Detail_Menus.Any() ).ToList();
+            List<Category_Menu> ListParent = context.Category_Menus.ToList();
+            //List<Category_Menu> ListParent = context.Category_Menus.Where(x => !x.Detail_Menus.Any() ).ToList();
             try
             {
                 var data = categoryMenuService.GetCategoryByID(Id);

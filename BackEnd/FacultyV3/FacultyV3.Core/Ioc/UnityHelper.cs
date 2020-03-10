@@ -61,6 +61,7 @@ namespace FacultyV3.Core.Ioc
             Container.BindInRequestScope<ICategoryMenuService, CategoryMenuService>();
             Container.BindInRequestScope<ICategoryNewsService, CategoryNewsService>();
             Container.BindInRequestScope<IDetailMenuService, DetailMenuService>();
+            Container.BindInRequestScope<IDetailNewsService, DetailNewsService>();
         }
     }
 

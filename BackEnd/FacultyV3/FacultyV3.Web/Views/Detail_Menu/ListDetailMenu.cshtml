@@ -1,0 +1,116 @@
+﻿@model List<FacultyV3.Core.Models.Entities.Detail_Menu>
+@{
+    ViewBag.Title = "ListDepartment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Page breadcrumb -->
+<section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-page-breadcrumb-area">
+                    <h2>@Model[0].Category_Menu.Meta_Name</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End breadcrumb -->
+<section id="mu-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <!-- start course content container -->
+                            <div class="mu-course-container mu-blog-archive">
+                                <div class="row">
+                                    @{
+                                        int index = 0;
+                                    }
+
+                                    @foreach (var item in Model)
+                                    {
+
+                                        var url = Url.Action("DetailMenu", "Detail_Menu", new { id = item.Id, Area = String.Empty });
+
+                                        <div class="col-md-6 col-sm-6">
+                                            <article class="mu-blog-single-item">
+                                                <figure class="mu-blog-single-img">
+                                                    @if (!item.Url_Image.Equals("#"))
+                                                    {
+                                                        <a href="@url"><img src="@item.Url_Image" width="100%" height="280px" alt="img"></a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="@url"><img src="~/Content/image.png" width="100%" height="280px" alt="img"></a>
+                                                    }
+                                                    <figcaption class="mu-blog-caption">
+                                                        <h3><a href="@url">@item.Title</a></h3>
+                                                    </figcaption>
+                                                </figure>
+                                                <div class="mu-blog-meta">
+                                                    <a href="#">@item.Account.FullName</a>
+                                                    <a href="#">@item.Update_At.ToShortDateString()</a>
+                                                    <span><i class="fa fa-comments-o"></i>87</span>
+                                                </div>
+                                                <div class="mu-blog-description">
+                                                    <p>@item.Description</p>
+
+                                                    <a class="mu-read-more-btn" href="@url">Chi tiết</a>
+                                                </div>
+                                            </article>
+                                        </div>
+
+                                        if (index++ == 1)
+                                        {
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6"></div>
+                                            </div>
+                                            {
+                                                index = 0;
+                                            }
+                                        }
+
+                                    }
+
+                                </div>
+                            </div>
+                            <!-- end course content container -->
+                            @*<!-- start course pagination -->
+                                <div class="mu-pagination">
+                                    <nav>
+                                        <ul class="pagination">
+                                            <li>
+                                                <a href="#" aria-label="Previous">
+                                                    <span class="fa fa-angle-left"></span> Prev
+                                                </a>
+                                            </li>
+                                            <li class="active"><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li>
+                                                <a href="#" aria-label="Next">
+                                                    Next <span class="fa fa-angle-right"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- end course pagination -->*@
+                        </div>
+                        <!--Start Left Category-->
+                        @{
+                            Html.RenderAction("_leftCategory", "Common");
+                        }
+                        <!--End Left Category-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

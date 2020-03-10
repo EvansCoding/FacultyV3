@@ -60,3 +60,5 @@ D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\D
 D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_9.resources
 D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_10.resources
 D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_11.resources
+D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_12.resources
+D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_13.resources

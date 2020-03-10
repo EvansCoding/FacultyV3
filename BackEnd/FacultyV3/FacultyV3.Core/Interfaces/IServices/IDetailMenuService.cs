@@ -12,5 +12,7 @@ namespace FacultyV3.Core.Interfaces.IServices
         Detail_Menu GetPostByName(string name);
 
         List<Detail_Menu> GetPostsByName(string name);
+
+        List<Detail_Menu> GetPostsByCategory(string category);
     }
 }
