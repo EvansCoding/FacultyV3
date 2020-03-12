@@ -440,6 +440,7 @@
     <Content Include="Content\Client\assets\css\jquery.fancybox.css" />
     <Content Include="Content\Client\assets\css\slick.css" />
     <Content Include="Content\Client\assets\css\style.css" />
+    <Content Include="Content\Client\assets\css\swc.css" />
     <Content Include="Content\Client\assets\css\theme-color\burlywood-theme.css" />
     <Content Include="Content\Client\assets\css\theme-color\dark-red-theme.css" />
     <Content Include="Content\Client\assets\css\theme-color\default-theme.css" />
@@ -457,6 +458,8 @@
     <Content Include="Content\Client\assets\img\2767734.jpg" />
     <Content Include="Content\Client\assets\img\3254161.jpg" />
     <Content Include="Content\Client\assets\img\about-us.jpg" />
+    <Content Include="Content\Client\assets\img\ads\Banner2.jpg" />
+    <Content Include="Content\Client\assets\img\ads\close-icon.png" />
     <Content Include="Content\Client\assets\img\Banner1.jpg" />
     <Content Include="Content\Client\assets\img\blog\blog-1.jpg" />
     <Content Include="Content\Client\assets\img\blog\blog-2.jpg" />
@@ -524,6 +527,7 @@
     <Content Include="Content\Client\assets\js\jquery.min.js" />
     <Content Include="Content\Client\assets\js\jquery.mixitup.js" />
     <Content Include="Content\Client\assets\js\slick.js" />
+    <Content Include="Content\Client\assets\js\swc.js" />
     <Content Include="Content\Client\assets\js\waypoints.js" />
     <Content Include="Content\image.png" />
     <Content Include="Content\jquery-3.4.1.min.js" />
@@ -1115,6 +1119,7 @@
     <Content Include="Views\Detail_News\DetailNews.cshtml" />
     <Content Include="Views\Detail_News\ListDetailNews.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Views\Home\_ads.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

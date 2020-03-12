@@ -28,6 +28,17 @@ namespace FacultyV3.Core.Services
             return null;
         }
 
+        public Ads ShowUI()
+        {
+            try
+            {
+                return context.Adss.Where(x => x.Status).Select(x => x).Take(1).SingleOrDefault();
+            }
+            catch (Exception)
+            {
+            }
+            return null;
+        }
         public Ads GetAdsByID(string Id)
         {
             try

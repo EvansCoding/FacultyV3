@@ -83,6 +83,11 @@ namespace FacultyV3.Web.Controllers
             return PartialView();
         }
 
+        public ActionResult _ads()
+        {
+            var model = adsService.ShowUI();
+            return PartialView(model);
+        }
         public ActionResult _slider()
         {
             var model = bannerService.GetBannersOrderBySerial(5);

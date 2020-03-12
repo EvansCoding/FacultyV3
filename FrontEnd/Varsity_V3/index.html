@@ -27,12 +27,11 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="assets/css/swc.css" />
 </head>
 
 <body>
-    <div id="popup" style="display: block;">
-        <img src="/assets/img/about-us.jpg" />
-    </div>
     <!--START SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#">
         <i class="fa fa-angle-up"></i>
@@ -895,7 +894,17 @@
         </ul>
     </div>
     <!-- end Icons Nav Left-->
-
+    <div id="boxes" style="width: 100% ;height: 100vh; ">
+        <div style="top: 0; display: none; height: 100%; width: 100%;" id="dialog" class="window">
+            <div id="san">
+                <a href="#" class="close agree"><img src="/assets/img/delete_48px.png" width="25" style="float: right; margin-right: -25px; margin-top: -20px;" /></a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img id="image-ads" src="/assets/img/Banner2.jpg" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                </a>
+            </div>
+        </div>
+        <div style="width: 100%; font-size: 32pt; color:white; height: 100vh; display: none; opacity: 0.1;" id="mask"></div>
+    </div>
     <!-- jQuery library -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -918,6 +927,8 @@
             $("#popup").css("display", "none"); // turn off the popup
         });
     </script>
+
+    <script type="text/javascript" src="assets/js/swc.js"></script>
 </body>
 
 </html>

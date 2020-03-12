@@ -1,0 +1,18 @@
+﻿@model FacultyV3.Core.Models.Entities.Ads
+
+@if (Model != null)
+{
+    <div id="boxes" style="width: 100% ;height: 100vh; ">
+        <div style="top: 0; display: none; height: 100%; width: 100%;" id="dialog" class="window">
+            <div id="san">
+                <a href="#" class="close agree"><img src="~/Content/Client/assets/img/ads/close-icon.png" width="25" style="float: right; margin-right: -25px; margin-top: -20px;" /></a>
+                <a href="@Model.Url_Link" target="_blank">
+                    <img id="image-ads" src="@Model.Url_Image" style=" box-shadow: 0 4px 8px 0 rgba(197, 193, 193, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" />
+                </a>
+            </div>
+        </div>
+        <div style="width: 100%; font-size: 32pt; color:white; height: 100vh; display: none; opacity: 0.5;" id="mask"></div>
+    </div>
+}
+
+

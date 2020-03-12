@@ -6,5 +6,6 @@ namespace FacultyV3.Core.Interfaces.IServices
     {
         Ads GetTop();
         Ads GetAdsByID(string Id);
+        Ads ShowUI();
     }
 }

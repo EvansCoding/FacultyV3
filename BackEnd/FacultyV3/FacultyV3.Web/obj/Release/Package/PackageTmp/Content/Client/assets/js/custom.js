@@ -47,7 +47,7 @@ jQuery(function($) {
         // debugger;
         event.preventDefault();
         $("body").append(
-            "<div id='about-video-popup'><span id='mu-video-close' class='fa fa-close'></span><iframe id='mutube-video' name='mutube-video' frameborder='0' allowfullscreen></iframe></div>"
+            "<div id='about-video-popup'><span id='mu-video-close' class='fa fa-close'></span><iframe id='mutube-video' name='mutube-video' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>"
         );
         $("#mutube-video").attr("src", $(this).attr("href"));
     });

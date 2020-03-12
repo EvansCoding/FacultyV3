@@ -10,53 +10,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="~/Content/Client/assets/img/logo/logokonen.ico" type="image/x-icon" />
 
-    <!-- Font awesome -->
-    <link href="~/Content/Client/assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Bootstrap -->
-    <link href="~/Content/Client/assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- Slick slider -->
-    <link rel="stylesheet" type="text/css" href="~/Content/Client/assets/css/slick.css" />
-    <!-- Fancybox slider -->
-    <link rel="stylesheet" href="~/Content/Client/assets/css/jquery.fancybox.css" type="text/css" media="screen" />
-    <!-- Theme color -->
-    <link id="switcher" href="~/Content/Client/assets/css/theme-color/default-theme.css" rel="stylesheet" />
-
-    <!-- Main style sheet -->
-    <link href="~/Content/Client/assets/css/style.css" rel="stylesheet" />
-
-    <!-- Google Fonts -->
-    @*<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700" rel="stylesheet" type="text/css" />*@
+    @Styles.Render("~/css/client")
 </head>
 
 <body>
-    <!-- Load Facebook SDK for JavaScript -->
-    <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v6.0'
-          });
-        };
-
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- Your customer chat code -->
-    <div class="fb-customerchat"
-         attribution=setup_tool
-         page_id="107034757584659"
-         theme_color="#0084ff"
-         logged_in_greeting="Chào! Tôi có thể giúp gì cho bạn?"
-         logged_out_greeting="Chào! Tôi có thể giúp gì cho bạn?">
-    </div>
-
     <!--START SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#">
         <i class="fa fa-angle-up"></i>
@@ -132,23 +89,9 @@
     @{
         Html.RenderAction("_sticky", "Home");
     }
-    <!-- end Icons Nav Left-->
-    <!-- jQuery library -->
-    <script src="~/Content/Client/assets/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="~/Content/Client/assets/js/bootstrap.js"></script>
-    <!-- Slick slider -->
-    <script type="text/javascript" src="~/Content/Client/assets/js/slick.js"></script>
-    <!-- Counter -->
-    <script type="text/javascript" src="~/Content/Client/assets/js/waypoints.js"></script>
-    <script type="text/javascript" src="~/Content/Client/assets/js/jquery.counterup.js"></script>
-    <!-- Mixit slider -->
-    <script type="text/javascript" src="~/Content/Client/assets/js/jquery.mixitup.js"></script>
-    <!-- Add fancyBox -->
-    <script type="text/javascript" src="~/Content/Client/assets/js/jquery.fancybox.pack.js"></script>
 
-    <!-- Custom js -->
-    <script src="~/Content/Client/assets/js/custom.js"></script>
+    @Scripts.Render("~/script/client")
+
 </body>
 
 </html>

@@ -11,9 +11,8 @@
                 </button>
                 <a href="@Url.Action("Index","Home", new { Area = String.Empty})">
                     <img class="image-logo" src="~/Content/Client/assets/img/Banner1.jpg" alt="logoKhoa" />
-
                 </a>
-            </div>
+            </div>  
 
             <div id="navbar" class="navbar-collapse collapse" style="">
                 <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
@@ -27,7 +26,6 @@
                                 if (Enumerable.Count(ViewBag.intro) > 0)
                                 {
                                     <ul class="dropdown-menu" role="menu">
-
                                         @foreach (var item in ViewBag.intro as List<FacultyV3.Core.Models.Entities.Category_Menu>)
                                         {
                                             <li><a href="@item.Meta_Value">@item.Meta_Name</a></li>
@@ -50,7 +48,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Đào tạo <span class="fa fa-angle-down"></span>
                         </a>
-
                         @{
                             if (ViewBag.educate != null)
                             {
@@ -71,7 +68,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Nghiên cứu <span class="fa fa-angle-down"></span>
                         </a>
-
                         @{
                             if (ViewBag.research != null)
                             {
@@ -87,7 +83,6 @@
                                 }
                             }
                         }
-
                     </li>
                     @{
                         if (ViewBag.resource != null)

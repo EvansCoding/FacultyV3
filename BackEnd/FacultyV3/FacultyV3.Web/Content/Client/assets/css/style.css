@@ -569,7 +569,7 @@ img {
     width: 100%;
     display: block;
     width: 100%;
-    background-color: #ccc;
+    /*background-color: #ccc;*/
 }
 
 #mu-about-us .mu-about-us-area .mu-about-us-right a {
@@ -621,7 +621,7 @@ img {
 }
 
 #about-video-popup iframe {
-    background: url(../img/loader.gif) center center no-repeat;
+    background: url("/Content/Client/assets/img/loader.gif") center center no-repeat;
     margin: 10% auto;
     width: 650px;
     height: 450px;
@@ -653,7 +653,7 @@ img {
 ====================*/
 
 #mu-abtus-counter {
-    background-image: url("../img/2767734.jpg");
+    background-image: url("/Content/Client/assets/img/2767734.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     display: inline;
@@ -1062,7 +1062,7 @@ img {
 
 #mu-testimonial {
     background-attachment: fixed;
-    background-image: url("../img/bgstudent.png");
+    background-image: url("/Content/Client/assets/img/bgstudent.png");
     background-position: center center;
     background-size: cover;
     display: inline;

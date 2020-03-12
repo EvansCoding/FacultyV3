@@ -1,4 +1,4 @@
-/* Slider */
+﻿/* Slider */
 
 .slick-slider {
     position: relative;
@@ -112,7 +112,7 @@
 /* Slider */
 
 .slick-loading .slick-list {
-    background: #fff url('../img/slider/ajax-loader.gif') center center no-repeat;
+    /*background: #fff url('/Content/Client/assets/img/slider/ajax-loader.gif') center center no-repeat;*/
 }
 
 
