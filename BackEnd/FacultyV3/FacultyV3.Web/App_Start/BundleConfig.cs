@@ -42,7 +42,9 @@ namespace FacultyV3.Web
                       "~/Content/Client/assets/css/style.css",
                       "~/Content/Client/assets/css/swc.css"
                   ).Include("~/Content/Client/assets/css/font-awesome.css", new CssRewriteUrlTransform()));
-
+            bundles.Add(new ScriptBundle("~/script/jquery").Include(
+                "~/Content/Client/assets/js/jquery.min.js"
+                ));
             BundleTable.EnableOptimizations = true;
         }
     }

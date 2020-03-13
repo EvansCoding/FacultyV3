@@ -51,10 +51,10 @@
         </div>
     </header> -->
     <header>
-            <div class="container">
-                <div class="row" style="color: slategrey; width: 10px;"></div>
-            </div>
-        </header>
+        <div class="container">
+            <div class="row" style="color: slategrey; width: 10px;"></div>
+        </div>
+    </header>
     <!-- End header  -->
     <!-- Start menu -->
     @{
@@ -63,21 +63,21 @@
     <!-- End menu -->
     <!-- Start search box -->
     <div id="mu-search">
-            <div class="mu-search-area">
-                <button class="mu-search-close">
-                    <span class="fa fa-close"></span>
-                </button>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form class="mu-search-form">
-                                <input type="search" placeholder="Type Your Keyword(s) & Hit Enter" />
-                            </form>
-                        </div>
+        <div class="mu-search-area">
+            <button class="mu-search-close">
+                <span class="fa fa-close"></span>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="mu-search-form">
+                            <input type="search" placeholder="Type Your Keyword(s) & Hit Enter" />
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     <!-- End search box -->
     @RenderBody();
     <!-- Start footer -->
@@ -89,8 +89,9 @@
     @{
         Html.RenderAction("_sticky", "Home");
     }
-
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
     @Scripts.Render("~/script/client")
+
 
 </body>
 

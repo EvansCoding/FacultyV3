@@ -7,7 +7,7 @@ $(document).ready(function() {
 
     //Set heigth and width to mask to fill up the whole screen
     $("#mask").css({ width: "100%", height: "100vh" });
-    //$("body").css({ overflow: "hidden" });
+   
     jQuery("html, body").animate({ scrollTop: 0 }, 800);
     //transition effect
     $("#mask").fadeIn(300);

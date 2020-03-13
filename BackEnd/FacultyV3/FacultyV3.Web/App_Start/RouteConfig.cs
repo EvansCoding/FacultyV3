@@ -16,9 +16,30 @@ namespace FacultyV3.Web
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
             routes.MapRoute(
-                name: "introduce",
-                url: "gioi-thieu-khoa/{id}",
-                defaults: new { controller = "Contact", action = "ContactView", id = UrlParameter.Optional },
+                name: "introduceK",
+                url: "gioi-thieu/gioi-thieu-khoa/{id}",
+                defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "34251e7f-79d1-4fc0-9ad7-ab7900db522a" },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "group",
+                url: "gioi-thieu/co-cau-to-chuc/{id}",
+                defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "F83DE66C-CA9D-4E6E-B8BC-AB7900F16AC6" },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "DEPARTMENT",
+                url: "gioi-thieu/to-bo-mon/{id}",
+                defaults: new { controller = "Detail_Menu", action = "ListDepartment", id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "ADMISSION",
+                url: "tuyen-sinh/{id}",
+                defaults: new { controller = "Detail_Menu", action = "ListAdmission", id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
 

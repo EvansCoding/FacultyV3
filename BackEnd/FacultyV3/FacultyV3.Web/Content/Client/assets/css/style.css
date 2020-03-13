@@ -658,11 +658,13 @@ img {
     background-size: 100%;
     display: inline;
     float: left;
-    padding: 100px 0;
+    padding: 50px 0;
+    padding-top: 60px;
     width: 100%;
     opacity: 1;
     position: relative;
     object-fit: contain;
+
 }
 
 #mu-abtus-counter .mu-abtus-counter-area {
@@ -689,7 +691,7 @@ img {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #mu-abtus-counter .mu-abtus-counter-area .mu-abtus-counter-single p {
