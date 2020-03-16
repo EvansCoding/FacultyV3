@@ -1,9 +1,7 @@
 ﻿using FacultyV3.Core.Constants;
 using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
-using System.Linq;
 using System.Web.Mvc;
-using System.Data.Entity;
 
 namespace FacultyV3.Web.Controllers
 {
@@ -40,7 +38,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 //var model = context.Category_News.Where(x => x.Meta_Name.Equals(Constant.NEWS)).SingleOrDefault();
-          
+
             }
             catch (System.Exception)
             {
@@ -48,12 +46,12 @@ namespace FacultyV3.Web.Controllers
             return View();
         }
 
-        public ActionResult ListDepartment()
+        public ActionResult ListDepartment(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailMenuService.GetPostsByCategory(Constant.DEPARTMENT);
-                if (model.Count > 0)
+                var model = detailMenuService.PageListFE(Constant.DEPARTMENT, page, pageSize);
+                if (model != null)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)
@@ -62,12 +60,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListEducation_Program()
+        public ActionResult ListEducation_Program(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailMenuService.GetPostsByCategory(Constant.EDUCATION_PROGRAM);
-                if (model.Count > 0)
+                var model = detailMenuService.PageListFE(Constant.EDUCATE, page, pageSize);
+                if (model != null)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)
@@ -76,12 +74,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListTraining_Sector()
+        public ActionResult ListTraining_Sector(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailMenuService.GetPostsByCategory(Constant.TRAINING_SECTOR);
-                if (model.Count > 0)
+                var model = detailMenuService.PageListFE(Constant.TRAINING_SECTOR, page, pageSize);
+                if (model != null)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)
@@ -90,12 +88,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListResource()
+        public ActionResult ListResource(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailMenuService.GetPostsByCategory(Constant.RESOURCE);
-                if (model.Count > 0)
+                var model = detailMenuService.PageListFE(Constant.RESOURCE, page, pageSize);
+                if (model != null)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)
@@ -104,12 +102,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListAdmission()
+        public ActionResult ListAdmission(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailMenuService.GetPostsByCategory(Constant.ADMISSION);
-                if (model.Count > 0)
+                var model = detailMenuService.PageListFE(Constant.ADMISSION, page, pageSize);
+                if (model != null)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)

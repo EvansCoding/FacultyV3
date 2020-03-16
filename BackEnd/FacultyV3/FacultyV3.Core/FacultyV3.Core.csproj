@@ -141,6 +141,7 @@
     <Compile Include="Data\Mapping\ServiceMapping.cs" />
     <Compile Include="Data\Mapping\StickeyMapping.cs" />
     <Compile Include="Data\Mapping\StudentMapping.cs" />
+    <Compile Include="Data\Mapping\Training_ProcessMapping.cs" />
     <Compile Include="Data\Mapping\VideoMapping.cs" />
     <Compile Include="FacultyV3Confirguration.cs" />
     <Compile Include="Interfaces\IBaseEntity.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Interfaces\IServices\IDescriptionService.cs" />
     <Compile Include="Interfaces\IServices\IDetailMenuService.cs" />
     <Compile Include="Interfaces\IServices\IDetailNewsService.cs" />
+    <Compile Include="Interfaces\IServices\IGraduationService.cs" />
     <Compile Include="Interfaces\IServices\ILecturerService.cs" />
     <Compile Include="Interfaces\IServices\IStickyService.cs" />
     <Compile Include="Interfaces\IServices\IStudentService.cs" />
@@ -207,6 +209,14 @@
     <Compile Include="Migrations\202003101329486_Initialize_13.designer.cs">
       <DependentUpon>202003101329486_Initialize_13.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003150731558_Initialize_14.cs" />
+    <Compile Include="Migrations\202003150731558_Initialize_14.designer.cs">
+      <DependentUpon>202003150731558_Initialize_14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003151323137_Initialize_15.cs" />
+    <Compile Include="Migrations\202003151323137_Initialize_15.designer.cs">
+      <DependentUpon>202003151323137_Initialize_15.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\About_Us.cs" />
     <Compile Include="Models\Entities\Account.cs" />
@@ -222,6 +232,7 @@
     <Compile Include="Models\Entities\Service.cs" />
     <Compile Include="Models\Entities\Stickey.cs" />
     <Compile Include="Models\Entities\Student.cs" />
+    <Compile Include="Models\Entities\Training_Process.cs" />
     <Compile Include="Models\Entities\Video.cs" />
     <Compile Include="Models\Enums\CacheTimes.cs" />
     <Compile Include="Models\Enums\Gender.cs" />
@@ -240,6 +251,7 @@
     <Compile Include="Services\DescriptionService.cs" />
     <Compile Include="Services\DetailMenuService.cs" />
     <Compile Include="Services\DetailNewsService.cs" />
+    <Compile Include="Services\GraduationService.cs" />
     <Compile Include="Services\LecturerService.cs" />
     <Compile Include="Services\StickyService.cs" />
     <Compile Include="Services\StudentService.cs" />
@@ -287,6 +299,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003101329486_Initialize_13.resx">
       <DependentUpon>202003101329486_Initialize_13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003150731558_Initialize_14.resx">
+      <DependentUpon>202003150731558_Initialize_14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003151323137_Initialize_15.resx">
+      <DependentUpon>202003151323137_Initialize_15.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

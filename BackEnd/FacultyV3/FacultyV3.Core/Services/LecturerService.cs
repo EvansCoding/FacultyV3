@@ -5,7 +5,7 @@ using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Data.Entity;   
 namespace FacultyV3.Core.Services
 {
     public class LecturerService : ILecturerService
@@ -31,7 +31,7 @@ namespace FacultyV3.Core.Services
             try
             {
                 Guid ID = new Guid(id);
-                return context.Lecturers.Find(ID);
+                return context.Lecturers.Where(x => x.Id == ID).Include(x => x.Training_Processes).SingleOrDefault();
             }
             catch (Exception)
             {

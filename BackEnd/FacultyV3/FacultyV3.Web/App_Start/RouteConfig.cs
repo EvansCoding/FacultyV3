@@ -37,9 +37,29 @@ namespace FacultyV3.Web
             );
 
             routes.MapRoute(
+                name: "LECTURER",
+                url: "gioi-thieu/can-bo-giang-vien/{id}",
+                defaults: new { controller = "Lecturer", action = "LecturerView", id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "ADMISSION",
                 url: "tuyen-sinh/{id}",
                 defaults: new { controller = "Detail_Menu", action = "ListAdmission", id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "MENU",
+                url: "home/{category}/{title}/{id}",
+                defaults: new { controller = "Detail_Menu", action = "DetailMenu", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "LECTURER DETAIL",
+                url: "can-bo-giang-vien/{title}/{id}",
+                defaults: new { controller = "Lecturer", action = "DetailLecturer", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
 

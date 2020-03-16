@@ -69,6 +69,23 @@ namespace FacultyV3.Core.Services
             return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
         }
 
+        public IEnumerable<Detail_News> PageListFE(string category, int page, int pageSize)
+        {
+            try
+            {
+                return context.Detail_News
+                        .Include(x => x.Account)
+                        .Include(x => x.Category_News)
+                        .Where(x => x.Category_News.Meta_Name.Equals(category)).OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+
         public Detail_News GetPostByID(string id)
         {
             try

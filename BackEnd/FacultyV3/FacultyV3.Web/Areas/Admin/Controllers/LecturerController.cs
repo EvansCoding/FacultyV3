@@ -45,6 +45,14 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     model.Phone = data.Phone;
                     model.Email = data.Email;
                     model.Serial = data.Serial;
+                    model.Position = data.Position;
+                    model.Academic_Rank = data.Academic_Rank;
+                    model.Specialized = data.Specialized;
+                    model.Title = data.Title;
+                    model.Native_Land = data.Native_Land;
+                    model.Url_Scientific_Works = data.Url_Scientific_Works;
+                    model.Specialized_Research = data.Specialized_Research;
+                    model.Teaching = data.Teaching;
                     return PartialView("CRUDLecturer", model);
                 }
             }
@@ -68,6 +76,14 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     Phone = model.Phone,
                     Email = model.Email,
                     Serial = model.Serial,
+                    Position = model.Position,
+                    Academic_Rank = model.Academic_Rank,
+                    Specialized = model.Specialized,
+                    Title = model.Title,
+                    Native_Land = model.Native_Land,
+                    Url_Scientific_Works = model.Url_Scientific_Works,
+                    Specialized_Research = model.Specialized_Research,
+                    Teaching = model.Teaching,
                     Create_At = DateTime.Now,
                     Update_At = DateTime.Now
                 };
@@ -104,6 +120,14 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     lecturer.Phone = model.Phone;
                     lecturer.Email = model.Email;
                     lecturer.Serial = model.Serial;
+                    lecturer.Position = model.Position;
+                    lecturer.Academic_Rank = model.Academic_Rank;
+                    lecturer.Specialized = model.Specialized;
+                    lecturer.Title = model.Title;
+                    lecturer.Native_Land = model.Native_Land;
+                    lecturer.Url_Scientific_Works = model.Url_Scientific_Works;
+                    lecturer.Specialized_Research = model.Specialized_Research;
+                    lecturer.Teaching = model.Teaching;
                     lecturer.Update_At = DateTime.Now;
 
                     context.SaveChanges();

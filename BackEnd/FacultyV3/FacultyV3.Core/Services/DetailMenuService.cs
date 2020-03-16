@@ -69,6 +69,18 @@ namespace FacultyV3.Core.Services
             return context.Detail_Menus.Include(x => x.Category_Menu).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
         }
 
+
+        public IEnumerable<Detail_Menu> PageListFE( string category, int page, int pageSize)
+        {
+    
+                return context.Detail_Menus
+                    .Include(x => x.Account)
+                    .Include(x => x.Category_Menu)
+                    .Where(x => x.Category_Menu.Meta_Name.Equals(category)).OrderBy(x => x.Update_At).ToPagedList(page,pageSize);
+
+        }
+
+
         public Detail_Menu GetPostByID(string id)
         {
             try

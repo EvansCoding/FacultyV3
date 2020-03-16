@@ -11,6 +11,8 @@ namespace FacultyV3.Core.Interfaces.IServices
     {
         IEnumerable<Detail_News> PageList(string name, string category, string state, int page, int pageSize);
 
+        IEnumerable<Detail_News> PageListFE(string category, int page, int pageSize);
+
         Detail_News GetPostByID(string id);
 
         Detail_News GetPostByName(string name);

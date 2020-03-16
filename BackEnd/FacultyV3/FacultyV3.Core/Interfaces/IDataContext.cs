@@ -23,7 +23,7 @@
         DbSet<Student> Students { get; set; }
         DbSet<Video> Videos { get; set; }
         DbSet<Ads> Adss { get; set; }
-
+        DbSet<Training_Process> Training_Processes { get; set; }
         int SaveChanges();
         Task<int> SaveChangesAsync();
         void RollBack();

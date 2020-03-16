@@ -30,8 +30,7 @@ namespace FacultyV3.Web
                     "~/Content/Client/assets/js/jquery.counterup.js",
                     "~/Content/Client/assets/js/jquery.mixitup.js",
                     "~/Content/Client/assets/js/jquery.fancybox.pack.js",
-                    "~/Content/Client/assets/js/custom.js",
-                    "~/Content/Client/assets/js/swc.js"
+                    "~/Content/Client/assets/js/custom.js"
                     ));
 
             bundles.Add(new StyleBundle("~/css/client").Include(

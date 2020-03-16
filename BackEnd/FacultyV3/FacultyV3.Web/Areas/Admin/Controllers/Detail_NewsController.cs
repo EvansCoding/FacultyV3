@@ -7,6 +7,8 @@ using FacultyV3.Web.Common;
 using FacultyV3.Web.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
 namespace FacultyV3.Web.Areas.Admin.Controllers
@@ -127,6 +129,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     detail_Menu.Category_News = context.Category_News.Find(new Guid(model.CategoryID));
                     detail_Menu.Account = context.Accounts.Find(new Guid("32E6C2E0-5304-4330-B9D3-8978B4803E61"));
 
+                    //var data = utf8Convert3(detail_Menu.Title.ToLower()).Replace(" ", "-");
                     context.SaveChanges();
                     TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                     {
@@ -146,6 +149,14 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             return RedirectToAction("Detail_NewsView", "Detail_News");
         }
 
+        // Chuyển đổi tiếng việt có dấu thành không dấu
+        //public static string utf8Convert3(string s)
+        //{
+        //    Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+        //    string temp = s.Normalize(NormalizationForm.FormD);
+        //    return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        //}
+
         [HttpPost]
         public ActionResult Delete(string Id)
         {
@@ -159,7 +170,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             catch (Exception)
             {
             }
-
             return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
 
@@ -187,7 +197,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             {
 
             }
-
             return Json(new { success = false, message = "Đã có lỗi xảy ra" }, JsonRequestBehavior.AllowGet);
         }
     }

@@ -33,7 +33,7 @@
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Video> Videos { get; set; }
         public virtual DbSet<Ads> Adss { get; set; }
-
+        public virtual DbSet<Training_Process> Training_Processes {get; set;}
 
         public override int SaveChanges()
         {

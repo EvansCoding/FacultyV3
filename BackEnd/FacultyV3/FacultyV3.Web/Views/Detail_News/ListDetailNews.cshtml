@@ -1,8 +1,9 @@
-﻿@model List<FacultyV3.Core.Models.Entities.Detail_News>
+﻿@model PagedList.IPagedList<FacultyV3.Core.Models.Entities.Detail_News>
 @{
     ViewBag.Title = "ListDetailNews";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using PagedList.Mvc;
 
 <!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
@@ -48,7 +49,7 @@
                                                         <a href="@url"><img src="~/Content/image.png" width="100%" height="280px" alt="img"></a>
                                                     }
 
-                                                    <figcaption class="mu-blog-caption">
+                                                    <figcaption class="mu-blog-caption" style="height: 120px">
                                                         <h3><a href="@url">@item.Title</a></h3>
                                                     </figcaption>
                                                 </figure>
@@ -58,7 +59,7 @@
                                                     <span><i class="fa fa-comments-o"></i>87</span>
                                                 </div>
                                                 <div class="mu-blog-description">
-                                                    <p>@item.Description</p>
+                                                    @*<p>@item.Description</p>*@
 
                                                     <a class="mu-read-more-btn" href="@url">Chi tiết</a>
                                                 </div>
@@ -80,29 +81,24 @@
                                 </div>
                             </div>
                             <!-- end course content container -->
-                            @*<!-- start course pagination -->
-                                <div class="mu-pagination">
-                                    <nav>
-                                        <ul class="pagination">
-                                            <li>
-                                                <a href="#" aria-label="Previous">
-                                                    <span class="fa fa-angle-left"></span> Prev
-                                                </a>
-                                            </li>
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li>
-                                                <a href="#" aria-label="Next">
-                                                    Next <span class="fa fa-angle-right"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!-- end course pagination -->*@
+                            <hr />
+                            <div style="float: right">
+                                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div class="mu-pagination">
+                                <nav>
+                                    @Html.PagedListPager(Model, page => Url.Action("LecturerView", "Lecturer", new { page }),
+                                       new PagedListRenderOptions
+                                       {
+                                           LiElementClasses = new string[] { "page-item" }
+                                       })
+                                </nav>
+                            </div>
+                            <!-- end course pagination -->
                         </div>
                         <!--Start Left Category-->
                         @{

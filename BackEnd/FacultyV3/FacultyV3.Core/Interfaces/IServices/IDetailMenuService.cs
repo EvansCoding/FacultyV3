@@ -6,7 +6,7 @@ namespace FacultyV3.Core.Interfaces.IServices
     public interface IDetailMenuService
     {
         IEnumerable<Detail_Menu> PageList(string name, string category, string state, int page, int pageSize);
-
+        IEnumerable<Detail_Menu> PageListFE(string category ,int page, int pageSize);
         Detail_Menu GetPostByID(string id);
 
         Detail_Menu GetPostByName(string name);

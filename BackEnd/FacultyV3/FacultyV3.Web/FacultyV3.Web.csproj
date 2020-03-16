@@ -216,16 +216,19 @@
     <Compile Include="Areas\Admin\Controllers\DescriptionController.cs" />
     <Compile Include="Areas\Admin\Controllers\Detail_MenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\Detail_NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GraduationController.cs" />
     <Compile Include="Areas\Admin\Controllers\LecturerController.cs" />
     <Compile Include="Areas\Admin\Controllers\StickyController.cs" />
     <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
     <Compile Include="Areas\Admin\Controllers\VideoController.cs" />
     <Compile Include="Common\BaseController.cs" />
+    <Compile Include="Common\utf8Convert.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\Detail_MenuController.cs" />
     <Compile Include="Controllers\Detail_NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LecturerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -241,6 +244,7 @@
     <Compile Include="ViewModels\DescriptionViewModel.cs" />
     <Compile Include="ViewModels\DetailViewModel.cs" />
     <Compile Include="ViewModels\GenericMessageViewModel.cs" />
+    <Compile Include="ViewModels\GraduationViewModel.cs" />
     <Compile Include="ViewModels\LecturerViewModel.cs" />
     <Compile Include="ViewModels\StickyViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
@@ -1090,6 +1094,9 @@
     <Content Include="Areas\Admin\Views\Detail_News\Detail_NewsView.cshtml" />
     <Content Include="Areas\Admin\Views\Detail_News\Detail_NewsTablePartialView.cshtml" />
     <Content Include="Areas\Admin\Views\Detail_News\CRUDDetail_News.cshtml" />
+    <Content Include="Areas\Admin\Views\Graduation\CRUDGraduation.cshtml" />
+    <Content Include="Areas\Admin\Views\Graduation\GraduationTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Graduation\GraduationView.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
@@ -1120,6 +1127,9 @@
     <Content Include="Views\Detail_News\ListDetailNews.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Views\Home\_ads.cshtml" />
+    <Content Include="Views\Lecturer\LecturerView.cshtml" />
+    <Content Include="Views\Lecturer\LecturerTablePartialView.cshtml" />
+    <Content Include="Views\Lecturer\DetailLecturer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

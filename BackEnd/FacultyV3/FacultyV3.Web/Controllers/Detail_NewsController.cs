@@ -2,9 +2,6 @@
 using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace FacultyV3.Web.Controllers
@@ -38,12 +35,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListNewss()
+        public ActionResult ListNewss(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailNewsService.GetPostsByCategory(Constant.NEWSS);
-                if (model.Count > 0)
+                var model = detailNewsService.PageListFE(Constant.NEWSS, page, pageSize);
+                if (model != null)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -52,12 +49,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListWorks()
+        public ActionResult ListWorks(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailNewsService.GetPostsByCategory(Constant.WORK);
-                if (model.Count > 0)
+                var model = detailNewsService.PageListFE(Constant.WORK, page, pageSize);
+                if (model != null)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -66,12 +63,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListYouth_Group()
+        public ActionResult ListYouth_Group(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailNewsService.GetPostsByCategory(Constant.YOUTH_GROUP);
-                if (model.Count > 0)
+                var model = detailNewsService.PageListFE(Constant.YOUTH_GROUP, page, pageSize);
+                if (model != null)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -80,12 +77,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListMinistry()
+        public ActionResult ListMinistry(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailNewsService.GetPostsByCategory(Constant.NEWS_FROM_THE_MINISTRY);
-                if (model.Count > 0)
+                var model = detailNewsService.PageListFE(Constant.NEWS_FROM_THE_MINISTRY, page, pageSize);
+                if (model != null)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -94,12 +91,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListFaculty()
+        public ActionResult ListFaculty(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailNewsService.GetPostsByCategory(Constant.NEWS_FROM_FACULTY);
-                if (model.Count > 0)
+                var model = detailNewsService.PageListFE(Constant.NEWS_FROM_FACULTY, page, pageSize);
+                if (model != null)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -108,12 +105,12 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListUniversity()
+        public ActionResult ListUniversity(int page = 1, int pageSize = 8)
         {
             try
             {
-                var model = detailNewsService.GetPostsByCategory(Constant.NEWS_FROM_UNIVERSITY);
-                if (model.Count > 0)
+                var model = detailNewsService.PageListFE(Constant.NEWS_FROM_UNIVERSITY, page, pageSize);
+                if (model != null)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -121,5 +118,6 @@ namespace FacultyV3.Web.Controllers
             }
             return View("~/Views/Shared/Error.cshtml");
         }
+
     }
 }

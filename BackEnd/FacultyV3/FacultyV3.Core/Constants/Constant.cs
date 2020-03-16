@@ -29,5 +29,6 @@
         public const string NEWS_FROM_FACULTY = "TIN TỪ KHOA";
         public const string NEWS_FROM_UNIVERSITY = "TIN TỪ TRƯỜNG";
         public const string YOUTH_GROUP = "ĐOÀN THANH NIÊN";
+
     }
 }

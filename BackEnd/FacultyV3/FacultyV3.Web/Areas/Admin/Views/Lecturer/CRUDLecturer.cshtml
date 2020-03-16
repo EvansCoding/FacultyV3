@@ -31,48 +31,103 @@
                     @Html.HiddenFor(model => model.Id)
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Họ và Tên <span class="text-danger">*</span></label>
-                        @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "Hãy nhập họ và tên giảng viên", required = "required" } })
+                        @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", placeholder = "...", required = "required" } })
                         @Html.ValidationMessageFor(x => x.FullName, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Học vị <span class="text-danger">*</span></label>
-                        @Html.EditorFor(model => model.Degree, new { htmlAttributes = new { @class = "form-control", placeholder = "Hãy nhập học vị", required = "required" } })
-                        @Html.ValidationMessageFor(x => x.Degree, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Hình ảnh</label>
-                        <div class="input-group">
-                            @Html.TextBoxFor(model => model.Url_Image, new { @id = "fieldID", @class = "form-control ", placeholder = "Đường dẫn hình ảnh" })
-                            @Html.ValidationMessageFor(x => x.Url_Image, "", new { @class = "text-danger" })
-                            <div class="input-group-append btn-upfle">
-                                <a data-toggle="modal" data-target="#myModal1" class="btn btn-dark " style="color: white">
-                                    <i class="fa fa-upload" style="color: white"></i>
-                                    Browse
-                                </a>
-                            </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Quê quán <span class="text-danger">*</span></label>
+                            @Html.EditorFor(model => model.Native_Land, new { htmlAttributes = new { @class = "form-control", placeholder = "...", required = "required" } })
+                            @Html.ValidationMessageFor(x => x.Native_Land, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Chuyên ngành <span class="text-danger">*</span></label>
+                            @Html.EditorFor(model => model.Specialized, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
+                            @Html.ValidationMessageFor(x => x.Specialized, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Link Facebook</label>
-                        @Html.EditorFor(model => model.Url_Facebook, new { htmlAttributes = new { @class = "form-control",placeholder ="#"} })
-                        @Html.ValidationMessageFor(x => x.Url_Facebook, "", new { @class = "text-danger" })
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Chức danh <span class="text-danger">*</span></label>
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
+                            @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Chức vụ <span class="text-danger">*</span></label>
+                            @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
+                            @Html.ValidationMessageFor(x => x.Position, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Số điện thoại</label>
-                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control",placeholder ="#" } })
-                        @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "text-danger" })
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Học hàm </label>
+                            @Html.EditorFor(model => model.Academic_Rank, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
+                            @Html.ValidationMessageFor(x => x.Academic_Rank, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Học vị </label>
+                            @Html.EditorFor(model => model.Degree, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
+                            @Html.ValidationMessageFor(x => x.Degree, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Email</label>
-                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder ="#" } })
-                        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Số thứ tự</label>
-                        @Html.EditorFor(model => model.Serial, new { @id = "Serial", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Serial) }, required = "required" })
-                        @Html.ValidationMessageFor(x => x.Serial, "", new { @class = "text-danger" })
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Email</label>
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
+                            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Số điện thoại</label>
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", placeholder = "..." } })
+                            @Html.ValidationMessageFor(x => x.Phone, "", new { @class = "text-danger" })
+                        </div>
                     </div>
 
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Link Facebook</label>
+                            @Html.EditorFor(model => model.Url_Facebook, new { htmlAttributes = new { @class = "form-control", placeholder = "#" } })
+                            @Html.ValidationMessageFor(x => x.Url_Facebook, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Link Công trình khoa học</label>
+                            @Html.EditorFor(model => model.Url_Scientific_Works, new { htmlAttributes = new { @class = "form-control", placeholder = "#" } })
+                            @Html.ValidationMessageFor(x => x.Url_Scientific_Works, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Chuyên ngành nghiên cứu <span class="text-danger">*</span></label>
+                            @Html.TextAreaFor(model => model.Specialized_Research, new { @class = "form-control", placeholder = "..." })
+                            @Html.ValidationMessageFor(x => x.Specialized_Research, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Môn học tham gia giảng dạy <span class="text-danger">*</span></label>
+                            @Html.TextAreaFor(model => model.Teaching, new { @class = "form-control", placeholder = "..." })
+                            @Html.ValidationMessageFor(x => x.Teaching, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-9">
+                            <label for="recipient-name" class="col-form-label">Hình ảnh</label>
+                            <div class="input-group">
+                                @Html.TextBoxFor(model => model.Url_Image, new { @id = "fieldID", @class = "form-control ", placeholder = "Đường dẫn hình ảnh", required = "required" })
+                                @Html.ValidationMessageFor(x => x.Url_Image, "", new { @class = "text-danger" })
+                                <div class="input-group-append btn-upfle">
+                                    <a data-toggle="modal" data-target="#myModal1" class="btn btn-dark " style="color: white">
+                                        <i class="fa fa-upload" style="color: white"></i>
+                                        Browse
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="recipient-name" class="col-form-label">Số thứ tự</label>
+                            @Html.EditorFor(model => model.Serial, new { @id = "Serial", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Serial) }, required = "required" })
+                            @Html.ValidationMessageFor(x => x.Serial, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
                     <div class="form-group text-right mb-0">
                         <button class="btn btn-primary" type="submit">Lưu</button>
                         <button type="button" onclick="window.location.href = '@Url.Action("LecturerView","Lecturer")'" class="btn btn-secondary">Đóng</button>

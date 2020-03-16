@@ -1,15 +1,22 @@
-﻿@model List<FacultyV3.Core.Models.Entities.Detail_Menu>
+﻿@model PagedList.IPagedList<FacultyV3.Core.Models.Entities.Detail_Menu>
 @{
     ViewBag.Title = "ListDepartment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@using PagedList.Mvc;
+@using FacultyV3.Web.Common;
 <!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="mu-page-breadcrumb-area">
-                    <h2>@Model[0].Category_Menu.Meta_Name</h2>
+                    @if (Model.Count > 0)
+                    {
+                        <h2>@Model[0].Category_Menu.Meta_Name</h2>
+                    }
+
                 </div>
             </div>
         </div>
@@ -33,7 +40,7 @@
                                     @foreach (var item in Model)
                                     {
 
-                                        var url = Url.Action("DetailMenu", "Detail_Menu", new { id = item.Id, Area = String.Empty });
+                                        var url = Url.RouteUrl("MENU", new { title = utf8Convert.Instance.ToUrlFriendly(item.Title), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly( item.Category_Menu.Meta_Name) });
 
                                         <div class="col-md-6 col-sm-6">
                                             <article class="mu-blog-single-item">
@@ -46,7 +53,7 @@
                                                     {
                                                         <a href="@url"><img src="~/Content/image.png" width="100%" height="280px" alt="img"></a>
                                                     }
-                                                    <figcaption class="mu-blog-caption">
+                                                    <figcaption class="mu-blog-caption" style="height: 100px">
                                                         <h3><a href="@url">@item.Title</a></h3>
                                                     </figcaption>
                                                 </figure>
@@ -56,7 +63,7 @@
                                                     <span><i class="fa fa-comments-o"></i>87</span>
                                                 </div>
                                                 <div class="mu-blog-description">
-                                                    <p>@item.Description</p>
+
 
                                                     <a class="mu-read-more-btn" href="@url">Chi tiết</a>
                                                 </div>
@@ -78,29 +85,24 @@
                                 </div>
                             </div>
                             <!-- end course content container -->
-                            @*<!-- start course pagination -->
-                                <div class="mu-pagination">
-                                    <nav>
-                                        <ul class="pagination">
-                                            <li>
-                                                <a href="#" aria-label="Previous">
-                                                    <span class="fa fa-angle-left"></span> Prev
-                                                </a>
-                                            </li>
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li>
-                                                <a href="#" aria-label="Next">
-                                                    Next <span class="fa fa-angle-right"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!-- end course pagination -->*@
+                            <hr />
+                            <div style="float: right">
+                                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div class="mu-pagination">
+                                <nav>
+                                    @Html.PagedListPager(Model, page => Url.Action("LecturerView", "Lecturer", new { page }),
+                                       new PagedListRenderOptions
+                                       {
+                                           LiElementClasses = new string[] { "page-item" }
+                                       })
+                                </nav>
+                            </div>
+                            <!-- end course pagination -->
                         </div>
                         <!--Start Left Category-->
                         @{

@@ -1,0 +1,147 @@
+﻿@model FacultyV3.Core.Models.Entities.Lecturer
+@{
+    ViewBag.Title = "DetailLecturer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page breadcrumb -->
+<section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-page-breadcrumb-area">
+                    <h2>THÔNG TIN</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- End breadcrumb -->
+
+<section id="mu-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <!-- start course content container -->
+                            <div class="mu-course-container mu-course-details">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mu-latest-course-single">
+
+                                            <div class="mu-latest-course-single-content">
+                                                <h2>
+                                                    <a href="#">@Model.FullName</a>
+                                                </h2>
+
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th colspan="3" style="text-align: center; color: white; background-color: rgb(43, 179, 255)">@Model.Position</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td rowspan="8" style="text-align: center; vertical-align: middle; width:30%;"> <img src="@Model.Url_Image" height="200px" width="auto"/> </td>
+                                                                <td>Quê quán</td>
+                                                                <td>@Model.Native_Land</td>
+                                                            </tr>
+
+                                                            <tr>
+
+                                                                <td style="width: 20%;">Chức danh</td>
+                                                                <td>@Model.Title</td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td style="width: 20%;">Chức vụ</td>
+                                                                <td>@Model.Position</td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td style="width: 20%;">Học hàm</td>
+                                                                <td>@Model.Academic_Rank</td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td style="width: 20%;">Học vị</td>
+                                                                <td>@Model.Degree</td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td style="width: 20%;">Chuyên ngành</td>
+                                                                <td>@Model.Specialized</td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td style="width: 20%;">Email</td>
+                                                                <td>@Model.Email</td>
+                                                            </tr>
+                                                            <tr>
+
+                                                                <td style="width: 20%;">Điện thoại</td>
+                                                                <td>@Model.Phone</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <h4 style="color: #b22222;"> <b>Quá trình đào tạo</b> </h4>
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 15%; text-align: center;">Cấp độ</th>
+                                                                <th style="width: 20%; text-align: center;">Năm tốt nghiệp</th>
+                                                                <th style="width: 20%; text-align: center; ">Trường tốt nghiệp</th>
+                                                                <th style="text-align: center;">Chuyên ngành tốt nghiệp</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            @foreach (var item in Model.Training_Processes)
+                                                            {
+                                                                <tr>
+                                                                    <td style="width: 15%; text-align: center;">@item.Degree</td>
+                                                                    <td style="width: 20%; text-align: center;">@item.Graduation_Year</td>
+                                                                    <td style="width: 20%; text-align: center;">@item.Graduation_School</td>
+                                                                    <td>@item.Graduation_Specialized</td>
+                                                                </tr>
+                                                            }
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <h4 style="color: #b22222;"> <b>Chuyên ngành nghiên cứu và giảng dạy</b> </h4>
+                                                <ul t="">
+                                                    <li>- Chuyên ngành nghiên cứu: @Model.Specialized_Research</li>
+                                                    <li style="text-align: justify;">
+                                                        - Các môn tham gia giảng dạy: @Model.Teaching
+                                                    </li>
+                                                </ul>
+                                                <h4 style="color: #b22222;"> <b>Công trình khoa học </b><a href="@Model.Url_Scientific_Works"> (Xem chi tiết)</a> </h4>
+                                                
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end course content container -->
+                            <!-- start related course item -->
+                            <!-- end start related course item -->
+                        </div>
+                        @{
+                            Html.RenderAction("_leftCategory", "Common");
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
