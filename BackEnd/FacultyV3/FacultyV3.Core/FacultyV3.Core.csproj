@@ -133,6 +133,7 @@
     <Compile Include="Data\Mapping\BannerMapping.cs" />
     <Compile Include="Data\Mapping\Category_MenuMapping.cs" />
     <Compile Include="Data\Mapping\Category_NewsMapping.cs" />
+    <Compile Include="Data\Mapping\ConfirguationMapping.cs" />
     <Compile Include="Data\Mapping\ContactMapping.cs" />
     <Compile Include="Data\Mapping\CountMapping.cs" />
     <Compile Include="Data\Mapping\Detail_MenuMapping.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="Interfaces\IServices\ICategoryMenuService.cs" />
     <Compile Include="Interfaces\IServices\ICategoryNewsService.cs" />
     <Compile Include="Interfaces\IServices\IConfigService.cs" />
+    <Compile Include="Interfaces\IServices\IConfirgurationService.cs" />
     <Compile Include="Interfaces\IServices\IContactService.cs" />
     <Compile Include="Interfaces\IServices\ICountService.cs" />
     <Compile Include="Interfaces\IServices\IDescriptionService.cs" />
@@ -217,6 +219,10 @@
     <Compile Include="Migrations\202003151323137_Initialize_15.designer.cs">
       <DependentUpon>202003151323137_Initialize_15.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003220953237_Initialize_16.cs" />
+    <Compile Include="Migrations\202003220953237_Initialize_16.designer.cs">
+      <DependentUpon>202003220953237_Initialize_16.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\About_Us.cs" />
     <Compile Include="Models\Entities\Account.cs" />
@@ -224,6 +230,7 @@
     <Compile Include="Models\Entities\Banner.cs" />
     <Compile Include="Models\Entities\Category_Menu.cs" />
     <Compile Include="Models\Entities\Category_News.cs" />
+    <Compile Include="Models\Entities\Confirguration.cs" />
     <Compile Include="Models\Entities\Contact.cs" />
     <Compile Include="Models\Entities\Count.cs" />
     <Compile Include="Models\Entities\Detail_Menu.cs" />
@@ -246,6 +253,7 @@
     <Compile Include="Services\CategoryMenuService.cs" />
     <Compile Include="Services\CategoryNewsService.cs" />
     <Compile Include="Services\ConfigService.cs" />
+    <Compile Include="Services\ConfirgurationService.cs" />
     <Compile Include="Services\ContactService.cs" />
     <Compile Include="Services\CountService.cs" />
     <Compile Include="Services\DescriptionService.cs" />
@@ -305,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003151323137_Initialize_15.resx">
       <DependentUpon>202003151323137_Initialize_15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003220953237_Initialize_16.resx">
+      <DependentUpon>202003220953237_Initialize_16.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

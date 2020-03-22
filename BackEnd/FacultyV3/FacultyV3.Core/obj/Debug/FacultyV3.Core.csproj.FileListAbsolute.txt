@@ -128,3 +128,4 @@ D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug
 D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.pdb
 D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_14.resources
 D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_15.resources
+D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_16.resources

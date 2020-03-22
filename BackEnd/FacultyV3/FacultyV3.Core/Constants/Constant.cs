@@ -30,5 +30,7 @@
         public const string NEWS_FROM_UNIVERSITY = "TIN TỪ TRƯỜNG";
         public const string YOUTH_GROUP = "ĐOÀN THANH NIÊN";
 
+
+        public const string MESSENGER_NAME = "Messenger";
     }
 }

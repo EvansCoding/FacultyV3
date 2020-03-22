@@ -211,6 +211,7 @@
     <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryMenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryNewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ConfirgurationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\CountController.cs" />
     <Compile Include="Areas\Admin\Controllers\DescriptionController.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Common\BaseController.cs" />
     <Compile Include="Common\utf8Convert.cs" />
     <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\ConfirgurationController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\Detail_MenuController.cs" />
     <Compile Include="Controllers\Detail_NewsController.cs" />
@@ -239,6 +241,7 @@
     <Compile Include="ViewModels\BannerViewModel.cs" />
     <Compile Include="ViewModels\Category_MenuViewModel.cs" />
     <Compile Include="ViewModels\Category_NewsViewModel.cs" />
+    <Compile Include="ViewModels\ConfirgurationViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\CountViewModel.cs" />
     <Compile Include="ViewModels\DescriptionViewModel.cs" />
@@ -1097,6 +1100,9 @@
     <Content Include="Areas\Admin\Views\Graduation\CRUDGraduation.cshtml" />
     <Content Include="Areas\Admin\Views\Graduation\GraduationTablePartialView.cshtml" />
     <Content Include="Areas\Admin\Views\Graduation\GraduationView.cshtml" />
+    <Content Include="Areas\Admin\Views\Confirguration\ConfirgurationView.cshtml" />
+    <Content Include="Areas\Admin\Views\Confirguration\CRUDConfirguration.cshtml" />
+    <Content Include="Areas\Admin\Views\Confirguration\ConfirgurationTablePartialView.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
@@ -1130,6 +1136,7 @@
     <Content Include="Views\Lecturer\LecturerView.cshtml" />
     <Content Include="Views\Lecturer\LecturerTablePartialView.cshtml" />
     <Content Include="Views\Lecturer\DetailLecturer.cshtml" />
+    <Content Include="Views\Confirguration\MessengerView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

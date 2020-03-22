@@ -1,11 +1,6 @@
 ﻿using FacultyV3.Core.Constants;
 using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
-using FacultyV3.Web.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace FacultyV3.Web.Controllers
@@ -27,8 +22,9 @@ namespace FacultyV3.Web.Controllers
         private readonly IAdsService adsService;
         private readonly IDetailNewsService detailNewsService;
 
-        public HomeController(IDataContext context, IAbout_UsService about_UsService, IBannerService bannerService, ICategoryMenuService categoryMenuService, 
-            ICategoryNewsService categoryNewsService, IContactService contactService, ICountService countService, IDescriptionService descriptionService, 
+
+        public HomeController(IDataContext context, IAbout_UsService about_UsService, IBannerService bannerService, ICategoryMenuService categoryMenuService,
+            ICategoryNewsService categoryNewsService, IContactService contactService, ICountService countService, IDescriptionService descriptionService,
             ILecturerService lecturerService, IStickyService stickyService, IStudentService studentService, IVideoService videoService, IAdsService adsService, IDetailNewsService detailNewsService)
         {
             this.context = context;
@@ -79,7 +75,7 @@ namespace FacultyV3.Web.Controllers
 
         public ActionResult _news()
         {
-  
+
             return PartialView();
         }
 
@@ -117,9 +113,9 @@ namespace FacultyV3.Web.Controllers
         {
             // Get Children Category Intro
             var intro = categoryMenuService.GetCategoriesByParent(Constant.INTRODUCE);
-            if(intro != null)
+            if (intro != null)
                 ViewBag.intro = intro;
-            
+
             var admission = categoryMenuService.GetCategoryByName(Constant.ADMISSION);
             if (admission != null)
                 ViewBag.admission = admission;
