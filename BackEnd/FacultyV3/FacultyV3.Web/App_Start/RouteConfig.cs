@@ -49,6 +49,14 @@ namespace FacultyV3.Web
                 defaults: new { controller = "Detail_Menu", action = "ListAdmission", id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
+
+            routes.MapRoute(
+                name: "RESOURCE",
+                url: "hoc-lieu/{id}",
+                defaults: new { controller = "Detail_Menu", action = "ListResource", id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
             routes.MapRoute(
                 name: "MENU",
                 url: "home/{category}/{title}/{id}",

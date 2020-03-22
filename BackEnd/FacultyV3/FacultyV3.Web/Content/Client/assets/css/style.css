@@ -883,7 +883,7 @@ img {
     display: inline;
     float: left;
     width: 100%;
-    padding: 15px;
+    padding: 0 15px 15px 15px;
 }
 
 .mu-latest-course-single .mu-latest-course-single-content h4 {
