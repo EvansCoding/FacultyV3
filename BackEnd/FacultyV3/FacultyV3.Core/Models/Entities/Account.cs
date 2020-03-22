@@ -18,7 +18,7 @@ namespace FacultyV3.Core.Models.Entities
         public string FullName { get; set; }
         public DateTime Create_At { get; set; }
         public DateTime Update_At { get; set; }
-
+        public Role Role { get; set; }
         public IList<Detail_News> Detail_Newss { get; set; }
         public IList<Detail_Menu> Detail_Menus { get; set; }
     }

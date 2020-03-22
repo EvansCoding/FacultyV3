@@ -139,6 +139,7 @@
     <Compile Include="Data\Mapping\Detail_MenuMapping.cs" />
     <Compile Include="Data\Mapping\Detail_NewsMapping.cs" />
     <Compile Include="Data\Mapping\LecturerMapping.cs" />
+    <Compile Include="Data\Mapping\RoleMapping.cs" />
     <Compile Include="Data\Mapping\ServiceMapping.cs" />
     <Compile Include="Data\Mapping\StickeyMapping.cs" />
     <Compile Include="Data\Mapping\StudentMapping.cs" />
@@ -223,6 +224,14 @@
     <Compile Include="Migrations\202003220953237_Initialize_16.designer.cs">
       <DependentUpon>202003220953237_Initialize_16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003221256476_Initialize_17.cs" />
+    <Compile Include="Migrations\202003221256476_Initialize_17.designer.cs">
+      <DependentUpon>202003221256476_Initialize_17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003221258330_Initialize_18.cs" />
+    <Compile Include="Migrations\202003221258330_Initialize_18.designer.cs">
+      <DependentUpon>202003221258330_Initialize_18.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\About_Us.cs" />
     <Compile Include="Models\Entities\Account.cs" />
@@ -236,6 +245,7 @@
     <Compile Include="Models\Entities\Detail_Menu.cs" />
     <Compile Include="Models\Entities\Detail_News.cs" />
     <Compile Include="Models\Entities\Lecturer.cs" />
+    <Compile Include="Models\Entities\Role.cs" />
     <Compile Include="Models\Entities\Service.cs" />
     <Compile Include="Models\Entities\Stickey.cs" />
     <Compile Include="Models\Entities\Student.cs" />
@@ -316,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003220953237_Initialize_16.resx">
       <DependentUpon>202003220953237_Initialize_16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003221256476_Initialize_17.resx">
+      <DependentUpon>202003221256476_Initialize_17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003221258330_Initialize_18.resx">
+      <DependentUpon>202003221258330_Initialize_18.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
