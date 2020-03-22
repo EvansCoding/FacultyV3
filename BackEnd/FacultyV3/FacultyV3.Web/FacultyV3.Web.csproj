@@ -1103,6 +1103,8 @@
     <Content Include="Areas\Admin\Views\Confirguration\ConfirgurationView.cshtml" />
     <Content Include="Areas\Admin\Views\Confirguration\CRUDConfirguration.cshtml" />
     <Content Include="Areas\Admin\Views\Confirguration\ConfirgurationTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\AccountTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\CRUDAccount.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />

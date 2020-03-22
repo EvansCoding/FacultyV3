@@ -64,6 +64,8 @@ namespace FacultyV3.Core.Ioc
             Container.BindInRequestScope<IDetailNewsService, DetailNewsService>();
             Container.BindInRequestScope<IGraduationService, GraduationService>();
             Container.BindInRequestScope<IConfirgurationService, ConfirgurationService>();
+            Container.BindInRequestScope<IRoleService, RoleService>();
+            Container.BindInRequestScope<IAccountService, AccountService>();
         }
     }
 

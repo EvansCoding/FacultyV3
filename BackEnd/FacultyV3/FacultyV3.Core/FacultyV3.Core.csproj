@@ -148,6 +148,7 @@
     <Compile Include="FacultyV3Confirguration.cs" />
     <Compile Include="Interfaces\IBaseEntity.cs" />
     <Compile Include="Interfaces\IDataContext.cs" />
+    <Compile Include="Interfaces\IServices\IAccountService.cs" />
     <Compile Include="Interfaces\IServices\IAbout_UsService.cs" />
     <Compile Include="Interfaces\IServices\IAdsService.cs" />
     <Compile Include="Interfaces\IServices\IBannerService.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Interfaces\IServices\IDetailNewsService.cs" />
     <Compile Include="Interfaces\IServices\IGraduationService.cs" />
     <Compile Include="Interfaces\IServices\ILecturerService.cs" />
+    <Compile Include="Interfaces\IServices\IRoleService.cs" />
     <Compile Include="Interfaces\IServices\IStickyService.cs" />
     <Compile Include="Interfaces\IServices\IStudentService.cs" />
     <Compile Include="Interfaces\IServices\IVideoService.cs" />
@@ -257,6 +259,7 @@
     <Compile Include="Models\Enums\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\About_UsService.cs" />
+    <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\AdsService.cs" />
     <Compile Include="Services\BannerService.cs" />
     <Compile Include="Services\CacheService.cs" />
@@ -271,11 +274,13 @@
     <Compile Include="Services\DetailNewsService.cs" />
     <Compile Include="Services\GraduationService.cs" />
     <Compile Include="Services\LecturerService.cs" />
+    <Compile Include="Services\RoleService.cs" />
     <Compile Include="Services\StickyService.cs" />
     <Compile Include="Services\StudentService.cs" />
     <Compile Include="Services\VideoService.cs" />
     <Compile Include="SiteConfig\SiteConfig.cs" />
     <Compile Include="Utilities\GuidComb.cs" />
+    <Compile Include="Utilities\Hash.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\ISettings\" />

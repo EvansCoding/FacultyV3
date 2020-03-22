@@ -35,6 +35,7 @@
         public virtual DbSet<Ads> Adss { get; set; }
         public virtual DbSet<Training_Process> Training_Processes {get; set;}
         public virtual DbSet<Confirguration> Confirgurations {get; set;}
+        public virtual DbSet<Role> Roles {get; set;}
 
         public override int SaveChanges()
         {
