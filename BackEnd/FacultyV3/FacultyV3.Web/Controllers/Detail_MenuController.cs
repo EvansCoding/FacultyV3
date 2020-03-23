@@ -64,7 +64,7 @@ namespace FacultyV3.Web.Controllers
         {
             try
             {
-                var model = detailMenuService.PageListFE(Constant.EDUCATE, page, pageSize);
+                var model = detailMenuService.PageListFE(Constant.EDUCATION_PROGRAM, page, pageSize);
                 if (model != null)
                     return View("ListDetailMenu", model);
             }

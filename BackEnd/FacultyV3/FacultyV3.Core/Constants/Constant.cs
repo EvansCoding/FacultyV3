@@ -63,6 +63,8 @@ namespace FacultyV3.Core.Constants
             { "Tuyển sinh", "tuyen-sinh" },
             { "Học liệu", "hoc-lieu" },
             { "Tổ bộ môn", "gioi-thieu/to-bo-mon" },
+            { "Ngành đào tạo", "dao-tao/nganh-dao-tao" },
+            { "Chương trình đào tạo", "dao-tao/chuong-trinh-dao-tao" },
 
         };
     }

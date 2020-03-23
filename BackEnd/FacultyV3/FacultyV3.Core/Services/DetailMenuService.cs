@@ -43,7 +43,7 @@ namespace FacultyV3.Core.Services
 
                 if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(state) || !string.IsNullOrEmpty(category))
                 {
-                    var posts = context.Detail_Menus.Include(x => x.Category_Menu).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderBy(x => x.Title).ToList();
+                    var posts = context.Detail_Menus.Include(x => x.Category_Menu).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderByDescending(x => x.Update_At).ToList();
 
                     if (!string.IsNullOrEmpty(name))
                         posts = posts.Where(x => x.Title.Contains(name)).ToList();
@@ -80,7 +80,7 @@ namespace FacultyV3.Core.Services
             return context.Detail_Menus
                 .Include(x => x.Account)
                 .Include(x => x.Category_Menu)
-                .Where(x => x.Category_Menu.Meta_Name.Equals(category) && x.Status).OrderByDescending(x => new { x.Update_At, x.Serial}).ToPagedList(page, pageSize);
+                .Where(x => x.Category_Menu.Meta_Name.Equals(category) && x.Status).OrderByDescending(x => new { x.Update_At, x.Serial }).ToPagedList(page, pageSize);
         }
 
 

@@ -65,6 +65,13 @@ namespace FacultyV3.Web
             );
 
             routes.MapRoute(
+                name: "New News",
+                url: "tin-moi-nhat/{title}/{id}",
+                defaults: new { controller = "Detail_News", action = "DetailNews", title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "LECTURER DETAIL",
                 url: "can-bo-giang-vien/{title}/{id}",
                 defaults: new { controller = "Lecturer", action = "DetailLecturer", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
@@ -121,6 +128,20 @@ namespace FacultyV3.Web
                 name: "NEWS_FROM_UNION",
                 url: "tin-tu-cong-doan/{id}",
                 defaults: new { controller = "Detail_News", action = "ListUnion", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Education Program",
+                url: "dao-tao/chuong-trinh-dao-tao/{id}",
+                defaults: new { controller = "Detail_Menu", action = "ListEducation_Program", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Trainning Sector",
+                url: "dao-tao/nganh-dao-tao/{id}",
+                defaults: new { controller = "Detail_Menu", action = "ListTraining_Sector", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
 

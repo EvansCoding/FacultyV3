@@ -45,7 +45,7 @@ namespace FacultyV3.Core.Services
 
                 if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(state) || !string.IsNullOrEmpty(category))
                 {
-                    var posts = context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderBy(x => x.Title).ToList();
+                    var posts = context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderByDescending(x => x.Update_At).ToList();
                     Console.WriteLine(posts.First().Id);
                     if (!string.IsNullOrEmpty(name))
                         posts = posts.Where(x => x.Title.Contains(name)).ToList();

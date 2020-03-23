@@ -1,5 +1,6 @@
 ﻿@model List<FacultyV3.Core.Models.Entities.Detail_News>
 @using FacultyV3.Web.Common;
+
 <section id="mu-latest-courses">
     <div class="container">
         <div class="row">
@@ -19,8 +20,12 @@
                             <div class="col-lg-4 col-md-4 col-xs-12">
                                 <div class="mu-latest-course-single">
                                     <figure class="mu-latest-course-img">
+
                                         @{
-                                            var url = Url.Action("DetailNews", "Detail_News", new { id = item.Id });
+                                            var strTitle = item.Title.Count() <= 120 ? item.Title : item.Title.Substring(0, 120);
+                                            var url = Url.RouteUrl("New News", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString() });
+
+                                            //var url = Url.Action("DetailNews", "Detail_News", new { id = item.Id });
                                         }
                                         @if (!item.Url_Image.Equals("#"))
                                         {
@@ -37,11 +42,11 @@
                                         </figcaption>
                                     </figure>
                                     <div class="mu-latest-course-single-content" style="height: 180px">
-                                        <h4 style="height: 58%; text-align: justify; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                                        <h4 style="height: 64%; text-align: justify; font-family: Verdana, Geneva, Tahoma, sans-serif;">
 
-                                            <a href="@url">@item.Title</a>
+                                            <a href="@url" class="block-ellipsis" style="height: 100%">@item.Title</a>
                                         </h4>
-                                        <div class="mu-latest-course-single-contbottom">
+                                        <div class="mu-latest-course-single-contbottom" style="margin-top: 0px">
                                             <a class="mu-course-details" href="@url">Chi tiết</a>
                                         </div>
                                     </div>
