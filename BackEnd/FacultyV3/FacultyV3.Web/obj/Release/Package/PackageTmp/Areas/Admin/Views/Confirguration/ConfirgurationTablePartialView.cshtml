@@ -1,0 +1,48 @@
+﻿<table class="table mb-0" id="categoryTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:5%;">
+                #
+            </th>
+            <th style="width:30%;">
+                Meta Name
+            </th>
+            <th style="width:45%;">
+                Meta Value
+            </th>
+
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            var index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @(index++)
+                    </th>
+                    <td>@item.Meta_Name</td>
+
+                    <td>@item.Meta_Value</td>
+                    <td>
+                        <div class="button-list">
+                            @{
+                                var uEdit = @Url.Action("AddOrEdit", "Confirguration") + "/" + item.Id;
+                                var urlEdit = @"Popup('" + uEdit + "')";
+                                <a title="Chỉnh sửa" onclick="@urlEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                    <i class="fa fa-edit" style="color: white"></i>
+                                </a>
+                            }
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+

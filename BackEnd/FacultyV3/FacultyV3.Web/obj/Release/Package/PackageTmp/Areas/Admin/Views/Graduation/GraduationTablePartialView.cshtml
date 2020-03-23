@@ -1,0 +1,76 @@
+﻿
+@model List<FacultyV3.Core.Models.Entities.Training_Process>
+
+@using PagedList.Mvc;
+
+<table class="table mb-0" id="categoryTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:5%;">
+                #
+            </th>
+            <th style="width:10%;">
+                Cấp độ
+            </th>
+            <th style="width:20%;">
+                Năm tốt nghiệp
+            </th>
+            <th style="width:20%;">
+                Trường tốt nghiệp
+            </th>
+            <th style="width:30%;">
+                Chuyên ngành tốt nghiệp
+            </th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            if (Model != null)
+            {
+                var index = 1;
+                foreach (var item in Model)
+                {
+        <tr>
+            <th scope="row">
+                @(index++)
+            </th>
+            <td>@item.Degree</td>
+
+            <td>
+                @item.Graduation_Year
+            </td>
+
+            <td>
+                @item.Graduation_School
+            </td>
+
+            <td>
+                @item.Graduation_Specialized
+            </td>
+            <td>
+                <div class="button-list">
+                    @{
+                        var uEdit = Url.Action("AddOrEdit", "Graduation", new { id = item.Id.ToString() }).ToString();
+                        var urluEdit = @"Popup('" + uEdit + "')";
+                        <a title="Chỉnh sửa" onclick="@urluEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                            <i class="fa fa-edit" style="color: white"></i>
+                        </a>
+
+                        var uDelete = @Url.Action("Delete", "Graduation") + "/" + item.Id;
+                        var urluDelete = @"Delete('" + uDelete + "')";
+
+                        <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
+                            <i class="fa fa-trash" style="color: white"></i>
+                        </a>
+                    }
+                </div>
+            </td>
+        </tr>
+                }
+            }
+
+        }
+    </tbody>
+</table>
+

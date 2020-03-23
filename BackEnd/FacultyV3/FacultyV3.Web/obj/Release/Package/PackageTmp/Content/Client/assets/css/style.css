@@ -621,7 +621,7 @@ img {
 }
 
 #about-video-popup iframe {
-    background: url(../img/loader.gif) center center no-repeat;
+    background: url("/Content/Client/assets/img/loader.gif") center center no-repeat;
     margin: 10% auto;
     width: 650px;
     height: 450px;
@@ -653,16 +653,18 @@ img {
 ====================*/
 
 #mu-abtus-counter {
-    background-image: url("../img/2767734.jpg");
+    background-image: url("/Content/Client/assets/img/2767734.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     display: inline;
     float: left;
-    padding: 100px 0;
+    padding: 50px 0;
+    padding-top: 60px;
     width: 100%;
     opacity: 1;
     position: relative;
     object-fit: contain;
+
 }
 
 #mu-abtus-counter .mu-abtus-counter-area {
@@ -689,7 +691,7 @@ img {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #mu-abtus-counter .mu-abtus-counter-area .mu-abtus-counter-single p {
@@ -881,7 +883,7 @@ img {
     display: inline;
     float: left;
     width: 100%;
-    padding: 15px;
+    padding: 0 15px 15px 15px;
 }
 
 .mu-latest-course-single .mu-latest-course-single-content h4 {
@@ -1062,7 +1064,7 @@ img {
 
 #mu-testimonial {
     background-attachment: fixed;
-    background-image: url("../img/bgstudent.png");
+    background-image: url("/Content/Client/assets/img/bgstudent.png");
     background-position: center center;
     background-size: cover;
     display: inline;
@@ -2830,4 +2832,14 @@ img {
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
+}
+
+.block-ellipsis {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

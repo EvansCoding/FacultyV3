@@ -1,9 +1,11 @@
-﻿@model List<FacultyV3.Core.Models.Entities.Detail_News>
+﻿@model PagedList.IPagedList<FacultyV3.Core.Models.Entities.Detail_News>
 @{
     ViewBag.Title = "ListDetailNews";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@using PagedList.Mvc;
+@using FacultyV3.Web.Common;
+@using FacultyV3.Core.Constants;
 <!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
     <div class="container">
@@ -33,8 +35,10 @@
 
                                     @foreach (var item in Model)
                                     {
+                                        var strTitle = item.Title.Count() <= 100 ? item.Title : item.Title.Substring(0, 100);
+                                        var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly(item.Category_News.Meta_Name) });
 
-                                        var url = Url.Action("DetailNews", "Detail_News", new { id = item.Id, Area = String.Empty });
+                                        //var url = Url.Action("DetailNews", "Detail_News", new { id = item.Id, Area = String.Empty });
 
                                         <div class="col-md-6 col-sm-6">
                                             <article class="mu-blog-single-item">
@@ -48,17 +52,20 @@
                                                         <a href="@url"><img src="~/Content/image.png" width="100%" height="280px" alt="img"></a>
                                                     }
 
-                                                    <figcaption class="mu-blog-caption">
-                                                        <h3><a href="@url">@item.Title</a></h3>
+                                                    <figcaption class="mu-blog-caption" style="height: 100px">
+                                                        @*@{ 
+                                                            var s = ProcessString.Instance.ShortCutString(item.Title);
+                                                        }*@
+                                                        <h3 style=" font-size: 20px;line-height: 1.4" class="block-ellipsis"><a href="@url"> @item.Title</a></h3>
                                                     </figcaption>
                                                 </figure>
                                                 <div class="mu-blog-meta">
                                                     <a href="#">@item.Account.FullName</a>
                                                     <a href="#">@item.Update_At.ToShortDateString()</a>
-                                                    <span><i class="fa fa-comments-o"></i>87</span>
+                                          
                                                 </div>
                                                 <div class="mu-blog-description">
-                                                    <p>@item.Description</p>
+                                                    @*<p>@item.Description</p>*@
 
                                                     <a class="mu-read-more-btn" href="@url">Chi tiết</a>
                                                 </div>
@@ -80,29 +87,27 @@
                                 </div>
                             </div>
                             <!-- end course content container -->
-                            @*<!-- start course pagination -->
-                                <div class="mu-pagination">
-                                    <nav>
-                                        <ul class="pagination">
-                                            <li>
-                                                <a href="#" aria-label="Previous">
-                                                    <span class="fa fa-angle-left"></span> Prev
-                                                </a>
-                                            </li>
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li>
-                                                <a href="#" aria-label="Next">
-                                                    Next <span class="fa fa-angle-right"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!-- end course pagination -->*@
+                            <hr />
+                            <div style="float: right">
+                                Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            @{ 
+                                var action = Constant.ListActionPage[Model[0].Category_News.Meta_Name];
+                                var url1 = "/" + action + "?page=";
+                            }
+                            <div class="mu-pagination">
+                                <nav>
+                                    @Html.PagedListPager(Model, page => url1 + page, new PagedListRenderOptions
+                               {
+                                   LiElementClasses = new string[] { "page-item" }
+                               })
+                                </nav>
+                            </div>
+                            <!-- end course pagination -->
                         </div>
                         <!--Start Left Category-->
                         @{

@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box">
-                <h4 class="page-title">Về chúng tôi</h4>
+                <h4 class="page-title">Giới thiệu</h4>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                                 @Html.ValidationMessageFor(x => x.Content, "", new { @class = "text-danger" })
                             </div>
                             <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Hình ảnh</label>
+                                <label for="recipient-name" class="col-form-label">Hình ảnh <span class="text-danger">1920x1271</span></label>
                                 <div class="input-group">
                                     @Html.TextBoxFor(model => model.Url_Image, new { @id = "fieldID", @class = "form-control ", placeholder = "Đường dẫn hình ảnh" })
                                     @Html.ValidationMessageFor(x => x.Url_Image, "", new { @class = "text-danger" })

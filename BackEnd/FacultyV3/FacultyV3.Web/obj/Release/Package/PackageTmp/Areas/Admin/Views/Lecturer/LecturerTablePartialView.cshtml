@@ -11,14 +11,11 @@
             <th style="width:25%;">
                 Tên
             </th>
-            <th style="width:20%;">
+            <th style="width:15%;">
                 Ảnh
             </th>
             <th>
                 Thứ tự
-            </th>
-            <th>
-                Ngày tạo
             </th>
             <th>
                 Ngày cập nhật
@@ -41,24 +38,28 @@
                         <a href="#" target="_blank">
                             @if (item.Url_Image == null)
                             {
-                                <img src="~/Content/image.png" style="width: 200px; height: 100px" alt="" />
+                                <img src="~/Content/image.png" style="width: 150px; height: 100px" alt="" />
                             }
                             else
                             {
-                                <img src="@item.Url_Image" style="width: 200px; height: 100px" alt="@item.Url_Image" />
+                                <img src="@item.Url_Image" style="width: 140px; height: 100px" alt="@item.Url_Image" />
                             }
-
                         </a>
                     </td>
                     <td>@item.Serial</td>
-                    <td>@item.Create_At.ToShortDateString()</td>
                     <td>@item.Update_At.ToShortDateString()</td>
                     <td>
                         <div class="button-list">
                             @{
+                                var uEditGraduation = @Url.Action("GraduationView", "Graduation") + "/" + item.Id;
+                                <a title="Chỉnh sửa" href="@uEditGraduation" class="btn btn-icon waves-effect waves-light btn-info btn-sm">
+                                    <i class="fa fa-eye" style="color: white"></i>
+                                </a>
+
                                 var uEdit = @Url.Action("AddOrEdit", "Lecturer") + "/" + item.Id;
                                 <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
                                     <i class="fa fa-edit" style="color: white"></i>
+
                                 </a>
 
                                 var uDelete = @Url.Action("Delete", "Lecturer") + "/" + item.Id;
@@ -69,9 +70,7 @@
                                 </a>
                             }
                         </div>
-
                     </td>
-
                 </tr>
             }
         }

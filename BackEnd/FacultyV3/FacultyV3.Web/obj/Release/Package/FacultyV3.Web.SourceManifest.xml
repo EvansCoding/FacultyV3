@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp" />
-  <setAcl path="D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
-  <setAcl path="D:\Project\Project DThu\WebsiteFaculty_V3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp\App_Data" setAclResourceType="Directory" setAclAccess="Write" />
+  <IisApp path="D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp" />
+  <setAcl path="D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <setAcl path="D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Web\obj\Release\Package\PackageTmp\App_Data" setAclResourceType="Directory" setAclAccess="Write" />
 </sitemanifest>
