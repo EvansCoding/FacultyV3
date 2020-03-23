@@ -38,9 +38,16 @@ namespace FacultyV3.Web
                       "~/Content/Client/assets/css/slick.css",
                       "~/Content/Client/assets/css/jquery.fancybox.css",
                       "~/Content/Client/assets/css/theme-color/default-theme.css",
-                      "~/Content/Client/assets/css/style.css",
-                      "~/Content/Client/assets/css/swc.css"
+                      "~/Content/Client/assets/css/style.css"
                   ).Include("~/Content/Client/assets/css/font-awesome.css", new CssRewriteUrlTransform()));
+
+            bundles.Add(new StyleBundle("~/css/client/swc").Include(
+                    "~/Content/Client/assets/css/swc.css"
+                ));
+            bundles.Add(new StyleBundle("~/css/client/swc").Include(
+                  "~/Content/Client/assets/js/jquery.min.js",
+                  "~/Content/Client/assets/js/swc.js"
+                ));
 
             bundles.Add(new ScriptBundle("~/script/jquery").Include(
                     "~/Content/Client/assets/js/jquery.min.js"

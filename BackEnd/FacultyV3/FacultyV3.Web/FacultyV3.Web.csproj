@@ -309,6 +309,7 @@
     <Content Include="Content\Admin\assets\images\logo-light.png" />
     <Content Include="Content\Admin\assets\images\logo-sm.png" />
     <Content Include="Content\Admin\assets\images\logoKiet.png" />
+    <Content Include="Content\Admin\assets\images\logokonen.png" />
     <Content Include="Content\Admin\assets\images\plugins\clear.png" />
     <Content Include="Content\Admin\assets\images\plugins\loading.gif" />
     <Content Include="Content\Admin\assets\images\users\avatar-1.jpg" />

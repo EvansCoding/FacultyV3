@@ -4,9 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style>
-    img {
+    .mu-blog-description img {
         background-size: inherit;
-        width: 100%;
+        max-width: 100%;
         height: auto;
     }
 </style>
@@ -62,7 +62,7 @@
                                             <div class="mu-blog-meta">
                                                 <a href="#">@Model.Account.FullName</a>
                                                 <a href="#">@Model.Update_At</a>
-                                                <span><i class="fa fa-comments-o"></i>87</span>
+                       
                                             </div>
                                             <div class="mu-blog-description">
                                                 @Html.Raw(Model.Content)

@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var id = "#dialog";
-
+    $('body').css({ overflow: 'hidden' });
     //Get the screen height and width
     var maskHeight = $(document).height();
     var maskWidth = $(document).width();

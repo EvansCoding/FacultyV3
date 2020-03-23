@@ -21,6 +21,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             this.detailMenuService = detailMenuService;
             this.categoryMenuService = categoryMenuService;
         }
+
         [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult Detail_MenuView()
         {
@@ -87,7 +88,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                         Description = model.Description,
                         Content = model.Content,
                         Serial = model.Serial,
-                        Status = model.Status.Equals(Gender.PUBLISH) ? true : false,
+                        Status = model.Status.Equals(Gender.PUBLISH.ToString()) ? true : false,
                         Url_Image = model.Url_Image == null ? "#" : model.Url_Image,
                         Url_Video = model.Url_Video == null ? "#" : model.Url_Video,
                         Url_LinkGoogle = model.Url_LinkGoogle == null ? "#" : model.Url_LinkGoogle,
@@ -163,15 +164,12 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             catch (Exception)
             {
             }
-
             return Json(new { success = false }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public ActionResult Publish(string Id)
         {
-
-
             try
             {
                 var post = detailMenuService.GetPostByID(Id);
@@ -180,7 +178,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     post.Status = false;
                     context.SaveChanges();
                     return Json(new { success = true, message = "Ẩn bài viết thành công" }, JsonRequestBehavior.AllowGet);
-
                 }
                 else
                 {
@@ -188,8 +185,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     context.SaveChanges();
                     return Json(new { success = true, message = "Công khai bài viết thành công" }, JsonRequestBehavior.AllowGet);
                 }
-
-              
             }
             catch (Exception)
             {

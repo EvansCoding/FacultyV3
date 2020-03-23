@@ -80,7 +80,7 @@ namespace FacultyV3.Core.Services
             return context.Detail_Menus
                 .Include(x => x.Account)
                 .Include(x => x.Category_Menu)
-                .Where(x => x.Category_Menu.Meta_Name.Equals(category)).OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
+                .Where(x => x.Category_Menu.Meta_Name.Equals(category) && x.Status).OrderByDescending(x => new { x.Update_At, x.Serial}).ToPagedList(page, pageSize);
         }
 
 

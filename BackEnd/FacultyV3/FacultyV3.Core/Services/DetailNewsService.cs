@@ -83,7 +83,7 @@ namespace FacultyV3.Core.Services
                 return context.Detail_News
                         .Include(x => x.Account)
                         .Include(x => x.Category_News)
-                        .Where(x => x.Category_News.Meta_Name.Equals(category)).OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
+                        .Where(x => x.Category_News.Meta_Name.Equals(category) && x.Status).OrderByDescending(x => new { x.Serial , x.Update_At}).ToPagedList(page, pageSize);
 
             }
             catch (Exception)
@@ -99,7 +99,6 @@ namespace FacultyV3.Core.Services
             {
                 Guid ID = new Guid(id);
                 return context.Detail_News.Include(x => x.Account).Include(x => x.Category_News).Where(x => x.Id == ID).SingleOrDefault();
-
             }
             catch (Exception)
             {
@@ -143,7 +142,7 @@ namespace FacultyV3.Core.Services
         {
             try
             {
-                return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Take(amount).ToList();
+                return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Status).OrderByDescending(x => new { x.Update_At, x.Serial}).Take(amount).ToList();
             }
             catch (Exception)
             {

@@ -89,7 +89,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                         Description = model.Description,
                         Content = model.Content,
                         Serial = model.Serial,
-                        Status = model.Status.Equals(Gender.PUBLISH) ? true : false,
+                        Status = model.Status.Equals(Gender.PUBLISH.ToString()) ? true : false,
                         Url_Image = model.Url_Image == null ? "#" : model.Url_Image,
                         Url_Video = model.Url_Video == null ? "#" : model.Url_Video,
                         Url_LinkGoogle = model.Url_LinkGoogle == null ? "#" : model.Url_LinkGoogle,

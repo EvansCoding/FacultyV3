@@ -13,6 +13,7 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -21,13 +22,15 @@
                         <div class="col-sm-12">
                             <div class="form-row align-items-center">
                                 <div class="col-auto">
+                                    <input id="search" class="form-control" type="text" name="search" placeholder="Nhập tên giảng viên" />
+                                </div>
+                                <div class="col-auto">
                                     <button type="button" class="btn btn-info waves-effect waves-light" onclick="window.location.href='@Url.Action("AddOrEdit","Lecturer")'">
                                         <i class="fas fa-plus "></i>
                                         <span>Thêm Giảng Viên</span>
                                     </button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -43,7 +46,6 @@
                             Html.RenderAction("LoadTable", "Lecturer");
                         }
                     </div>
-
                 </div>
             </div>
         </div>
