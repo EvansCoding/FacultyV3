@@ -46,7 +46,7 @@ namespace FacultyV3.Web.Controllers
             return View();
         }
 
-        public ActionResult ListDepartment(int page = 1, int pageSize = 8)
+        public ActionResult ListDepartment(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListEducation_Program(int page = 1, int pageSize = 8)
+        public ActionResult ListEducation_Program(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListTraining_Sector(int page = 1, int pageSize = 8)
+        public ActionResult ListTraining_Sector(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListResource(int page = 1, int pageSize = 8)
+        public ActionResult ListResource(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListAdmission(int page = 1, int pageSize = 8)
+        public ActionResult ListAdmission(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {

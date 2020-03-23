@@ -3,7 +3,6 @@
     ViewBag.Title = "CategoryNewsView";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
-
 <div id="data1">
     <div class="row">
         <div class="col-12">
@@ -20,7 +19,6 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <h6 class="">Tìm kiếm</h6>
-
                             @using (@Html.BeginForm("SearchCategory", "CategoryNews", FormMethod.Post, new { onsubmit = "return SubmitSearch(this)" }))
                             {
                                 <div class="form-row align-items-center">
@@ -54,7 +52,6 @@
                             Html.RenderAction("LoadTable", "CategoryNews");
                         }
                     </div>
-
                 </div>
             </div>
         </div>
@@ -63,10 +60,10 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-url="@Url.Action("AddorUpdate","CategoryNews")" style="margin: 10px 10px">
     <div class="modal-dialog" role="document">
         <div class="modal-content" id="modalcontent" style="padding: 10px 10px">
-
         </div>
     </div>
 </div>
+@Scripts.Render("~/script/jquery");
 @section scripts{
     <script>
 
@@ -156,4 +153,3 @@
         }
     </script>
 }
-

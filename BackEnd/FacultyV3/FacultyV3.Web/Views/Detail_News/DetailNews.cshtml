@@ -3,12 +3,17 @@
     ViewBag.Title = "DetailNews";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <style>
-    img {
+
+    .mu-blog-description img {
         background-size: inherit;
-        width: 100%;
+        max-width: 100%;
         height: auto;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100vh !important;
     }
 </style>
 <!-- Page breadcrumb -->
@@ -40,8 +45,7 @@
                                                 @if (!Model.Url_Video.Equals("#"))
                                                 {
 
-                                                    var urlvideo = "https://www.youtube.com/embed/" + Model.Url_Video;
-
+                                                    var urlvideo = "https://www.youtube.com/embed/" + Model.Url_Video + "?rel=0&autoplay=1";
 
                                                     <a class="mu-abtus-video" href="@urlvideo" target="mutube-video">
                                                         <img src="@Model.Url_Image" alt="img" />
@@ -63,9 +67,17 @@
                                             <div class="mu-blog-meta">
                                                 <a href="#">@Model.Account.FullName</a>
                                                 <a href="#">@Model.Update_At</a>
-                                
+
                                             </div>
                                             <div class="mu-blog-description">
+                                                @if (!Model.Url_LinkGoogle.Equals("#"))
+                                                {
+                                                    <hr />
+                                                    <div id="FileGoogleDrive" style="width: inherit">
+                                                        @Html.Raw(Model.Url_LinkGoogle)
+                                                        <hr />
+                                                    </div>
+                                                }
                                                 @Html.Raw(Model.Content)
                                             </div>
                                         </article>
@@ -79,7 +91,6 @@
                                 }*@
                             <!-- end start related news item -->
                         </div>
-
                         <!--Start Left Category-->
                         @{
                             Html.RenderAction("_leftCategory", "Common");
@@ -92,5 +103,31 @@
     </div>
 </section>
 
+@Scripts.Render("~/script/jquery");
+<script>
+    // Resize video on news
+    var height = $("#videoIframe").width() / 1.7;
+    $(document).ready(function () {
+        $("#videoIframe").css({ height: height });
 
+        $(" .mu-blog-description ol li a").css({ "font-size": "16px" })
+        $(" .mu-blog-description ol li a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
 
+        $(" .mu-blog-description ul li a").css({ "font-size": "16px" })
+        $(" .mu-blog-description ul li a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+        $(" .mu-blog-description p a").css({ "font-size": "16px" })
+        $(" .mu-blog-description p a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+    });
+</script>

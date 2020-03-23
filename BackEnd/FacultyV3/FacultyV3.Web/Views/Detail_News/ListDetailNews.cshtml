@@ -5,6 +5,7 @@
 }
 @using PagedList.Mvc;
 @using FacultyV3.Web.Common;
+@using FacultyV3.Core.Constants;
 <!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
     <div class="container">
@@ -34,7 +35,8 @@
 
                                     @foreach (var item in Model)
                                     {
-                                        var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(item.Title), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly(item.Category_News.Meta_Name) });
+                                        var strTitle = item.Title.Count() <= 100 ? item.Title : item.Title.Substring(0, 100);
+                                        var url = Url.RouteUrl("DETAILNEWS", new { title = utf8Convert.Instance.ToUrlFriendly(strTitle), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly(item.Category_News.Meta_Name) });
 
                                         //var url = Url.Action("DetailNews", "Detail_News", new { id = item.Id, Area = String.Empty });
 
@@ -93,13 +95,16 @@
                             <div class="clearfix"></div>
                             <br />
 
+                            @{ 
+                                var action = Constant.ListActionPage[Model[0].Category_News.Meta_Name];
+                                var url1 = "/" + action + "?page=";
+                            }
                             <div class="mu-pagination">
                                 <nav>
-                                    @Html.PagedListPager(Model, page => Url.Action("LecturerView", "Lecturer", new { page }),
-                                       new PagedListRenderOptions
-                                       {
-                                           LiElementClasses = new string[] { "page-item" }
-                                       })
+                                    @Html.PagedListPager(Model, page => url1 + page, new PagedListRenderOptions
+                               {
+                                   LiElementClasses = new string[] { "page-item" }
+                               })
                                 </nav>
                             </div>
                             <!-- end course pagination -->

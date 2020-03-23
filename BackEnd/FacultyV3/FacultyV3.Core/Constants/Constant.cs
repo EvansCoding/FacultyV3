@@ -1,4 +1,6 @@
-﻿namespace FacultyV3.Core.Constants
+﻿using System.Collections.Generic;
+
+namespace FacultyV3.Core.Constants
 {
     public class Constant
     {
@@ -28,10 +30,14 @@
         public const string NEWS_FROM_THE_MINISTRY = "TIN TỪ BỘ MÔN";
         public const string NEWS_FROM_FACULTY = "TIN TỪ KHOA";
         public const string NEWS_FROM_UNIVERSITY = "TIN TỪ TRƯỜNG";
-        public const string YOUTH_GROUP = "ĐOÀN THANH NIÊN";
+        public const string YOUTH_GROUP = "Tin từ Đoàn thanh niên";
+        public const string NEWS_FROM_PARTY_CELL = "TIN TỪ CHI BỘ";
+        public const string NEWS_FROM_UNION = "TIN TỪ CÔNG ĐOÀN";
 
 
         public const string MESSENGER_NAME = "Messenger";
+        public const string META_KEYWORDS = "Meta_Keywords";
+        public const string META_DESCRIPTION = "Meta_Description";
 
         public const string USER_SESSION = "USER_SESSION";
 
@@ -42,5 +48,22 @@
 
 
         public const int SERIALACCEPT = 84;
+        public const int PAGESIZE = 4;
+
+        public static IDictionary<string, string> ListActionPage = new Dictionary<string, string>() {
+
+            { "Tin từ Bộ môn", "tin-tu-bo-mon" },
+            { "Thông Tin - Thông Báo", "thong-tin-thong-bao" },
+            { "Tin từ Khoa", "tin-tu-khoa" },
+            { "Tuyển dụng - Việc làm", "tuyen-dung-viec-lam" },
+            { "Tin từ Đoàn thanh niên", "doan-thanh-nien" },
+            { "Tin từ Trường", "tin-tu-truong" },
+            { "Tin từ Công đoàn", "tin-tu-cong-doan" },
+            { "Tin từ Chi bộ", "tin-tu-chi-bo" },
+            { "Tuyển sinh", "tuyen-sinh" },
+            { "Học liệu", "hoc-lieu" },
+            { "Tổ bộ môn", "gioi-thieu/to-bo-mon" },
+
+        };
     }
 }

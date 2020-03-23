@@ -1,8 +1,6 @@
 ﻿
 @model PagedList.IPagedList<FacultyV3.Core.Models.Entities.Category_News>
-
 @using PagedList.Mvc;
-
 <table class="table mb-0" id="categoryTable">
     <thead class="thead-light">
         <tr>
@@ -50,7 +48,6 @@
                                 </a>
                             }
                         </div>
-
                     </td>
                 </tr>
 
@@ -60,7 +57,6 @@
                     {
                         <tr>
                             <th scope="row">
-
                             </th>
                             <td>_____/ @chil.Meta_Name</td>
                             @{
@@ -84,9 +80,7 @@
                                         </a>
                                     }
                                 </div>
-
                             </td>
-
                         </tr>
 
                         if (chil.Children.ToList().Count() > 0)
@@ -95,7 +89,6 @@
                             {
                                 <tr>
                                     <th scope="row">
-
                                     </th>
                                     <td>_____/_____ @son.Meta_Name</td>
                                     @{
@@ -128,8 +121,9 @@
             }
         }
     </tbody>
-</table>
 
+</table>
+@*@Scripts.Render("~/script/jquery");*@
 <script>
     $(document).ready(function () {
         $("nav ul li a").addClass("page-link");
@@ -140,10 +134,8 @@
 <div style="float: right">
     Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
 </div>
-
 <div class="clearfix"></div>
 <br />
-
 <nav>
     @Html.PagedListPager(Model, page => Url.Action("CategoryNewsView", "CategoryNews", new { page }),
     new PagedListRenderOptions

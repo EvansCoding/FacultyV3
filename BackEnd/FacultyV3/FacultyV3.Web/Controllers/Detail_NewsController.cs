@@ -35,7 +35,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListNewss(int page = 1, int pageSize = 8)
+        public ActionResult ListNewss(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListWorks(int page = 1, int pageSize = 8)
+        public ActionResult ListWorks(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListYouth_Group(int page = 1, int pageSize = 8)
+        public ActionResult ListYouth_Group(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListMinistry(int page = 1, int pageSize = 8)
+        public ActionResult ListMinistry(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListFaculty(int page = 1, int pageSize = 8)
+        public ActionResult ListFaculty(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -105,7 +105,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListUniversity(int page = 1, int pageSize = 8)
+        public ActionResult ListUniversity(int page = 1, int pageSize = Constant.PAGESIZE)
         {
             try
             {
@@ -119,5 +119,32 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
+        public ActionResult ListPartyCell(int page = 1, int pageSize = Constant.PAGESIZE)
+        {
+            try
+            {
+                var model = detailNewsService.PageListFE(Constant.NEWS_FROM_PARTY_CELL, page, pageSize);
+                if (model != null)
+                    return View("ListDetailNews", model);
+            }
+            catch (System.Exception)
+            {
+            }
+            return View("~/Views/Shared/Error.cshtml");
+        }
+
+        public ActionResult ListUnion(int page = 1, int pageSize = Constant.PAGESIZE)
+        {
+            try
+            {
+                var model = detailNewsService.PageListFE(Constant.NEWS_FROM_UNION, page, pageSize);
+                if (model != null)
+                    return View("ListDetailNews", model);
+            }
+            catch (System.Exception)
+            {
+            }
+            return View("~/Views/Shared/Error.cshtml");
+        }
     }
 }

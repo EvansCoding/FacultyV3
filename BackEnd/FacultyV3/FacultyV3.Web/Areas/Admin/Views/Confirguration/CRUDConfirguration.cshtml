@@ -8,7 +8,6 @@
         </div>
     </div>
 </div>
-
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -24,10 +23,9 @@
                         @Html.EditorFor(model => model.Meta_Name, new { htmlAttributes = new { @class = "form-control", required = "required", @disabled = "disabled" } })
                         @Html.ValidationMessageFor(x => x.Meta_Name, "", new { @class = "text-danger" })
                     </div>
-
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Meta Value <span class="text-danger">*</span></label>
-                        @Html.EditorFor(model => model.Meta_Value, new { htmlAttributes = new { @class = "form-control", placehodler = "#"} })
+                        <label for="recipient-name" class="col-form-label">Mô tả ngắn<span class="text-danger"> *</span></label>
+                        @Html.TextAreaFor(model => model.Meta_Value, new { @id = "Description", style = "height: 150px", @class = "form-control", placeholder = "Mô tả ngắn", required = "required" })
                         @Html.ValidationMessageFor(x => x.Meta_Value, "", new { @class = "text-danger" })
                     </div>
 

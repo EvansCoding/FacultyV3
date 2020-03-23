@@ -111,6 +111,20 @@ namespace FacultyV3.Web
             );
 
             routes.MapRoute(
+                name: "NEWS_FROM_PARTY_CELL",
+                url: "tin-tu-chi-bo/{id}",
+                defaults: new { controller = "Detail_News", action = "ListPartyCell", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "NEWS_FROM_UNION",
+                url: "tin-tu-cong-doan/{id}",
+                defaults: new { controller = "Detail_News", action = "ListUnion", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
                 name: "DETAILNEWS",
                 url: "news/{category}/{title}/{id}",
                 defaults: new { controller = "Detail_News", action = "DetailNews", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },

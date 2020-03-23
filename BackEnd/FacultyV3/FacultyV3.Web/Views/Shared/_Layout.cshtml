@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Khoa Kỹ thuật - Công nghệ</title>
 
+    @{ 
+        Html.RenderAction("MetaView", "Confirguration", new { Area = String.Empty });
+    }
+   
     <!-- Favicon -->
     <link rel="shortcut icon" href="~/Content/Client/assets/img/logo/logokonen.ico" type="image/x-icon" />
 

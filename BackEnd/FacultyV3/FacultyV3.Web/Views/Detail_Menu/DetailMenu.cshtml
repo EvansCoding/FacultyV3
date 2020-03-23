@@ -9,6 +9,11 @@
         max-width: 100%;
         height: auto;
     }
+
+    .mu-blog-description > ol > li > a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
 </style>
 <!-- Page breadcrumb -->
 <section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
@@ -39,12 +44,11 @@
                                                 @if (!Model.Url_Video.Equals("#"))
                                                 {
 
-                                                    var urlvideo = "https://www.youtube.com/embed/" + Model.Url_Video;
-
-
-                                                    <a class="mu-abtus-video" href="@urlvideo" target="mutube-video">
-                                                        <img src="@Model.Url_Image" alt="img" />
-                                                    </a>
+                                                    var urlvideo = "https://www.youtube.com/embed/" + Model.Url_Video + "?rel=0&autoplay=1";
+                                                    <iframe id="videoIframe" width="100%" src="@urlvideo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    @*<a class="mu-abtus-video" href="@urlvideo" target="mutube-video">
+                                                            <img src="@Model.Url_Image" alt="img" />
+                                                        </a>*@
                                                 }
                                                 else
                                                 {
@@ -62,9 +66,17 @@
                                             <div class="mu-blog-meta">
                                                 <a href="#">@Model.Account.FullName</a>
                                                 <a href="#">@Model.Update_At</a>
-                       
+
                                             </div>
                                             <div class="mu-blog-description">
+                                                @if (!Model.Url_LinkGoogle.Equals("#"))
+                                                {
+                                                    <hr />
+                                                    <div id="FileGoogleDrive" style="width: inherit">
+                                                        @Html.Raw(Model.Url_LinkGoogle)
+                                                        <hr />
+                                                    </div>
+                                                }
                                                 @Html.Raw(Model.Content)
                                             </div>
                                         </article>
@@ -91,3 +103,31 @@
     </div>
 </section>
 
+@Scripts.Render("~/script/jquery");
+<script>
+    // Resize video on news
+    var height = $("#videoIframe").width() / 1.7;
+    $(document).ready(function () {
+        $("#videoIframe").css({ height: height });
+
+        $(" .mu-blog-description ol li a").css({ "font-size": "16px" })
+        $(" .mu-blog-description ol li a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+
+        $(" .mu-blog-description ul li a").css({ "font-size": "16px" })
+        $(" .mu-blog-description ul li a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+        $(" .mu-blog-description p a").css({ "font-size": "16px" })
+        $(" .mu-blog-description p a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+    });
+</script>
