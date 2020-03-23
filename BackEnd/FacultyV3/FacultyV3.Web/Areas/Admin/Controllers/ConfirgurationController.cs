@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using FacultyV3.Core.Interfaces.IServices;
 using FacultyV3.Web.ViewModels;
+using FacultyV3.Core.Constants;
 
 namespace FacultyV3.Web.Areas.Admin.Controllers
 {
@@ -18,7 +19,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.confirgurationService = confirgurationService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult ConfirgurationView()
         {
             return View();

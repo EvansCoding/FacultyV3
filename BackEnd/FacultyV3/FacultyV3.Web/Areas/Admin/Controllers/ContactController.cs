@@ -16,7 +16,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.contactService = contactService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult ContactView()
         {
             return View();

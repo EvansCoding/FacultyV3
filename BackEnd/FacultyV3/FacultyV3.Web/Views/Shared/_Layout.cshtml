@@ -16,7 +16,7 @@
 <body>
 
     @{ 
-        Html.RenderAction("MessengerView", "Confirguration");
+        Html.RenderAction("MessengerView", "Confirguration", new { Area = String.Empty});
     }
     <!--START SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#">
@@ -62,7 +62,7 @@
     <!-- End header  -->
     <!-- Start menu -->
     @{
-        Html.RenderAction("_menu", "Home");
+        Html.RenderAction("_menu", "Home", new { Area = String.Empty});
     }
     <!-- End menu -->
     <!-- Start search box -->
@@ -86,12 +86,12 @@
     @RenderBody();
     <!-- Start footer -->
     @{
-        Html.RenderAction("_footer", "Home");
+        Html.RenderAction("_footer", "Home", new { Area = String.Empty });
     }
     <!-- End footer -->
     <!-- start Icons Nav Left-->
     @{
-        Html.RenderAction("_sticky", "Home");
+        Html.RenderAction("_sticky", "Home", new { Area = String.Empty });
     }
     @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
     @Scripts.Render("~/script/client")

@@ -18,7 +18,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.categoryMenuService = categoryMenuService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult CategoryMenuView()
         {
             return View();

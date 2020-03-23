@@ -20,7 +20,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.categoryNewsService = categoryNewsService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult CategoryNewsView()
         {
             return View();

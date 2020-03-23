@@ -32,5 +32,12 @@
 
 
         public const string MESSENGER_NAME = "Messenger";
+
+        public const string USER_SESSION = "USER_SESSION";
+
+        public const string ADMIN = "Admin";
+        public const string POSTER = "Poster";
+        public const string ADMIN_OR_POSTER = ADMIN + "," + POSTER;
+        public const string SESSION_CREDENTIAL = "SESSION_CREDENTIAL";
     }
 }

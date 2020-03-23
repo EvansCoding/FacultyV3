@@ -200,3 +200,7 @@ C:\Users\Evans\Downloads\FacultyV3-master\BackEnd\FacultyV3\FacultyV3.Core\obj\D
 C:\Users\Evans\Downloads\FacultyV3-master\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_18.resources
 D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_17.resources
 D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_18.resources
+D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\bin\Debug\AntiXssLibrary.dll
+D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\bin\Debug\HtmlSanitizationLibrary.dll
+D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\bin\Debug\AntiXssLibrary.xml
+D:\Project\Private\Websites\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\bin\Debug\HtmlSanitizationLibrary.xml

@@ -22,7 +22,8 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             this.accountService = accountService;
             this.roleService = roleService;
         }
-        // GET: Admin/Account
+        
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult AccountView()
         {
             return View();
@@ -158,7 +159,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                         {
                             TempData[Constant.MessageViewBagName] = new GenericMessageViewModel
                             {
-                                Message = "Mật khẩu chưa chính xác",
+                                Message = "Cập nhật mật khẩu thất bại",
                                 MessageType = GenericMessages.error
                             };
                             return RedirectToAction("AccountView", "Account");

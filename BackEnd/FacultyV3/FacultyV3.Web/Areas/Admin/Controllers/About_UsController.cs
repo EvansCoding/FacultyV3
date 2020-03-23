@@ -17,6 +17,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             this.about_UsService = about_UsService;
         }
 
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult About_UsView()
         {
             var data = about_UsService.GetTop();

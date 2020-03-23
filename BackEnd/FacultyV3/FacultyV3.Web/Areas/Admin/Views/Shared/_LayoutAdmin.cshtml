@@ -1,7 +1,6 @@
 ﻿
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Quản trị Website</title>
@@ -12,9 +11,7 @@
     <link rel="shortcut icon" href="~/Content/Admin/assets/images/header/icons8_books.ico">
     <script src="~/Scripts/tinymce/tinymce.min.js"></script>
     @Styles.Render("~/css/Admin")
-
 </head>
-
 <body>
     <div id="wrapper">
         <div class="navbar-custom">
@@ -28,7 +25,7 @@
                     </a>
                 </li>
                 <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" href="@Url.Action("LogOut","Account", new { Area = String.Empty})">
+                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" href="@Url.Action("LogOut","Login", new { Area = "Admin"})">
                         <img src="~/Content/Admin/assets/images/header/logout_rounded_64px.png" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ">
                             Đăng xuất
@@ -36,7 +33,6 @@
                     </a>
                 </li>
             </ul>
-
             <div class="logo-box">
                 <a href="@Url.Action("ProfileView","User", new { Area = "Admin"})" class="logo text-center logo-dark">
                     <span class="logo-lg">
@@ -46,7 +42,6 @@
                         <img src="~/Content/Admin/assets/images/logo-sm.png" alt="" height="22">
                     </span>
                 </a>
-
                 <a href="@Url.Action("ProfileView","User", new { Area = "Admin"})" class="logo text-center logo-light">
                     <span class="logo-lg">
                         <img src="~/Content/Admin/assets/images/logo-light.png" alt="" height="18">
@@ -56,14 +51,12 @@
                     </span>
                 </a>
             </div>
-
             <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
                 <li>
                     <button class="button-menu-mobile waves-effect">
                         <i class="mdi mdi-menu"></i>
                     </button>
                 </li>
-
             </ul>
         </div>
         <div class="left-side-menu">
@@ -77,6 +70,7 @@
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="@Url.Action("ProfileView","Profile", new { Area = "Admin"})">Thông tin</a></li>
                                 <li><a href="@Url.Action("ConfirgurationView","Confirguration", new { Area = "Admin"})">Cấu hình</a></li>
                                 <li><a href="@Url.Action("AccountView","Account", new { Area = "Admin"})">Tài khoản</a></li>
                                 <li><a href="@Url.Action("About_UsView","About_Us", new { Area = "Admin"})">Về chúng tôi</a></li>
@@ -121,17 +115,13 @@
         <div class="content-page">
             <div class="content">
                 <div class="container-fluid">
-
                     @RenderBody()
-
                 </div>
             </div>
         </div>
     </div>
 
-
     @Scripts.Render("~/script/Admin")
-
     @if (IsSectionDefined("scripts"))
     {
         @RenderSection("scripts", false)

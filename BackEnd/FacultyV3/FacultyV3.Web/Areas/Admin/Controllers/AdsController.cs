@@ -19,6 +19,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             this.adsService = adsService;
         }
 
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult AdsView()
         {
             var data = adsService.GetTop();

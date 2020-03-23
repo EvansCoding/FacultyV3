@@ -17,7 +17,7 @@ namespace FacultyV3.Web.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { controller = "Banner",action = "BannerView", id = UrlParameter.Optional }
+                new { controller = "Login",action = "LoginView", id = UrlParameter.Optional }
             );
         }
     }

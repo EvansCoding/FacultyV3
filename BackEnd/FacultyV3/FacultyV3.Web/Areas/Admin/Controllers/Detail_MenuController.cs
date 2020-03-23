@@ -21,7 +21,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             this.detailMenuService = detailMenuService;
             this.categoryMenuService = categoryMenuService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult Detail_MenuView()
         {
             List<Category_Menu> ListCategory = categoryMenuService.GetCategories();

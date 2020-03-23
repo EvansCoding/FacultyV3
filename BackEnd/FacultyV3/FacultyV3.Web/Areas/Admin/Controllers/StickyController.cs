@@ -1,4 +1,5 @@
-﻿using FacultyV3.Core.Interfaces;
+﻿using FacultyV3.Core.Constants;
+using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
 using FacultyV3.Web.Common;
 using FacultyV3.Web.ViewModels;
@@ -15,7 +16,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.stickyService = stickyService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult StickyView()
         {
             return View();

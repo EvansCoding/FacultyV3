@@ -1,4 +1,5 @@
-﻿using FacultyV3.Core.Interfaces;
+﻿using FacultyV3.Core.Constants;
+using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
 using FacultyV3.Core.Models.Entities;
 using FacultyV3.Web.Common;
@@ -16,7 +17,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.graduationService = graduationService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult GraduationView(string id)
         {
             var model = new GraduationViewModel();

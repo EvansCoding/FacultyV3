@@ -17,7 +17,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.bannerService = bannerService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult BannerView()
         {
             return View();

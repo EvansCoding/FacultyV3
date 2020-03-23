@@ -19,7 +19,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.videoService = videoService;
         }
-        
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult VideoView()
         {
             return View();

@@ -17,7 +17,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         {
             this.lecturerService = lecturerService;
         }
-
+        [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult LecturerView()
         {
             return View();

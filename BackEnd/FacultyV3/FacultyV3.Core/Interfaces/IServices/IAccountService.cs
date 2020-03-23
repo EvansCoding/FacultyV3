@@ -1,9 +1,5 @@
 ﻿using FacultyV3.Core.Models.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FacultyV3.Core.Interfaces.IServices
 {
@@ -13,5 +9,7 @@ namespace FacultyV3.Core.Interfaces.IServices
         Account GetAccountByEmail(string email);
         IEnumerable<Account> PageList(string name, int page, int pageSize);
         List<Account> GetAccounts();
+        Account GetEmail(string email);
+        bool ValidateUser(string email, string password);
     }
 }

@@ -1,13 +1,14 @@
 ﻿using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
 using FacultyV3.Core.Models.Entities;
+using FacultyV3.Core.Models.Enums;
+using FacultyV3.Core.Utilities;
+using Microsoft.Security.Application;
+using PagedList;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity;
-using PagedList;
+using System.Linq;
 
 namespace FacultyV3.Core.Services
 {
@@ -40,7 +41,17 @@ namespace FacultyV3.Core.Services
             }
             return null;
         }
-
+        public Account GetEmail(string email)
+        {
+            try
+            {
+                return context.Accounts.Include(x => x.Role).Where(x => x.Email.Equals(email)).SingleOrDefault();
+            }
+            catch (Exception)
+            {
+            }
+            return null;
+        }
         public Account GetAccountByEmail(string email)
         {
             try
@@ -63,6 +74,31 @@ namespace FacultyV3.Core.Services
             {
             }
             return null;
+        }
+
+        public LoginAttemptStatus LastLoginStatus { get; private set; } = LoginAttemptStatus.LoginSuccessful;
+        public bool ValidateUser(string email, string password)
+        {
+            email = Sanitizer.GetSafeHtmlFragment(email);
+            password = Sanitizer.GetSafeHtmlFragment(password);
+
+            LastLoginStatus = LoginAttemptStatus.LoginSuccessful;
+
+            var user = GetEmail(email);
+            if (user == null)
+            {
+                LastLoginStatus = LoginAttemptStatus.UserNotFound;
+                return false;
+            }
+
+            var passwordMatches = Hash.Instance.ComputeSha256Hash(password) == user.Password;
+            if (!passwordMatches)
+            {
+                LastLoginStatus = LoginAttemptStatus.PasswordIncorrect;
+                return false;
+            }
+
+            return LastLoginStatus == LoginAttemptStatus.LoginSuccessful;
         }
     }
 }
