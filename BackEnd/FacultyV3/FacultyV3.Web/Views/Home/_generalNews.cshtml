@@ -1,5 +1,5 @@
 ﻿@model List<FacultyV3.Core.Models.Entities.Detail_News>
-
+@using FacultyV3.Web.Common;
 <section id="mu-latest-courses">
     <div class="container">
         <div class="row">
@@ -36,8 +36,9 @@
                                             <span><i class="fa fa-clock-o"></i>@item.Update_At.ToShortDateString()</span>
                                         </figcaption>
                                     </figure>
-                                    <div class="mu-latest-course-single-content" style="height: 200px">
-                                        <h4 style="height: 60%; text-align: justify; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                                    <div class="mu-latest-course-single-content" style="height: 180px">
+                                        <h4 style="height: 58%; text-align: justify; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
                                             <a href="@url">@item.Title</a>
                                         </h4>
                                         <div class="mu-latest-course-single-contbottom">

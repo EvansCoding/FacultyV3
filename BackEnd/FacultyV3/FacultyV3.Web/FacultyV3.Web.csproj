@@ -227,6 +227,7 @@
     <Compile Include="Common\BaseController.cs" />
     <Compile Include="Common\CustomRoleProvider.cs" />
     <Compile Include="Common\HasCredentialAttribute.cs" />
+    <Compile Include="Common\ProcessString.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Common\utf8Convert.cs" />
     <Compile Include="Controllers\CommonController.cs" />

@@ -20,53 +20,60 @@ namespace FacultyV3.Core.Services
         }
 
         #region  Area Admin
-        public IEnumerable<Detail_News> PageList(string name, string category, string state, int page, int pageSize)
+        public IEnumerable<Detail_News> PageList(string account, string name, string category, string state, int page, int pageSize)
         {
-            if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(state) && string.IsNullOrEmpty(category))
+            try
             {
-                return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
-            }
-
-            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(state) && !string.IsNullOrEmpty(category))
-            {
-                bool status = state == Status.Publish.ToString() ? true : false;
-                try
+                if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(state) && string.IsNullOrEmpty(category))
                 {
-                    Guid CategoryID = new Guid(category);
-
-                    return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Title.Contains(name) && x.Category_News.Id == CategoryID && x.Status == status).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
+                    return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
                 }
-                catch (Exception)
-                {
-                }
-            }
 
-            if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(state) || !string.IsNullOrEmpty(category))
-            {
-                var posts = context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).OrderBy(x => x.Title).ToList();
-                Console.WriteLine(posts.First().Id);
-                if (!string.IsNullOrEmpty(name))
-                    posts = posts.Where(x => x.Title.Contains(name)).ToList();
-                if (!string.IsNullOrEmpty(state))
+                if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(state) && !string.IsNullOrEmpty(category))
                 {
                     bool status = state == Status.Publish.ToString() ? true : false;
-                    posts = posts.Where(x => x.Status == status).ToList();
-                }
-                if (!string.IsNullOrEmpty(category))
-                {
                     try
                     {
                         Guid CategoryID = new Guid(category);
-                        posts = posts.Where(x => x.Category_News.Id == CategoryID).ToList();
+
+                        return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Title.Contains(name) && x.Category_News.Id == CategoryID && x.Status == status && x.Account.Id == new Guid(account)).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
                     }
                     catch (Exception)
                     {
                     }
                 }
-                return posts.ToPagedList(page, pageSize);
-            }
 
-            return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
+                if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(state) || !string.IsNullOrEmpty(category))
+                {
+                    var posts = context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderBy(x => x.Title).ToList();
+                    Console.WriteLine(posts.First().Id);
+                    if (!string.IsNullOrEmpty(name))
+                        posts = posts.Where(x => x.Title.Contains(name)).ToList();
+                    if (!string.IsNullOrEmpty(state))
+                    {
+                        bool status = state == Status.Publish.ToString() ? true : false;
+                        posts = posts.Where(x => x.Status == status).ToList();
+                    }
+                    if (!string.IsNullOrEmpty(category))
+                    {
+                        try
+                        {
+                            Guid CategoryID = new Guid(category);
+                            posts = posts.Where(x => x.Category_News.Id == CategoryID).ToList();
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
+                    return posts.ToPagedList(page, pageSize);
+                }
+
+                return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
+            }
+            catch (Exception)
+            {
+            }
+            return null;
         }
 
         public IEnumerable<Detail_News> PageListFE(string category, int page, int pageSize)

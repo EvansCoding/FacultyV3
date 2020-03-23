@@ -35,7 +35,8 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult LoadTable(string search, string category, string state, int page = 1, int pageSize = 10)
         {
-            var model = detailNewsService.PageList(search, category, state, page, pageSize);
+            var session = (UserLogin)Session[Constant.USER_SESSION];
+            var model = detailNewsService.PageList(session.UserID.ToString() ,search, category, state, page, pageSize);
             return PartialView("Detail_NewsTablePartialView", model);
         }
 
@@ -75,6 +76,9 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         [HttpPost, ValidateInput(false)]
         public ActionResult AddOrUpdate(DetailViewModel model)
         {
+            var session = (UserLogin)Session[Constant.USER_SESSION];
+            if (session == null)
+                return RedirectToAction("Logon", "Login", new { Area = "Admin" });
             if (model.Id == null)
             {
                 try
@@ -92,7 +96,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                         Category_News = context.Category_News.Find(new Guid(model.CategoryID)),
                         Create_At = DateTime.Now,
                         Update_At = DateTime.Now,
-                        Account = context.Accounts.Find(new Guid("32E6C2E0-5304-4330-B9D3-8978B4803E61"))
+                        Account = context.Accounts.Find(session.UserID)
                     };
 
                     context.Detail_News.Add(detail_Menu);
@@ -127,7 +131,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     detail_Menu.Url_LinkGoogle = model.Url_LinkGoogle == null ? "#" : model.Url_LinkGoogle;
                     detail_Menu.Update_At = DateTime.Now;
                     detail_Menu.Category_News = context.Category_News.Find(new Guid(model.CategoryID));
-                    detail_Menu.Account = context.Accounts.Find(new Guid("32E6C2E0-5304-4330-B9D3-8978B4803E61"));
+                    detail_Menu.Account = context.Accounts.Find(session.UserID);
 
                     //var data = utf8Convert3(detail_Menu.Title.ToLower()).Replace(" ", "-");
                     context.SaveChanges();

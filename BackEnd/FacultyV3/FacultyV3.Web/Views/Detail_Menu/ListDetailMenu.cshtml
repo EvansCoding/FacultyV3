@@ -3,7 +3,6 @@
     ViewBag.Title = "ListDepartment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 @using PagedList.Mvc;
 @using FacultyV3.Web.Common;
 <!-- Page breadcrumb -->
@@ -16,7 +15,6 @@
                     {
                         <h2>@Model[0].Category_Menu.Meta_Name</h2>
                     }
-
                 </div>
             </div>
         </div>
@@ -36,11 +34,10 @@
                                     @{
                                         int index = 0;
                                     }
-
                                     @foreach (var item in Model)
                                     {
 
-                                        var url = Url.RouteUrl("MENU", new { title = utf8Convert.Instance.ToUrlFriendly(item.Title), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly( item.Category_Menu.Meta_Name) });
+                                        var url = Url.RouteUrl("MENU", new { title = utf8Convert.Instance.ToUrlFriendly(item.Title), id = item.Id.ToString(), category = utf8Convert.Instance.ToUrlFriendly(item.Category_Menu.Meta_Name) });
 
                                         <div class="col-md-6 col-sm-6">
                                             <article class="mu-blog-single-item">
@@ -53,8 +50,11 @@
                                                     {
                                                         <a href="@url"><img src="~/Content/image.png" width="100%" height="280px" alt="img"></a>
                                                     }
-                                                    <figcaption class="mu-blog-caption" style="height: 100px">
-                                                        <h3><a href="@url">@item.Title</a></h3>
+                                                    <figcaption class="mu-blog-caption" style="height: 80px">
+                                                        @{
+                                                            var s = ProcessString.Instance.ShortCutString(item.Title);
+                                                        }
+                                                        <h3 style=" font-size: 20px"><a href="@url"> @s</a></h3>
                                                     </figcaption>
                                                 </figure>
                                                 <div class="mu-blog-meta">
@@ -63,7 +63,6 @@
                                                     <span><i class="fa fa-comments-o"></i>87</span>
                                                 </div>
                                                 <div class="mu-blog-description">
-
 
                                                     <a class="mu-read-more-btn" href="@url">Chi tiết</a>
                                                 </div>
@@ -81,7 +80,6 @@
                                         }
 
                                     }
-
                                 </div>
                             </div>
                             <!-- end course content container -->
@@ -89,10 +87,8 @@
                             <div style="float: right">
                                 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
                             </div>
-
                             <div class="clearfix"></div>
                             <br />
-
                             <div class="mu-pagination">
                                 <nav>
                                     @Html.PagedListPager(Model, page => Url.Action("LecturerView", "Lecturer", new { page }),
@@ -115,4 +111,3 @@
         </div>
     </div>
 </section>
-

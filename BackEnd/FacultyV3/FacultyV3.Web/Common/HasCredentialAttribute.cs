@@ -11,7 +11,8 @@ namespace FacultyV3.Web.Common
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
             var session = (UserLogin)HttpContext.Current.Session[Constant.USER_SESSION];
-
+            if (session == null)
+                return false;
             string privilegeLevels = this.GetCredentialByLoggedInUser(session.Email);
             if (privilegeLevels.Contains(this.RoleID))
             {

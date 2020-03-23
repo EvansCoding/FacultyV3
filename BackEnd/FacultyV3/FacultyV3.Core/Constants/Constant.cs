@@ -39,5 +39,8 @@
         public const string POSTER = "Poster";
         public const string ADMIN_OR_POSTER = ADMIN + "," + POSTER;
         public const string SESSION_CREDENTIAL = "SESSION_CREDENTIAL";
+
+
+        public const int SERIALACCEPT = 84;
     }
 }

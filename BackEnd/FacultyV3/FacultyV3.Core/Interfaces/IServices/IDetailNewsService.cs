@@ -9,7 +9,7 @@ namespace FacultyV3.Core.Interfaces.IServices
 {
     public interface IDetailNewsService
     {
-        IEnumerable<Detail_News> PageList(string name, string category, string state, int page, int pageSize);
+        IEnumerable<Detail_News> PageList(string account, string name, string category, string state, int page, int pageSize);
 
         IEnumerable<Detail_News> PageListFE(string category, int page, int pageSize);
 

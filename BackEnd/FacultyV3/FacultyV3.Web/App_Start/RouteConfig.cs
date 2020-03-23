@@ -72,6 +72,51 @@ namespace FacultyV3.Web
             );
 
             routes.MapRoute(
+                name: "NEWSS",
+                url: "thong-tin-thong-bao/{id}",
+                defaults: new { controller = "Detail_News", action = "ListNewss", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "WORK",
+                url: "tuyen-dung-viec-lam/{id}",
+                defaults: new { controller = "Detail_News", action = "ListWorks", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "YOUTH_GROUP",
+                url: "doan-thanh-nien/{id}",
+                defaults: new { controller = "Detail_News", action = "ListYouth_Group", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "NEWS_FROM_THE_MINISTRY",
+                url: "tin-tu-bo-mon/{id}",
+                defaults: new { controller = "Detail_News", action = "ListMinistry", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "NEWS_FROM_FACULTY",
+                url: "tin-tu-khoa/{id}",
+                defaults: new { controller = "Detail_News", action = "ListFaculty", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "NEWS_FROM_UNIVERSIT",
+                url: "tin-tu-truong/{id}",
+                defaults: new { controller = "Detail_News", action = "ListUniversity", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "DETAILNEWS",
+                url: "news/{category}/{title}/{id}",
+                defaults: new { controller = "Detail_News", action = "DetailNews", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

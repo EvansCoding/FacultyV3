@@ -39,6 +39,8 @@ namespace FacultyV3.Web.Common
         public string ToUrlFriendly(string data)
         {
             var s = utf8Convert3(data).Replace(" ", "-").ToLower();
+            s = s.Replace("/", "");
+            s = s.Replace(":", "");
             return s;
         }
     }
