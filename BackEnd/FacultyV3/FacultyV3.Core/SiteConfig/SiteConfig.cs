@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FacultyV3.Core.SiteConfig
+﻿namespace FacultyV3.Core.SiteConfig
 {
     using Models.Enums;
     using Services;

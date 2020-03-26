@@ -153,14 +153,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             return RedirectToAction("Detail_NewsView", "Detail_News");
         }
 
-        // Chuyển đổi tiếng việt có dấu thành không dấu
-        //public static string utf8Convert3(string s)
-        //{
-        //    Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
-        //    string temp = s.Normalize(NormalizationForm.FormD);
-        //    return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
-        //}
-
         [HttpPost]
         public ActionResult Delete(string Id)
         {

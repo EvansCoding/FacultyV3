@@ -455,6 +455,7 @@
     <Content Include="Content\Client\assets\img\counter-bg.jpg" />
     <Content Include="Content\Client\assets\img\count\2729411.jpg" />
     <Content Include="Content\Client\assets\img\count\bannerCount.jpg" />
+    <Content Include="Content\Client\assets\img\count\milestones_background.jpg" />
     <Content Include="Content\Client\assets\img\courses\1.jpg" />
     <Content Include="Content\Client\assets\img\courses\2.jpg" />
     <Content Include="Content\Client\assets\img\courses\3.jpg" />
@@ -493,6 +494,7 @@
     <Content Include="Content\Client\assets\img\logo.png" />
     <Content Include="Content\Client\assets\img\logo\logokonen.ico" />
     <Content Include="Content\Client\assets\img\logo\logokonen.png" />
+    <Content Include="Content\Client\assets\img\logo\vietnam-flag-icon-32.png" />
     <Content Include="Content\Client\assets\img\slider\1.jpg" />
     <Content Include="Content\Client\assets\img\slider\2.jpg" />
     <Content Include="Content\Client\assets\img\slider\3.jpg" />
