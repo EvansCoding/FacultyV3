@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khoa Kỹ thuật - Công nghệ</title>
+
+    @{ 
+        Html.RenderAction("MetaView", "Confirguration", new { Area = String.Empty });
+    }
+   
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/Client/assets/img/logo/logokonen.ico" type="image/x-icon" />
+
+    @Styles.Render("~/css/client")
+</head>
+
+<body>
+
+    @{ 
+        Html.RenderAction("MessengerView", "Confirguration", new { Area = String.Empty});
+    }
+    <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+        <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- END SCROLL TOP BUTTON -->
+    <!-- Start header  -->
+    <!-- <header id="mu-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="mu-header-area">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="mu-header-top-left">
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="mu-header-top-right">
+                                    <nav>
+                                        <ul class="mu-top-social-nav">
+                                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                            <li><a href="#"><span class="fa fa-youtube"></span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> -->
+    <header>
+        <div class="container">
+            <div class="row" style="color: slategrey; width: 10px;"></div>
+        </div>
+    </header>
+    <!-- End header  -->
+    <!-- Start menu -->
+    @{
+        Html.RenderAction("_menu", "Home", new { Area = String.Empty});
+    }
+    <!-- End menu -->
+    <!-- Start search box -->
+    <div id="mu-search">
+        <div class="mu-search-area">
+            <button class="mu-search-close">
+                <span class="fa fa-close"></span>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="mu-search-form">
+                            <input type="search" placeholder="Type Your Keyword(s) & Hit Enter" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End search box -->
+    @RenderBody();
+    <!-- Start footer -->
+    @{
+        Html.RenderAction("_footer", "Home", new { Area = String.Empty });
+    }
+    <!-- End footer -->
+    <!-- start Icons Nav Left-->
+    @{
+        Html.RenderAction("_sticky", "Home", new { Area = String.Empty });
+    }
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+    @Scripts.Render("~/script/client")
+
+    @*<script src="~/Content/Client/assets/js/swc.js"></script>*@
+
+    @*<script src="~/Content/jquery-3.4.1.min.js"></script>*@
+    <script>
+        $(document).ready(function () {
+            $("nav ul li a").addClass("page-link");
+            $("nav ul ").addClass("justify-content-end");
+            //$("nav ul ").addClass("pagination");
+        })
+    </script>
+</body>
+
+</html>

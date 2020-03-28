@@ -1,0 +1,53 @@
+﻿@model  FacultyV3.Web.ViewModels.Category_MenuViewModel
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Cập nhật</h4>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                @using (@Html.BeginForm("AddOrUpdate", "CategoryMenu", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Tên <span class="text-danger">*</span></label>
+                        @Html.EditorFor(model => model.Meta_Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập tên danh mục", required = "required" } })
+                        @Html.ValidationMessageFor(x => x.Meta_Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Liên kết <span class="text-danger">*</span></label>
+                        @Html.EditorFor(model => model.Meta_Value, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập liên kết", required = "required" } })
+                        @Html.ValidationMessageFor(x => x.Meta_Value, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Số thứ tự <span class="text-danger">*</span></label>
+                        @Html.EditorFor(model => model.Serial, new { htmlAttributes = new { @class = "form-control",  required = "required" } })
+                        @Html.ValidationMessageFor(x => x.Serial, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Danh mục cha <span class="text-danger">*</span></label>
+                        @Html.DropDownListFor(model => model.ParentID, ViewBag.ListOfParent as SelectList, "----Lựa Chọn----", new { @id = "DropDwnParent", @class = "form-control" })
+                    </div>
+
+                    <div class="form-group text-right mb-0">
+                        <button class="btn btn-primary" type="submit">Lưu</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-secondary">Đóng</button>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+

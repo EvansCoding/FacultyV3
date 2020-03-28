@@ -1,0 +1,73 @@
+﻿@model FacultyV3.Web.ViewModels.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Đăng Nhập | Khoa Kỹ thuật - Công nghệ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Evans" name="author">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/Content/Admin/assets/images/favicon.ico">
+
+    <!-- App css -->
+    @Styles.Render("~/login/css")
+</head>
+
+<body class="authentication-page" >
+
+    <div class="account-pages my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div class="card mt-4">
+                        <div class="card-header p-4 bg-primary">
+                            <h4 class="text-white text-center mb-0 mt-0">Admin</h4>
+                        </div>
+                        <div class="card-body">
+                            @using (@Html.BeginForm("LogOn", "Login", new { Area = "Admin" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Email <span class="text-danger">*</span></label>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "admin@gmail.com", required = "required" , type="email"} })
+                                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="emailaddress">Password <span class="text-danger">*</span></label>
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your password", required = "required" , type="password"} })
+                                    @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group row text-center mt-4 mb-4">
+                                    <div class="col-12">
+                                        <button class="btn btn-md btn-block btn-primary waves-effect waves-light" type="submit">Sign In</button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <!-- end card-body -->
+                    </div>
+                    <!-- end card -->
+                    <!-- end row -->
+
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+
+        </div>
+    </div>
+
+    @Scripts.Render("~/login/scripts")
+
+</body>
+
+</html>

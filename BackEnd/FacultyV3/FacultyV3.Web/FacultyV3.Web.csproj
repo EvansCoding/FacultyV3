@@ -1124,6 +1124,8 @@
     <Content Include="Views\Lecturer\DetailLecturer.cshtml" />
     <Content Include="Views\Confirguration\MessengerView.cshtml" />
     <Content Include="Views\Confirguration\MetaView.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

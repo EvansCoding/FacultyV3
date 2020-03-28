@@ -1,0 +1,103 @@
+﻿@model PagedList.IPagedList<FacultyV3.Core.Models.Entities.Video>
+
+@using PagedList.Mvc;
+
+<table class="table mb-0" id="categoryTable">
+    <thead class="thead-light">
+        <tr>
+            <th style="width:5%;">
+                #
+            </th>
+            <th style="width:25%;">
+                Tên
+            </th>
+            <th style="width:20%;">
+                Youtube
+            </th>
+            <th>
+                Thứ tự
+            </th>
+            <th>
+                Ngày tạo
+            </th>
+            <th>
+                Ngày cập nhật
+            </th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @{
+            var index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10))))
+                    </th>
+                    <td>@item.Title</td>
+
+                    <td>
+                        <a href="#" target="_blank">
+                            @if (item.Url_Image == null)
+                            {
+                                <img src="~/Content/image.png" style="width: 200px; height: 100px" alt="" />
+                            }
+                            else
+                            {
+                                <img src="@item.Url_Image" style="width: 200px; height: 100px" alt="@item.Url_Image" />
+                            }
+
+                        </a>
+                    </td>
+                    <td>@item.Serial</td>
+                    <td>@item.Create_At.ToShortDateString()</td>
+                    <td>@item.Update_At.ToShortDateString()</td>
+                    <td>
+                        <div class="button-list">
+                            @{
+                                var uEdit = @Url.Action("AddOrEdit", "Video") + "/" + item.Id;
+                                <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                    <i class="fa fa-edit" style="color: white"></i>
+                                </a>
+
+                                var uDelete = @Url.Action("Delete", "Video") + "/" + item.Id;
+                                var urluDelete = @"Delete('" + uDelete + "')";
+
+                                <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
+                                    <i class="fa fa-trash" style="color: white"></i>
+                                </a>
+                            }
+                        </div>
+
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<script src="~/Content/jquery-3.4.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("nav ul li a").addClass("page-link");
+        $("nav ul ").addClass("justify-content-end");
+    })
+</script>
+<hr />
+<div style="float: right">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
+</div>
+
+<div class="clearfix"></div>
+<br />
+
+<nav>
+    @Html.PagedListPager(Model, page => Url.Action("VideoView", "Video", new { page }),
+    new PagedListRenderOptions
+    {
+        LiElementClasses = new string[] { "page-item" }
+    })
+</nav>

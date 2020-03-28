@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "ContactView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start contact  -->
+<section id="mu-contact" style="padding-top: 40px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-contact-area">
+                    <!-- start title -->
+                    <div class="mu-title">
+                        <h2>Liên Hệ</h2>
+                        <p>Thông tin của Khoa Kỹ thuật - Công nghệ</p>
+                    </div>
+                    <!-- end title -->
+                    <!-- start contact content -->
+                    <div class="mu-contact-content">
+                        <div class="row"  >
+
+                            @if (ViewBag.Contact != null)
+                            {
+                                if (Enumerable.Count(ViewBag.Contact) > 0)
+                                {
+                                    <div class="col-md-6">
+                                        <div class="mu-contact-left">
+
+                                            @{
+                                                var contact = ViewBag.Contact as List<FacultyV3.Core.Models.Entities.Contact>
+;
+                                                var phone = "tel:" + contact[4].Meta_Value;
+                                                var email = "mailto:" + contact[1].Meta_Value;
+                                            }
+
+
+                                            <p style="margin: 0 0 5px">
+                                                Địa chỉ : @contact[0].Meta_Value
+                                            </p>
+                                            <a href="@phone">
+                                                <p style="margin: 0 0 5px">Điện thoại: @contact[4].Meta_Value</p>
+                                            </a>
+
+                                            <a href="@email">
+                                                <p style="margin: 0 0 5px">Email: @contact[1].Meta_Value</p>
+                                            </a>
+
+                                            <img src="@contact[3].Meta_Value" style="width: inherit; object-fit: scale-down;" alt="" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mu-contact-right" >
+                                            <iframe src="@contact[2].Meta_Value" width="100%" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                    <!-- end contact content -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End contact  -->

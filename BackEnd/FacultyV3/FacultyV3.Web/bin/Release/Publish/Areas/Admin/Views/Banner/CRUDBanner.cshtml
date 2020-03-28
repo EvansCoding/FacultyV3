@@ -1,0 +1,98 @@
+﻿
+
+@model FacultyV3.Web.ViewModels.BannerViewModel
+
+@{
+    ViewBag.Title = "CRUDBanner";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style type="text/css">
+    .modal-dialog {
+        width: 100%;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <h4 class="page-title">Cập nhật ảnh bìa</h4>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                @using (@Html.BeginForm("AddOrUpdate", "Banner", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Chủ đề <span class="text-danger">*</span></label>
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Hãy nhập chủ đề", required = "required" } })
+                        @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Chủ đề rút gọn <span class="text-danger">*</span></label>
+                        @Html.EditorFor(model => model.Title_Short, new { htmlAttributes = new { @class = "form-control", placeholder = "Hãy nhập chủ đề rút gọn", required = "required" } })
+                        @Html.ValidationMessageFor(x => x.Title_Short, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Mô tả <span class="text-danger">*</span></label>
+                        @Html.TextAreaFor(model => model.Description, new { placeholder = "Hãy nhập mô tả", @class = "form-control", required = "required" })
+                        @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Hình ảnh <span class="text-danger">1920x500</span></label>
+                        <div class="input-group">
+                            @Html.TextBoxFor(model => model.Url_Image, new { @id = "fieldID", @class = "form-control ", placeholder = "Đường dẫn hình ảnh" })
+                            @Html.ValidationMessageFor(x => x.Url_Image, "", new { @class = "text-danger" })
+                            <div class="input-group-append btn-upfle">
+                                <a data-toggle="modal" data-target="#myModal1" class="btn btn-dark " style="color: white">
+                                    <i class="fa fa-upload" style="color: white"></i>
+                                    Browse
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">HyperLink</label>
+                        @Html.EditorFor(model => model.Url_Link, new { htmlAttributes = new { @class = "form-control", placeholder = "#" } })
+                        @Html.ValidationMessageFor(x => x.Url_Link, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Số thứ tự</label>
+                        @Html.EditorFor(model => model.Serial, new { @id = "Serial", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Serial) }, required = "required" })
+                        @Html.ValidationMessageFor(x => x.Serial, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group text-right mb-0">
+                        <button class="btn btn-primary" type="submit">Lưu</button>
+                        <button type="button" onclick="window.location.href = '@Url.Action("BannerView","Banner")'" class="btn btn-secondary">Đóng</button>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Quản lý tệp tin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="/filemanager/dialog.php?type=1&fldr=&field_id=fieldID" frameborder="0" style="overflow:hidden; min-height:600px; height:100%;width:100%" height="100%" width="100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+

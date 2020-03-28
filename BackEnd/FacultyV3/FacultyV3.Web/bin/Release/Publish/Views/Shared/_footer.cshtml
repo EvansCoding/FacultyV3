@@ -1,0 +1,80 @@
+﻿
+<footer id="mu-footer">
+    <!-- start footer top -->
+    <div class="mu-footer-top">
+        <div class="container">
+            <div class="mu-footer-top-area">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="mu-footer-widget">
+                            <h4>Bộ môn đào tạo</h4>
+                            <ul>
+                                @if (ViewBag.Department != null)
+                                {
+                                    var department = ViewBag.Department as List<FacultyV3.Core.Models.Entities.Category_Menu>;
+                                    foreach (var item in department)
+                                    {
+                                        <li><a href="@item.Meta_Value">@item.Meta_Name</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="mu-footer-widget">
+                            <h4>Chương trình đào tạo</h4>
+                            <ul>
+                                <li><a href="">Các chương trình đại học</a></li>
+                                <li><a href="#">Các chương trình thạc sỹ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="mu-footer-widget">
+                            <h4>Hệ thống và tài nguyên</h4>
+                            <ul>
+                                <li><a href="">Hệ thống Quản lý Đào tạo</a></li>
+                                <li><a href="#">Các biểu mẫu sinh viên</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="mu-footer-widget">
+                            <h4>Liên hệ</h4>
+                            @if (ViewBag.Contact != null)
+                            {
+                                if (Enumerable.Count(ViewBag.Contact) > 0)
+                                {
+
+                                    var contact = ViewBag.Contact as List<FacultyV3.Core.Models.Entities.Contact>;
+                                    var phone = "tel:" + contact[4].Meta_Value;
+                                    var email = "mailto:" + contact[1].Meta_Value;
+                                    <address>
+                                        <p>@contact[0].Meta_Value</p>
+                                        <a href="@phone">
+                                            <p>Phone: @contact[4].Meta_Value</p>
+                                        </a>
+                                        <a href="@email">
+                                            <p>@contact[1].Meta_Value</p>
+                                        </a>
+                                    </address>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end footer top -->
+    <!-- start footer bottom -->
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="mu-footer-bottom-area">
+                <p>Copyright &copy; Khoa Kỹ Thuật - Công Nghệ</p>
+            </div>
+        </div>
+    </div>
+    <!-- end footer bottom -->
+</footer>

@@ -653,6 +653,7 @@ img {
 ====================*/
 
 #mu-abtus-counter {
+    background-attachment: fixed;
     background-image: url("/Content/Client/assets/img/count/milestones_background.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -664,7 +665,6 @@ img {
     opacity: 1;
     position: relative;
     object-fit: contain;
-
 }
 
 #mu-abtus-counter .mu-abtus-counter-area {

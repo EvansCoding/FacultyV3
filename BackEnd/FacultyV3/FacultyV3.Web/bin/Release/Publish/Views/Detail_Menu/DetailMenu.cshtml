@@ -1,0 +1,133 @@
+﻿@model  FacultyV3.Core.Models.Entities.Detail_Menu
+@{
+    ViewBag.Title = "DetailMenu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .mu-blog-description img {
+        background-size: inherit;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .mu-blog-description > ol > li > a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+</style>
+<!-- Page breadcrumb -->
+<section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-page-breadcrumb-area">
+                    <h2>@Model.Category_Menu.Meta_Name</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End breadcrumb -->
+<section id="mu-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <!-- start course content container -->
+                            <div class="mu-course-container mu-blog-single">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <article class="mu-blog-single-item">
+                                            <figure class="mu-blog-single-img">
+                                                @if (!Model.Url_Video.Equals("#"))
+                                                {
+
+                                                    var urlvideo = "https://www.youtube.com/embed/" + Model.Url_Video + "?rel=0&autoplay=1";
+                                                    <iframe id="videoIframe" width="100%" src="@urlvideo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                    @*<a class="mu-abtus-video" href="@urlvideo" target="mutube-video">
+                                                            <img src="@Model.Url_Image" alt="img" />
+                                                        </a>*@
+                                                }
+                                                else
+                                                {
+                                                    if (!Model.Url_Image.Equals("#"))
+                                                    {
+                                                        <a href="#"><img alt="img" src="@Model.Url_Image" /></a>
+                                                    }
+                                                }
+                                                <figcaption class="mu-blog-caption">
+                                                    <h3>
+                                                        <a href="#">@Model.Title</a>
+                                                    </h3>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="mu-blog-meta">
+                                                <a href="#">@Model.Account.FullName</a>
+                                                <a href="#">@Model.Update_At</a>
+
+                                            </div>
+                                            <div class="mu-blog-description">
+                                                @if (!Model.Url_LinkGoogle.Equals("#"))
+                                                {
+                                                    <hr />
+                                                    <div id="FileGoogleDrive" style="width: inherit">
+                                                        @Html.Raw(Model.Url_LinkGoogle)
+                                                        <hr />
+                                                    </div>
+                                                }
+                                                @Html.Raw(Model.Content)
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end course content container -->
+                            <!-- start related news item -->
+                            @*@{
+                                    Html.RenderAction("_relatedDetail", "DetailMenu");
+                                }*@
+                            <!-- end start related news item -->
+                        </div>
+
+                        <!--Start Left Category-->
+                        @{
+                            Html.RenderAction("_leftCategory", "Common");
+                        }
+                        <!--End Left Category-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Scripts.Render("~/script/jquery");
+<script>
+    // Resize video on news
+    var height = $("#videoIframe").width() / 1.7;
+    $(document).ready(function () {
+        $("#videoIframe").css({ height: height });
+
+        $(" .mu-blog-description ol li a").css({ "font-size": "16px" })
+        $(" .mu-blog-description ol li a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+
+        $(" .mu-blog-description ul li a").css({ "font-size": "16px" })
+        $(" .mu-blog-description ul li a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+        $(" .mu-blog-description p a").css({ "font-size": "16px" })
+        $(" .mu-blog-description p a").hover(function () {
+            $(this).css("color", "blue");
+        }, function () {
+            $(this).css("color", "#333");
+        });
+    });
+</script>
