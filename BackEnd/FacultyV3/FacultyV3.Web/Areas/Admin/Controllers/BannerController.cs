@@ -39,10 +39,8 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     var model = new BannerViewModel();
                     model.Title = data.Title;
-                    model.Title_Short = data.Title_Short;
                     model.Url_Image = data.Url_Image;
                     model.Url_Link = data.Url_Link;
-                    model.Description = data.Description;
                     model.Serial = data.Serial;
                     return PartialView("CRUDBanner", model);
                 }
@@ -61,9 +59,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 Banner banner = new Banner()
                 {
                     Title = model.Title,
-                    Title_Short = model.Title_Short,
                     Url_Image = model.Url_Image,
-                    Description = model.Description,
                     Url_Link = model.Url_Link,
                     Serial = model.Serial,
                     Create_At = DateTime.Now,
@@ -95,10 +91,8 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     var banner = bannerService.GetBannerByID(model.Id);
                     banner.Title = model.Title;
-                    banner.Title_Short = model.Title_Short;
                     banner.Url_Image = model.Url_Image;
                     banner.Url_Link = model.Url_Link;
-                    banner.Description = model.Description;
                     banner.Serial = model.Serial;
                     banner.Update_At = DateTime.Now;
                     context.SaveChanges();

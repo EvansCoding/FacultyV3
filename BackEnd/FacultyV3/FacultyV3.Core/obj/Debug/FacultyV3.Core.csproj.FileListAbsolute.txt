@@ -277,3 +277,7 @@ E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.c
 E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.csproj.CopyComplete
 E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.dll
 E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.pdb
+E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_19.resources
+E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_20.resources
+E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_21.resources
+E:\Website\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Debug\FacultyV3.Core.Migrations.Initialize_211.resources

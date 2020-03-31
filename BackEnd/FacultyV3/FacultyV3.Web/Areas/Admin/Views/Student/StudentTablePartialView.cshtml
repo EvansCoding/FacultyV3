@@ -33,10 +33,9 @@
             {
                 <tr>
                     <th scope="row">
-                        @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10))))
+                        @((Model.PageNumber <= 1 ? (index++) : (index++ + ((Model.PageNumber * 10) - 10))))
                     </th>
                     <td>@item.FullName</td>
-
                     <td>
                         <a href="#" target="_blank">
                             @if (item.Url_Image == null)
@@ -47,7 +46,6 @@
                             {
                                 <img src="@item.Url_Image" style="width: 150px; height: 120px" alt="@item.Url_Image" />
                             }
-
                         </a>
                     </td>
                     <td>@item.Serial</td>
@@ -60,18 +58,14 @@
                                 <a title="Chỉnh sửa" href="@uEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
                                     <i class="fa fa-edit" style="color: white"></i>
                                 </a>
-
                                 var uDelete = @Url.Action("Delete", "Student") + "/" + item.Id;
                                 var urluDelete = @"Delete('" + uDelete + "')";
-
                                 <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
                                     <i class="fa fa-trash" style="color: white"></i>
                                 </a>
                             }
                         </div>
-
                     </td>
-
                 </tr>
             }
         }

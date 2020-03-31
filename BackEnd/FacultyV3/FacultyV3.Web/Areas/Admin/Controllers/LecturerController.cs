@@ -45,6 +45,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     model.Phone = data.Phone;
                     model.Email = data.Email;
                     model.Serial = data.Serial;
+                    model.Code = data.Code;
                     model.Position = data.Position;
                     model.Academic_Rank = data.Academic_Rank;
                     model.Specialized = data.Specialized;
@@ -69,21 +70,22 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             {
                 Lecturer lecturer = new Lecturer()
                 {
-                    FullName = model.FullName,
-                    Degree = model.Degree,
-                    Url_Image = model.Url_Image,
-                    Url_Facebook = model.Url_Facebook,
-                    Phone = model.Phone,
-                    Email = model.Email,
+                    FullName = model.FullName != null ? model.FullName : "...",
+                    Degree = model.Degree != null ? model.Degree : "...",
+                    Url_Image = model.Url_Image != null ? model.Url_Image : "#",
+                    Url_Facebook = model.Url_Facebook != null ? model.Url_Facebook : "#",
+                    Phone = model.Phone != null ? model.Phone : "...",
+                    Email = model.Email != null ? model.Email : "...",
+                    Code = model.Code != null ? model.Code : "...",
                     Serial = model.Serial,
-                    Position = model.Position,
-                    Academic_Rank = model.Academic_Rank,
-                    Specialized = model.Specialized,
-                    Title = model.Title,
-                    Native_Land = model.Native_Land,
-                    Url_Scientific_Works = model.Url_Scientific_Works,
-                    Specialized_Research = model.Specialized_Research,
-                    Teaching = model.Teaching,
+                    Position = model.Position != null ? model.Position : "...",
+                    Academic_Rank = model.Academic_Rank != null ? model.Academic_Rank : "...",
+                    Specialized = model.Specialized != null ? model.Specialized : "...",
+                    Title = model.Title != null ? model.Title : "...",
+                    Native_Land = model.Native_Land != null ? model.Native_Land : "...",
+                    Url_Scientific_Works = model.Url_Scientific_Works != null ? model.Url_Scientific_Works : "#",
+                    Specialized_Research = model.Specialized_Research != null ? model.Specialized_Research : "...",
+                    Teaching = model.Teaching != null ? model.Teaching : "...",
                     Create_At = DateTime.Now,
                     Update_At = DateTime.Now
                 };
@@ -113,21 +115,22 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     var lecturer = lecturerService.GetLecturerByID(model.Id);
 
-                    lecturer.FullName = model.FullName;
-                    lecturer.Degree = model.Degree;
-                    lecturer.Url_Image = model.Url_Image;
-                    lecturer.Url_Facebook = model.Url_Facebook;
-                    lecturer.Phone = model.Phone;
-                    lecturer.Email = model.Email;
+                    lecturer.FullName = model.FullName != null ? model.FullName : "...";
+                    lecturer.Degree = model.Degree != null ? model.Degree : "...";
+                    lecturer.Url_Image = model.Url_Image != null ? model.Url_Image : "#";
+                    lecturer.Url_Facebook = model.Url_Facebook != null ? model.Url_Facebook : "#";
+                    lecturer.Phone = model.Phone != null ? model.Phone : "...";
+                    lecturer.Email = model.Email != null ? model.Email : "...";
                     lecturer.Serial = model.Serial;
-                    lecturer.Position = model.Position;
-                    lecturer.Academic_Rank = model.Academic_Rank;
-                    lecturer.Specialized = model.Specialized;
-                    lecturer.Title = model.Title;
-                    lecturer.Native_Land = model.Native_Land;
-                    lecturer.Url_Scientific_Works = model.Url_Scientific_Works;
-                    lecturer.Specialized_Research = model.Specialized_Research;
-                    lecturer.Teaching = model.Teaching;
+                    lecturer.Position = model.Position != null ? model.Position : "...";
+                    lecturer.Code = model.Code != null ? model.Code : "...";
+                    lecturer.Academic_Rank = model.Academic_Rank != null ? model.Academic_Rank : "...";
+                    lecturer.Specialized = model.Specialized != null ? model.Specialized : "...";
+                    lecturer.Title = model.Title != null ? model.Title : "...";
+                    lecturer.Native_Land = model.Native_Land != null ? model.Native_Land : "...";
+                    lecturer.Url_Scientific_Works = model.Url_Scientific_Works != null ? model.Url_Scientific_Works : "#";
+                    lecturer.Specialized_Research = model.Specialized_Research != null ? model.Specialized_Research : "...";
+                    lecturer.Teaching = model.Teaching != null ? model.Teaching : "...";
                     lecturer.Update_At = DateTime.Now;
 
                     context.SaveChanges();

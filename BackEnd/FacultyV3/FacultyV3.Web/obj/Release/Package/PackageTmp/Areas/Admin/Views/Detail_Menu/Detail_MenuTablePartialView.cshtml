@@ -35,7 +35,7 @@
             {
                 <tr>
                     <th scope="row">
-                        @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10))))
+                        @((Model.PageNumber <= 1 ? (index++) : (index++ + ((Model.PageNumber * 10) - 10))))
                     </th>
                     <td>
                         @item.Title

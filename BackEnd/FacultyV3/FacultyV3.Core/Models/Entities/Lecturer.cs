@@ -20,6 +20,7 @@ namespace FacultyV3.Core.Models.Entities
         public string Phone { get; set; }
         public string Email { get; set; }
         public int Serial { get; set; }
+        public string Code { get; set; }
         public string Position { get; set; }
         public string Academic_Rank { get; set; }
         public string Specialized { get; set; }

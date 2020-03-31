@@ -13,7 +13,7 @@
 
             //var url = Url.Action("DetailLecturer", "Lecturer", new { id = item.Id, Area = String.Empty });
 
-            var url = Url.RouteUrl("LECTURER DETAIL", new { title = utf8Convert.Instance.ToUrlFriendly(item.FullName), id = item.Id.ToString()});
+            var url = Url.RouteUrl("LECTURER DETAIL", new { title = utf8Convert.Instance.ToUrlFriendly(item.FullName), code = item.Code.Replace(".", "-").ToString() });
 
             <div class="col-md-3 col-sm-3">
                 <article class="mu-blog-single-item">

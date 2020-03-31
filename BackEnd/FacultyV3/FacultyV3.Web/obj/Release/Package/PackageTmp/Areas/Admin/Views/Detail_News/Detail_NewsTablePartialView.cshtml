@@ -20,6 +20,7 @@
             <th >
                 Danh mục
             </th>
+            <th>Tác giả</th>
             <th style="width:6%;">
                 Trạng thái
             </th>
@@ -36,7 +37,7 @@
             {
                 <tr>
                     <th scope="row">
-                        @((Model.PageNumber <= 1 ? (index++) : (index++ + (Model.PageNumber * 10))))
+                        @((Model.PageNumber <= 1 ? (index++) : (index++ + ((Model.PageNumber * 10) - 10))))
                     </th>
                     <td>
                         @item.Title
@@ -61,7 +62,7 @@
                     </td>
 
                     <td>@item.Category_News.Meta_Name</td>
-
+                    <td>@item.Account.FullName</td>
                     <td>
                         <div>
                             @{

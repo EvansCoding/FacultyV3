@@ -13,7 +13,7 @@
     <meta content="Evans" name="author">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="~/Content/Admin/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="~/Content/Client/assets/img/logo/logokonen.ico">
 
     <!-- App css -->
     @Styles.Render("~/login/css")
@@ -33,7 +33,7 @@
                             @using (@Html.BeginForm("LogOn", "Login", new { Area = "Admin" }))
                             {
                                 @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger", @style = "padding-bottom: 0px; " })
 
                                 <div class="form-group mb-3">
                                     <label for="emailaddress">Email <span class="text-danger">*</span></label>

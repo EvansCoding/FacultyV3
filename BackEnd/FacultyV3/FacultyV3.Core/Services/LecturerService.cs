@@ -38,6 +38,19 @@ namespace FacultyV3.Core.Services
             }
             return null;
         }
+
+        public Lecturer GetLecturerByCode(string code)
+        {
+            try
+            {
+                return context.Lecturers.Where(x => x.Code == code).Include(x => x.Training_Processes).SingleOrDefault();
+            }
+            catch (Exception)
+            {
+            }
+            return null;
+        }
+
         public List<Lecturer> GetStudentOrderBySerial(int amount)
         {
             try

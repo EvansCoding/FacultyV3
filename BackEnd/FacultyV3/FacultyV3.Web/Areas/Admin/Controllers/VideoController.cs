@@ -41,7 +41,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 {
                     var model = new VideoViewModel();
                     model.Title = data.Title;
-                    model.Description = data.Description;
                     model.Url_Image = data.Url_Image;
                     model.Url_Video = data.Url_Video;
                     model.Serial = data.Serial;
@@ -62,7 +61,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                 Video video = new Video()
                 {
                     Title = model.Title,
-                    Description = model.Description,
                     Url_Image = model.Url_Image,
                     Url_Video = model.Url_Video,
                     Serial = model.Serial,
@@ -97,7 +95,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     var Video = videoService.GetVideoByID(model.Id);
 
                     Video.Title = model.Title;
-                    Video.Description = model.Description;
                     Video.Url_Image = model.Url_Image;
                     Video.Url_Video = model.Url_Video;
                     Video.Serial = model.Serial;

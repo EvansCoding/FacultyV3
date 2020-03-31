@@ -240,6 +240,22 @@
     <Compile Include="Migrations\202003221258330_Initialize_18.designer.cs">
       <DependentUpon>202003221258330_Initialize_18.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003310642176_Initialize_19.cs" />
+    <Compile Include="Migrations\202003310642176_Initialize_19.designer.cs">
+      <DependentUpon>202003310642176_Initialize_19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003310645298_Initialize_20.cs" />
+    <Compile Include="Migrations\202003310645298_Initialize_20.designer.cs">
+      <DependentUpon>202003310645298_Initialize_20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003310659110_Initialize_21.cs" />
+    <Compile Include="Migrations\202003310659110_Initialize_21.designer.cs">
+      <DependentUpon>202003310659110_Initialize_21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003310915537_Initialize_211.cs" />
+    <Compile Include="Migrations\202003310915537_Initialize_211.designer.cs">
+      <DependentUpon>202003310915537_Initialize_211.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\About_Us.cs" />
     <Compile Include="Models\Entities\Account.cs" />
@@ -343,6 +359,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003221258330_Initialize_18.resx">
       <DependentUpon>202003221258330_Initialize_18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003310642176_Initialize_19.resx">
+      <DependentUpon>202003310642176_Initialize_19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003310645298_Initialize_20.resx">
+      <DependentUpon>202003310645298_Initialize_20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003310659110_Initialize_21.resx">
+      <DependentUpon>202003310659110_Initialize_21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003310915537_Initialize_211.resx">
+      <DependentUpon>202003310915537_Initialize_211.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

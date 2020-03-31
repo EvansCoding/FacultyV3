@@ -57,7 +57,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             try
             {
                 var stickey = confirgurationService.GetConfirgurationByID(model.Id);
-                stickey.Meta_Value = model.Meta_Value;
+                stickey.Meta_Value = model.Meta_Value != null? model.Meta_Value : "#" ;
                 context.SaveChanges();
                 return Json(new { success = true }, JsonRequestBehavior.AllowGet);
             }

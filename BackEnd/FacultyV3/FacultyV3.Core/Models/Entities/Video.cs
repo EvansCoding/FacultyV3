@@ -12,7 +12,6 @@ namespace FacultyV3.Core.Models.Entities
         }
         public Guid Id { get; set; }
         public string Title { get; set; }
-        public string Description { get; set; }
         public string Url_Video { get; set; }
         public string Url_Image { get; set; }
         public int  Serial { get; set; }

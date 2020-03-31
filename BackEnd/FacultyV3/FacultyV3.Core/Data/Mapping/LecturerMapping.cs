@@ -16,6 +16,7 @@ namespace FacultyV3.Core.Data.Mapping
             Property(x => x.Phone).IsRequired().HasMaxLength(12);
             Property(x => x.Email).IsRequired().HasMaxLength(100);
             Property(x => x.Serial).IsRequired();
+            Property(x => x.Code).IsOptional().HasMaxLength(50);
             Property(x => x.Position).IsOptional();
             Property(x => x.Academic_Rank).IsOptional();
             Property(x => x.Specialized).IsOptional();

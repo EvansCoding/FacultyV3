@@ -9,7 +9,6 @@ namespace FacultyV3.Web.ViewModels
 
         [AllowHtml]
         public string Content { get; set; }
-        public string Url_Image { get; set; }
         public string Url_Video { get; set; }
         public DateTime Create_At { get; set; }
         public DateTime Update_At { get; set; }

@@ -13,10 +13,12 @@ namespace FacultyV3.Core.Services
     public class DetailNewsService : IDetailNewsService
     {
         private IDataContext context;
+        private readonly IAccountService accountService;
 
-        public DetailNewsService(IDataContext context)
+        public DetailNewsService(IAccountService accountService, IDataContext context)
         {
             this.context = context;
+            this.accountService = accountService;
         }
 
         #region  Area Admin
@@ -24,6 +26,56 @@ namespace FacultyV3.Core.Services
         {
             try
             {
+                var user = accountService.GetAccountByID(account);
+                if (user.Role.Name.Equals(Constants.Constant.ADMIN))
+                {
+                    if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(state) && string.IsNullOrEmpty(category))
+                    {
+                        return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
+                    }
+
+                    if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(state) && !string.IsNullOrEmpty(category))
+                    {
+                        bool status = state == Status.Publish.ToString() ? true : false;
+                        try
+                        {
+                            Guid CategoryID = new Guid(category);
+
+                            return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Title.Contains(name) && x.Category_News.Id == CategoryID && x.Status == status).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(name) || !string.IsNullOrEmpty(state) || !string.IsNullOrEmpty(category))
+                    {
+                        var posts = context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToList();
+
+                        if (!string.IsNullOrEmpty(name))
+                            posts = posts.Where(x => x.Title.Contains(name)).ToList();
+                        if (!string.IsNullOrEmpty(state))
+                        {
+                            bool status = state == Status.Publish.ToString() ? true : false;
+                            posts = posts.Where(x => x.Status == status).ToList();
+                        }
+                        if (!string.IsNullOrEmpty(category))
+                        {
+                            try
+                            {
+                                Guid CategoryID = new Guid(category);
+                                posts = posts.Where(x => x.Category_News.Id == CategoryID).ToList();
+                            }
+                            catch (Exception)
+                            {
+                            }
+                        }
+                        return posts.ToPagedList(page, pageSize);
+                    }
+
+                    return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
+                }
+
                 if (string.IsNullOrEmpty(name) && string.IsNullOrEmpty(state) && string.IsNullOrEmpty(category))
                 {
                     return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Account.Id == new Guid(account)).OrderByDescending(x => x.Update_At).ToPagedList(page, pageSize);
@@ -83,7 +135,7 @@ namespace FacultyV3.Core.Services
                 return context.Detail_News
                         .Include(x => x.Account)
                         .Include(x => x.Category_News)
-                        .Where(x => x.Category_News.Meta_Name.Equals(category) && x.Status).OrderByDescending(x => new { x.Serial , x.Update_At}).ToPagedList(page, pageSize);
+                        .Where(x => x.Category_News.Meta_Name.Equals(category) && x.Status).OrderByDescending(x => new { x.Serial, x.Update_At }).ToPagedList(page, pageSize);
 
             }
             catch (Exception)
@@ -142,7 +194,7 @@ namespace FacultyV3.Core.Services
         {
             try
             {
-                return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Status).OrderByDescending(x => new { x.Update_At, x.Serial}).Take(amount).ToList();
+                return context.Detail_News.Include(x => x.Category_News).Include(x => x.Account).Where(x => x.Status).OrderByDescending(x => new { x.Update_At, x.Serial }).Take(amount).ToList();
             }
             catch (Exception)
             {

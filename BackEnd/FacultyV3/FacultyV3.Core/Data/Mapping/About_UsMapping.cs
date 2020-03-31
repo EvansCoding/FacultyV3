@@ -10,7 +10,6 @@ namespace FacultyV3.Core.Data.Mapping
             HasKey(x => x.Id);
             Property(x => x.Id).IsRequired();
             Property(x => x.Content).IsRequired();
-            Property(x => x.Url_Image).IsRequired().HasMaxLength(300);
             Property(x => x.Url_Video).IsRequired().HasMaxLength(300);
             Property(x => x.Create_At).IsRequired();
             Property(x => x.Update_At).IsRequired();

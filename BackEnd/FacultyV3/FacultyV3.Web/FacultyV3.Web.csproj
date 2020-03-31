@@ -1125,7 +1125,11 @@
     <Content Include="Views\Confirguration\MessengerView.cshtml" />
     <Content Include="Views\Confirguration\MetaView.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

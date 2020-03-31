@@ -653,6 +653,7 @@ img {
 ====================*/
 
 #mu-abtus-counter {
+    background-attachment: fixed;
     background-image: url("/Content/Client/assets/img/count/milestones_background.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -664,7 +665,6 @@ img {
     opacity: 1;
     position: relative;
     object-fit: contain;
-
 }
 
 #mu-abtus-counter .mu-abtus-counter-area {
@@ -2647,6 +2647,14 @@ img {
 }
 
 @media (max-width: 480px) {
+
+    .col-md-6 .mu-blog-single-item .mu-blog-single-img a img {
+        height: 180px !important;
+    }
+
+    .col-md-3 .mu-blog-single-item .mu-blog-single-img a img {
+        height:  340px !important;
+    }
     #mu-header .mu-header-area .mu-header-top-left .mu-top-email {
         font-size: 12px;
         margin-top: 3px;

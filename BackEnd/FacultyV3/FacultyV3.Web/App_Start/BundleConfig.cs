@@ -22,14 +22,15 @@ namespace FacultyV3.Web
                       "~/Content/Admin/assets/css/app.min.css")
                       .Include("~/Content/Admin/assets/css/icons.min.css"));
 
+            // Client
             bundles.Add(new ScriptBundle("~/script/client").Include(
                     "~/Content/Client/assets/js/jquery.min.js",
                     "~/Content/Client/assets/js/bootstrap.js",
+                    "~/Content/Client/assets/js/slick.js",
                     "~/Content/Client/assets/js/waypoints.js",
                     "~/Content/Client/assets/js/jquery.counterup.js",
                     "~/Content/Client/assets/js/jquery.mixitup.js",
                     "~/Content/Client/assets/js/jquery.fancybox.pack.js",
-                    "~/Content/Client/assets/js/slick.js",
                     "~/Content/Client/assets/js/custom.js"
                     ));
 
@@ -63,9 +64,9 @@ namespace FacultyV3.Web
                     "~/Content/Admin/assets/js/vendor.min.js",
                     "~/Content/Admin/assets/js/app.min.js"
                 ));
-            bundles.Add(new ScriptBundle("~/script/slick").Include(
-                    "~/Content/Client/assets/js/slick.js"
-            ));
+            //bundles.Add(new ScriptBundle("~/script/slick").Include(
+            //        "~/Content/Client/assets/js/slick.js"
+            //));
 
             BundleTable.EnableOptimizations = true;
         }

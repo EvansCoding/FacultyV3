@@ -46,8 +46,8 @@
                 asNavFor: null,
                 prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
                 nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
-                autoplay: false,
-                autoplaySpeed: 3000,
+                autoplay: true,
+                autoplaySpeed: 5000,
                 centerMode: false,
                 centerPadding: '50px',
                 cssEase: 'ease',
@@ -75,7 +75,7 @@
                 slidesPerRow: 1,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                speed: 500,
+                speed: 1000,
                 swipe: true,
                 swipeToSlide: false,
                 touchMove: true,
@@ -1928,7 +1928,6 @@
         }
         _.transformsEnabled = _.options.useTransform && (_.animType !== null && _.animType !== false);
     };
-
 
     Slick.prototype.setSlideClasses = function(index) {
 

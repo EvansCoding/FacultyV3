@@ -3,6 +3,8 @@ using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
 using System;
 using System.Web.Mvc;
+using System.Linq;
+
 
 namespace FacultyV3.Web.Controllers
 {
@@ -40,7 +42,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.NEWSS, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -54,7 +56,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.WORK, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -68,7 +70,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.YOUTH_GROUP, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -82,7 +84,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.NEWS_FROM_THE_MINISTRY, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -96,7 +98,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.NEWS_FROM_FACULTY, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -110,7 +112,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.NEWS_FROM_UNIVERSITY, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -124,7 +126,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.NEWS_FROM_PARTY_CELL, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)
@@ -138,7 +140,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailNewsService.PageListFE(Constant.NEWS_FROM_UNION, page, pageSize);
-                if (model != null)
+                if (model.Count() > 0)
                     return View("ListDetailNews", model);
             }
             catch (System.Exception)

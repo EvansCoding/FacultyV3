@@ -38,11 +38,11 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult DetailLecturer(string Id = "")
+        public ActionResult DetailLecturer(string code)
         {
             try
             {
-                var model = lecturerService.GetLecturerByID(Id);
+                var model = lecturerService.GetLecturerByCode(code.Replace("-", "."));
                 if (model != null)
                     return PartialView("DetailLecturer", model);
             }

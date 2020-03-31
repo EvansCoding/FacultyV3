@@ -32,7 +32,7 @@ namespace FacultyV3.Core.Constants
         public const string NEWS_FROM_UNIVERSITY = "TIN TỪ TRƯỜNG";
         public const string YOUTH_GROUP = "Tin từ Đoàn thanh niên";
         public const string NEWS_FROM_PARTY_CELL = "TIN TỪ CHI BỘ";
-        public const string NEWS_FROM_UNION = "TIN TỪ CÔNG ĐOÀN";
+        public const string NEWS_FROM_UNION = "Tin từ Công đoàn";
 
 
         public const string MESSENGER_NAME = "Messenger";

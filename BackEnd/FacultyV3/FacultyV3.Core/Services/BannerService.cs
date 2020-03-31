@@ -51,9 +51,9 @@ namespace FacultyV3.Core.Services
         {
             if (!string.IsNullOrEmpty(name))
             {
-                return context.Banners.Where(x => x.Title_Short.Contains(name)).OrderBy(x => x.Title_Short).ToPagedList(page, pageSize);
+                return context.Banners.Where(x => x.Title.Contains(name)).OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
             }
-            return context.Banners.OrderBy(x => x.Title_Short).ToPagedList(page, pageSize);
+            return context.Banners.OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
         }
 
         public List<Banner> GetBannersByName(string name)
@@ -61,7 +61,7 @@ namespace FacultyV3.Core.Services
             try
             {
                 return context.Banners
-                    .Where(x => x.Title_Short == name)
+                    .Where(x => x.Title == name)
                     .Select(x => x).ToList();
             }
             catch (Exception)
@@ -76,7 +76,7 @@ namespace FacultyV3.Core.Services
             try
             {
                 return context.Banners
-                    .Where(x => x.Title_Short == name).SingleOrDefault();
+                    .Where(x => x.Title == name).SingleOrDefault();
             }
             catch (Exception)
             {
