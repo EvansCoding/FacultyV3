@@ -45,7 +45,7 @@ namespace FacultyV3.Core.Services
             {
                 return context.Category_Menus.Include(x => x.Parent)
                                 .Where(x => x.Parent.Meta_Name == name)
-                                .OrderBy(x => x.Serial)
+                                .OrderByDescending(x => x.Serial)
                                 .Select(x => x).ToList();
             }
             catch (Exception)

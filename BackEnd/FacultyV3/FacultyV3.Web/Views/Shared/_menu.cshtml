@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="@Url.Action("Index","Home", new { Area = String.Empty})">
-                    <img class="image-logo" src="~/Content/Client/assets/img/Banner1.jpg" alt="logoKhoa" />
+                    <img class="image-logo" src="~/Content/Client/assets/img/Banner1.jpg" alt="logoKhoa" style="margin-left:5px"/>
                 </a>
             </div>  
 
@@ -124,7 +124,12 @@
                             }
                         }
                     </li>
+                    @{ 
+                        var language = ViewBag.Language as FacultyV3.Core.Models.Entities.Stickey;
+                    }
+                   <a class="icon-language-en"href="@language.Meta_Value" style="padding-left: 1px; padding-right: 1px"><img src="~/Content/Client/assets/img/logo/uk.png" style="height: 20px; width: 20px; margin-top: 24px; padding: 0"/></a>
                 </ul>
+
             </div>
             <!--/.nav-collapse -->
         </div>

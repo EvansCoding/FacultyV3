@@ -423,6 +423,7 @@
     <Content Include="Content\Admin\assets\libs\x-editable\bootstrap-editable.css" />
     <Content Include="Content\Admin\assets\libs\x-editable\bootstrap-editable.min.js" />
     <Content Include="Content\Client\assets\css\bootstrap.css" />
+    <Content Include="Content\Client\assets\css\buttonAnimation.css" />
     <Content Include="Content\Client\assets\css\font-awesome.css" />
     <Content Include="Content\Client\assets\css\jquery.fancybox.css" />
     <Content Include="Content\Client\assets\css\slick.css" />
@@ -494,6 +495,7 @@
     <Content Include="Content\Client\assets\img\logo.png" />
     <Content Include="Content\Client\assets\img\logo\logokonen.ico" />
     <Content Include="Content\Client\assets\img\logo\logokonen.png" />
+    <Content Include="Content\Client\assets\img\logo\uk.png" />
     <Content Include="Content\Client\assets\img\logo\vietnam-flag-icon-32.png" />
     <Content Include="Content\Client\assets\img\slider\1.jpg" />
     <Content Include="Content\Client\assets\img\slider\2.jpg" />

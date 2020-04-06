@@ -140,6 +140,9 @@ namespace FacultyV3.Web.Controllers
             if (alumni != null)
                 ViewBag.alumni = alumni;
 
+            var language = stickyService.GetStickyByID("EE5AC888-CBD3-4843-8775-AB7300D6369A");
+            if (language != null)
+                ViewBag.Language = language;
             return PartialView();
         }
 
