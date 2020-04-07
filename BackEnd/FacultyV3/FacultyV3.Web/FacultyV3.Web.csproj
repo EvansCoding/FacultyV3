@@ -442,25 +442,12 @@
     <Content Include="Content\Client\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Client\assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Client\assets\img\1920x1080_dai-hoc-dong-thap.jpg" />
-    <Content Include="Content\Client\assets\img\2767734.jpg" />
-    <Content Include="Content\Client\assets\img\about-us.jpg" />
-    <Content Include="Content\Client\assets\img\ads\Banner1.jpg" />
-    <Content Include="Content\Client\assets\img\ads\Banner2.jpg" />
     <Content Include="Content\Client\assets\img\ads\close-icon.png" />
     <Content Include="Content\Client\assets\img\Banner1.jpg" />
-    <Content Include="Content\Client\assets\img\blog\blog-1.jpg" />
-    <Content Include="Content\Client\assets\img\blog\blog-2.jpg" />
-    <Content Include="Content\Client\assets\img\blog\blog-3.jpg" />
-    <Content Include="Content\Client\assets\img\contact\image_1.png" />
-    <Content Include="Content\Client\assets\img\contact\image_2.jpg" />
-    <Content Include="Content\Client\assets\img\counter-bg.jpg" />
-    <Content Include="Content\Client\assets\img\count\2729411.jpg" />
-    <Content Include="Content\Client\assets\img\count\bannerCount.jpg" />
     <Content Include="Content\Client\assets\img\count\milestones_background.jpg" />
     <Content Include="Content\Client\assets\img\courses\1.jpg" />
     <Content Include="Content\Client\assets\img\courses\2.jpg" />
     <Content Include="Content\Client\assets\img\courses\3.jpg" />
-    <Content Include="Content\Client\assets\img\favicon.ico" />
     <Content Include="Content\Client\assets\img\gallery\big\1.jpg" />
     <Content Include="Content\Client\assets\img\gallery\big\2.jpg" />
     <Content Include="Content\Client\assets\img\gallery\big\3.jpg" />
@@ -476,40 +463,12 @@
     <Content Include="Content\Client\assets\img\gallery\fancybox_overlay.png" />
     <Content Include="Content\Client\assets\img\gallery\fancybox_sprite%402x.png" />
     <Content Include="Content\Client\assets\img\gallery\fancybox_sprite.png" />
-    <Content Include="Content\Client\assets\img\gallery\small\1.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\2.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\3.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\4.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\5.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\6.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\7.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\8.jpg" />
-    <Content Include="Content\Client\assets\img\gallery\small\9.jpg" />
-    <Content Include="Content\Client\assets\img\image_1.png" />
-    <Content Include="Content\Client\assets\img\image_2.png" />
-    <Content Include="Content\Client\assets\img\image_3.png" />
-    <Content Include="Content\Client\assets\img\image_4.png" />
-    <Content Include="Content\Client\assets\img\image_5.png" />
-    <Content Include="Content\Client\assets\img\image_6.png" />
     <Content Include="Content\Client\assets\img\loader.gif" />
-    <Content Include="Content\Client\assets\img\logo.png" />
     <Content Include="Content\Client\assets\img\logo\logokonen.ico" />
     <Content Include="Content\Client\assets\img\logo\logokonen.png" />
     <Content Include="Content\Client\assets\img\logo\uk.png" />
     <Content Include="Content\Client\assets\img\logo\vietnam-flag-icon-32.png" />
-    <Content Include="Content\Client\assets\img\slider\1.jpg" />
-    <Content Include="Content\Client\assets\img\slider\2.jpg" />
-    <Content Include="Content\Client\assets\img\slider\3.jpg" />
     <Content Include="Content\Client\assets\img\slider\ajax-loader.gif" />
-    <Content Include="Content\Client\assets\img\slider\image_6.png" />
-    <Content Include="Content\Client\assets\img\teachers\teacher-01.png" />
-    <Content Include="Content\Client\assets\img\teachers\teacher-02.png" />
-    <Content Include="Content\Client\assets\img\teachers\teacher-03.png" />
-    <Content Include="Content\Client\assets\img\teachers\teacher-04.png" />
-    <Content Include="Content\Client\assets\img\testimonial-1.png" />
-    <Content Include="Content\Client\assets\img\testimonial-2.png" />
-    <Content Include="Content\Client\assets\img\testimonial-3.png" />
-    <Content Include="Content\Client\assets\img\testimonial-bg.jpg" />
     <Content Include="Content\Client\assets\js\bootstrap.js" />
     <Content Include="Content\Client\assets\js\custom.js" />
     <Content Include="Content\Client\assets\js\jquery.counterup.js" />
@@ -1001,6 +960,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Client\assets\img\New folder\" />
+    <Folder Include="Content\Client\assets\img\teachers\" />
     <Folder Include="Media\Thumbs\" />
     <Folder Include="Media\Uploads\" />
   </ItemGroup>
@@ -1132,6 +1092,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

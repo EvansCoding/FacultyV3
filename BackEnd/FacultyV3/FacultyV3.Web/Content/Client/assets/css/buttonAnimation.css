@@ -45,7 +45,7 @@ footer1 {
         margin: 5px;
     }*/
 
-        /*footer a:hover {
+/*footer a:hover {
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -108,8 +108,8 @@ button {
 .button__wrapper {
     display: inline-block;
     position: relative;
-    width: 140px;
-    height: 30px;
+    width: 100px;
+    height: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
