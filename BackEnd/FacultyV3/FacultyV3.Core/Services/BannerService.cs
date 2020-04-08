@@ -21,10 +21,10 @@ namespace FacultyV3.Core.Services
         {
             try
             {
-                return context.Banners
-                    .OrderBy(x => x.Serial)
-                    .Select(x => x).Take(amount)
-                    .ToList();
+                var model = context.Banners.OrderByDescending(x => x.Update_At).ToList();
+
+                var data = model.OrderByDescending(x => x.Serial).Select(x => x).Take(amount).ToList();
+                return data;
             }
             catch (Exception)
             {

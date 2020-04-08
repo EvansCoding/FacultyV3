@@ -47,7 +47,7 @@
                 prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
                 nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
                 autoplay: true,
-                autoplaySpeed: 5000,
+                autoplaySpeed: 15000,
                 centerMode: false,
                 centerPadding: '50px',
                 cssEase: 'ease',

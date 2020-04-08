@@ -656,7 +656,7 @@ img {
     background-attachment: fixed;
     background-image: url("/Content/Client/assets/img/count/milestones_background.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     display: inline;
     float: left;
     padding: 50px 0;

@@ -193,19 +193,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:16</publishTime>
     </File>
     <File Include="bin/FacultyV3.Core.dll">
-      <publishTime>04/06/2020 23:03:15</publishTime>
+      <publishTime>04/08/2020 10:36:18</publishTime>
     </File>
     <File Include="bin/FacultyV3.Core.dll.config">
       <publishTime>04/05/2020 17:24:11</publishTime>
     </File>
     <File Include="bin/FacultyV3.Core.pdb">
-      <publishTime>04/06/2020 23:03:15</publishTime>
+      <publishTime>04/08/2020 10:36:18</publishTime>
     </File>
     <File Include="bin/FacultyV3.Web.dll">
-      <publishTime>04/06/2020 23:05:03</publishTime>
+      <publishTime>04/08/2020 10:36:18</publishTime>
     </File>
     <File Include="bin/FacultyV3.Web.pdb">
-      <publishTime>04/06/2020 23:05:03</publishTime>
+      <publishTime>04/08/2020 10:36:18</publishTime>
     </File>
     <File Include="bin/Hangfire.Core.dll">
       <publishTime>04/05/2020 17:24:16</publishTime>
@@ -1105,7 +1105,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/06/2020 15:08:14</publishTime>
     </File>
     <File Include="Content/Client/assets/css/buttonAnimation.css">
-      <publishTime>04/06/2020 20:14:41</publishTime>
+      <publishTime>04/08/2020 09:41:55</publishTime>
     </File>
     <File Include="Content/Client/assets/css/font-awesome.css">
       <publishTime>04/05/2020 17:24:11</publishTime>
@@ -1117,7 +1117,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:11</publishTime>
     </File>
     <File Include="Content/Client/assets/css/style.css">
-      <publishTime>04/06/2020 18:57:03</publishTime>
+      <publishTime>04/07/2020 12:23:12</publishTime>
     </File>
     <File Include="Content/Client/assets/css/swc.css">
       <publishTime>04/05/2020 17:24:11</publishTime>
@@ -1273,7 +1273,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:12</publishTime>
     </File>
     <File Include="Content/Client/assets/js/custom.js">
-      <publishTime>04/05/2020 17:24:12</publishTime>
+      <publishTime>04/07/2020 12:40:43</publishTime>
     </File>
     <File Include="Content/Client/assets/js/jquery.counterup.js">
       <publishTime>04/05/2020 17:24:12</publishTime>
@@ -1288,7 +1288,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:12</publishTime>
     </File>
     <File Include="Content/Client/assets/js/slick.js">
-      <publishTime>04/05/2020 17:24:12</publishTime>
+      <publishTime>04/07/2020 12:47:52</publishTime>
     </File>
     <File Include="Content/Client/assets/js/swc.js">
       <publishTime>04/05/2020 17:24:12</publishTime>
@@ -2677,7 +2677,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:12</publishTime>
     </File>
     <File Include="Views/Home/_slider.cshtml">
-      <publishTime>04/06/2020 20:13:08</publishTime>
+      <publishTime>04/08/2020 10:07:40</publishTime>
     </File>
     <File Include="Views/Home/_student.cshtml">
       <publishTime>04/05/2020 17:24:12</publishTime>

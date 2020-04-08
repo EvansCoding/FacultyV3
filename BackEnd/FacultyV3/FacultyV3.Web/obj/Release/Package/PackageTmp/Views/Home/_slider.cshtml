@@ -10,11 +10,11 @@
         position: absolute;
     }
 
-    div .button-pulse {
+    .button-jittery {
         margin-top: 10px;
         position: absolute;
         float: left;
-        margin-left: 10px;
+        margin-left: 20px;
     }
 
     /*.button__wrapper {
@@ -33,18 +33,10 @@
                         <img src="@item.Url_Image" alt="img" />
                     </figure>
                 </div>
-                @*<div class="mu-slider-content">
-                        <a href="#" class="mu-read-more-btn" style="margin-top: 260px; " tabindex="0">Liên kết</a>
-                    </div>*@
                 @if (item.Url_Link != null)
                 {
-                    <div class="item button-pulse" style="--bg-color: #179BD7;">
-                        <div class="button__wrapper">
-                            <div class="pulsing"></div>
-
-                            <button style="padding: 0;">Click vào ảnh!</button>
-
-                        </div>
+                    <div class="item button-jittery" style="--bg-color: #f1c40f;">
+                        <button style="background-color: #0376C3">@item.Title</button>
                     </div>
                 }
 

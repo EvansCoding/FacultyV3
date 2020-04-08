@@ -96,11 +96,11 @@ jQuery(function($) {
         dots: true,
         arrows: false,
         infinite: true,
-        speed: 300,
+        speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 2,
         autoplay: true,
-        autoplaySpeed: 2500,
+        autoplaySpeed: 10000,
         responsive: [{
                 breakpoint: 1024,
                 settings: {
@@ -149,7 +149,7 @@ jQuery(function($) {
 
     jQuery(".counter").counterUp({
         delay: 10,
-        time: 1000
+        time: 500
     });
 
     /* ----------------------------------------------------------- */

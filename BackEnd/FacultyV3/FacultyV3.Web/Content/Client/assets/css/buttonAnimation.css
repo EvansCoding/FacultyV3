@@ -73,7 +73,7 @@ footer1 {
         align-items: center;
         justify-content: center;
         height: 10vh;
-        flex-wrap: wrap;
+        /*flex-wrap: wrap;*/
         background: var(--bg-color);
     }
 
@@ -108,9 +108,10 @@ button {
 .button__wrapper {
     display: inline-block;
     position: relative;
-    width: 100px;
+    /*width: 100px;*/
+    max-width: 400px;
     height: 28px;
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
 }
@@ -118,6 +119,7 @@ button {
 .button-pulse button {
     background: var(--bg-color);
     width: 100%;
+    max-width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
