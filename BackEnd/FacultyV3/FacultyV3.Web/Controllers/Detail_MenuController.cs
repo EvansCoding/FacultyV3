@@ -102,7 +102,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListAdmission(int page = 1, int pageSize = Constant.PAGESIZE)
+        public ActionResult ListAdmission(int page = 1, int pageSize = Constant.PAGESIZEADMISSION)
         {
             try
             {

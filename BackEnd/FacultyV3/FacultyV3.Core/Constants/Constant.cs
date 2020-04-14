@@ -49,6 +49,8 @@ namespace FacultyV3.Core.Constants
 
         public const int SERIALACCEPT = 84;
         public const int PAGESIZE = 4;
+        public const int PAGESIZEADMISSION = 6;
+
 
         public static IDictionary<string, string> ListActionPage = new Dictionary<string, string>() {
 
