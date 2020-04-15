@@ -33,7 +33,19 @@
 
 
 /* BASE - Base tyles, Variables, Mixins, etc. */
+body::-webkit-scrollbar {
+    width: 1em;
+}
 
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    
+}
 body {
     background-color: #ffffff;
     font-family: Arial, sans-serif;
@@ -1237,13 +1249,13 @@ img {
     width: 100%;
 }
 
-.mu-blog-single-item .mu-blog-single-img .mu-blog-caption h3 a {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-}
+    .mu-blog-single-item .mu-blog-single-img .mu-blog-caption h3 a {
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
 
 .mu-blog-single-item .mu-blog-meta {
     display: inline;
@@ -2615,6 +2627,44 @@ img {
     #mu-error .mu-error-area h2 {
         font-size: 150px;
         line-height: 1.5;
+    }
+
+    .img-news {
+        width: 100% !important;
+        height: 90px !important;
+
+    }
+
+    .image-content {
+        width: 30% !important;
+        float: left;
+        padding: 0;
+        height: 100% !important;
+        margin-right: 6px !important;
+    }
+    .main-content-news {
+        width: 68% !important;
+        display: inline-block;
+        padding: 0;
+    }
+    .inline-block-content{
+        float: left;
+    }
+    .mu-course-content-area .row{
+        margin: 0 -10px !important;
+    }
+
+    .mu-blog-single-img a img {
+        height: 200px !important;
+    }
+    .title-content-new a{
+       font-size: 14px;
+    }
+    .mu-blog-caption h3 a{
+        font-size: 20px;
+    }
+    .mu-blog-meta span {
+        font-size: 14px !important;
     }
 }
 

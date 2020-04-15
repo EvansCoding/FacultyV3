@@ -60,7 +60,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListEducation_Program(int page = 1, int pageSize = Constant.PAGESIZE)
+        public ActionResult ListEducation_Program(int page = 1, int pageSize = 6)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace FacultyV3.Web.Controllers
             return View("~/Views/Shared/Error.cshtml");
         }
 
-        public ActionResult ListTraining_Sector(int page = 1, int pageSize = Constant.PAGESIZE)
+        public ActionResult ListTraining_Sector(int page = 1, int pageSize = 6)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace FacultyV3.Web.Controllers
             {
                 var model = detailMenuService.PageListFE(Constant.RESOURCE, page, pageSize);
                 if (model != null)
-                    return View("ListDetailMenu", model);
+                    return View("ListDetailResource", model);
             }
             catch (System.Exception)
             {

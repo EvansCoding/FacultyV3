@@ -1093,6 +1093,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
+    <Content Include="Views\Detail_Menu\ListDetailResource.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

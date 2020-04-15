@@ -38,17 +38,15 @@
                                         }
                                         <figcaption class="mu-latest-course-imgcaption">
                                             <a href="#">@item.Account.FullName</a>
-                                            <span><i class="fa fa-clock-o"></i>@item.Update_At.ToShortDateString()</span>
+                                            <span><i class="fa fa-clock-o"></i>@item.Update_At.ToString("dd/MM/yyyy")</span>
                                         </figcaption>
                                     </figure>
-                                    <div class="mu-latest-course-single-content" style="height: 180px">
-                                        <h4 style="height: 64%; text-align: justify; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                                    <div class="mu-latest-course-single-content" style="height: 144px">
+                                        <h4 style="height: 100%; text-align: left; font-family:Arial, Helvetica, sans-serif; font-size: 16px; padding-bottom: 20px">
 
                                             <a href="@url" class="block-ellipsis" style="height: 100%">@item.Title</a>
                                         </h4>
-                                        <div class="mu-latest-course-single-contbottom" style="margin-top: 0px">
-                                            <a class="mu-course-details" href="@url">Chi tiết</a>
-                                        </div>
+                   
                                     </div>
                                 </div>
                             </div>

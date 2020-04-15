@@ -56,8 +56,8 @@
                                                     var urlvideo = "https://www.youtube.com/embed/" + Model.Url_Video + "?rel=0&autoplay=1";
                                                     <iframe id="videoIframe" width="100%" src="@urlvideo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                     @*<a class="mu-abtus-video" href="@urlvideo" target="mutube-video">
-                                                            <img src="@Model.Url_Image" alt="img" />
-                                                        </a>*@
+                    <img src="@Model.Url_Image" alt="img" />
+                </a>*@
                                                 }
                                                 else
                                                 {
@@ -72,9 +72,9 @@
                                                     </h3>
                                                 </figcaption>
                                             </figure>
-                                            <div class="mu-blog-meta">
-                                                <a href="#">@Model.Account.FullName</a>
-                                                <a href="#">@Model.Update_At</a>
+                                            <div class="mu-blog-meta" style="color: #646464">
+
+                                                <span> @Model.Account.FullName  | <i class="fa fa-clock-o"></i>@Model.Update_At.DayOfWeek,  @Model.Update_At.ToString("dd/MM/yyyy") | @Model.Update_At.ToString("HH:mm")</span>
 
                                             </div>
                                             <div class="mu-blog-description">

@@ -193,19 +193,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:16</publishTime>
     </File>
     <File Include="bin/FacultyV3.Core.dll">
-      <publishTime>04/08/2020 10:36:18</publishTime>
+      <publishTime>04/15/2020 18:03:01</publishTime>
     </File>
     <File Include="bin/FacultyV3.Core.dll.config">
       <publishTime>04/05/2020 17:24:11</publishTime>
     </File>
     <File Include="bin/FacultyV3.Core.pdb">
-      <publishTime>04/08/2020 10:36:18</publishTime>
+      <publishTime>04/15/2020 18:03:01</publishTime>
     </File>
     <File Include="bin/FacultyV3.Web.dll">
-      <publishTime>04/08/2020 10:36:18</publishTime>
+      <publishTime>04/15/2020 18:03:02</publishTime>
     </File>
     <File Include="bin/FacultyV3.Web.pdb">
-      <publishTime>04/08/2020 10:36:18</publishTime>
+      <publishTime>04/15/2020 18:03:02</publishTime>
     </File>
     <File Include="bin/Hangfire.Core.dll">
       <publishTime>04/05/2020 17:24:16</publishTime>
@@ -1117,7 +1117,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:11</publishTime>
     </File>
     <File Include="Content/Client/assets/css/style.css">
-      <publishTime>04/07/2020 12:23:12</publishTime>
+      <publishTime>04/15/2020 17:27:29</publishTime>
     </File>
     <File Include="Content/Client/assets/css/swc.css">
       <publishTime>04/05/2020 17:24:11</publishTime>
@@ -2641,19 +2641,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:12</publishTime>
     </File>
     <File Include="Views/Detail_Menu/DetailMenu.cshtml">
-      <publishTime>04/06/2020 15:49:31</publishTime>
+      <publishTime>04/15/2020 14:38:52</publishTime>
     </File>
     <File Include="Views/Detail_Menu/ListDetailMenu.cshtml">
-      <publishTime>04/05/2020 17:24:12</publishTime>
+      <publishTime>04/15/2020 17:27:01</publishTime>
+    </File>
+    <File Include="Views/Detail_Menu/ListDetailResource.cshtml">
+      <publishTime>04/15/2020 16:11:16</publishTime>
     </File>
     <File Include="Views/Detail_Menu/_relatedDetail.cshtml">
       <publishTime>04/05/2020 17:24:12</publishTime>
     </File>
     <File Include="Views/Detail_News/DetailNews.cshtml">
-      <publishTime>04/06/2020 15:49:53</publishTime>
+      <publishTime>04/15/2020 14:35:43</publishTime>
     </File>
     <File Include="Views/Detail_News/ListDetailNews.cshtml">
-      <publishTime>04/05/2020 17:24:12</publishTime>
+      <publishTime>04/15/2020 16:24:18</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>04/05/2020 17:24:12</publishTime>
@@ -2671,7 +2674,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:12</publishTime>
     </File>
     <File Include="Views/Home/_generalNews.cshtml">
-      <publishTime>04/05/2020 17:24:12</publishTime>
+      <publishTime>04/15/2020 17:21:59</publishTime>
     </File>
     <File Include="Views/Home/_news.cshtml">
       <publishTime>04/05/2020 17:24:12</publishTime>
@@ -2692,7 +2695,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/05/2020 17:24:12</publishTime>
     </File>
     <File Include="Views/Lecturer/LecturerTablePartialView.cshtml">
-      <publishTime>04/05/2020 17:24:12</publishTime>
+      <publishTime>04/15/2020 13:41:11</publishTime>
     </File>
     <File Include="Views/Lecturer/LecturerView.cshtml">
       <publishTime>04/05/2020 17:24:12</publishTime>
