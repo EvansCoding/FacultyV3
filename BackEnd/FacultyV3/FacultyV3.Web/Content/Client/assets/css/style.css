@@ -2648,7 +2648,7 @@ img {
         padding: 0;
     }
     .inline-block-content{
-        float: left;
+        /*float: left;*/
     }
     .mu-course-content-area .row{
         margin: 0 -10px !important;
