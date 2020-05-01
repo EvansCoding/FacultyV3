@@ -38,6 +38,8 @@ namespace FacultyV3.Core.Constants
         public const string MESSENGER_NAME = "Messenger";
         public const string META_KEYWORDS = "Meta_Keywords";
         public const string META_DESCRIPTION = "Meta_Description";
+        public const string TOTAL_ACCESS = "TotalAccess";
+
 
         public const string USER_SESSION = "USER_SESSION";
 

@@ -52,5 +52,21 @@ namespace FacultyV3.Core.Services
             }
             return null;
         }
+
+        public bool UpdateTotal()
+        {
+            try
+            {
+                var model = context.Confirgurations.Where(x => x.Meta_Name == Constants.Constant.TOTAL_ACCESS).SingleOrDefault();
+                long total = long.Parse(model.Meta_Value) + 1;
+                model.Meta_Value = total.ToString();
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

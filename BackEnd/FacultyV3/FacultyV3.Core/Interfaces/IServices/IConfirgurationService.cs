@@ -8,5 +8,6 @@ namespace FacultyV3.Core.Interfaces.IServices
         Confirguration GetConfirgurationByID(string id);
         Confirguration GetConfirgurationByName(string name);
         List<Confirguration> GetConfirgurations();
+        bool UpdateTotal();
     }
 }

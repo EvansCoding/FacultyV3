@@ -21,11 +21,12 @@ namespace FacultyV3.Web.Controllers
         private readonly IVideoService videoService;
         private readonly IAdsService adsService;
         private readonly IDetailNewsService detailNewsService;
-
+        private readonly IConfirgurationService confirgurationService;
 
         public HomeController(IDataContext context, IAbout_UsService about_UsService, IBannerService bannerService, ICategoryMenuService categoryMenuService,
             ICategoryNewsService categoryNewsService, IContactService contactService, ICountService countService, IDescriptionService descriptionService,
-            ILecturerService lecturerService, IStickyService stickyService, IStudentService studentService, IVideoService videoService, IAdsService adsService, IDetailNewsService detailNewsService)
+            ILecturerService lecturerService, IStickyService stickyService, IStudentService studentService, IVideoService videoService, IAdsService adsService, 
+            IDetailNewsService detailNewsService, IConfirgurationService confirgurationService)
         {
             this.context = context;
             this.about_UsService = about_UsService;
@@ -41,6 +42,7 @@ namespace FacultyV3.Web.Controllers
             this.videoService = videoService;
             this.adsService = adsService;
             this.detailNewsService = detailNewsService;
+            this.confirgurationService = confirgurationService;
         }
         public ActionResult Index()
         {
@@ -150,6 +152,10 @@ namespace FacultyV3.Web.Controllers
         {
             ViewBag.Department = categoryMenuService.GetCategoryByName(Constant.DEPARTMENT).Children;
             ViewBag.Contact = contactService.GetContacts();
+
+            // Get total access from db
+            var total = confirgurationService.GetConfirgurationByName(Constant.TOTAL_ACCESS);
+            ViewBag.Total = long.Parse(total.Meta_Value);
             return PartialView();
         }
 

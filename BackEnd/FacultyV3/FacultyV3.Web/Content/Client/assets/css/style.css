@@ -2666,6 +2666,14 @@ img {
     .mu-blog-meta span {
         font-size: 14px !important;
     }
+
+    .mu-footer-bottom-area div{
+        text-align: center !important;
+    }
+
+    .mu-footer-bottom-area  .row > div:first-child {
+        margin-bottom: 10px;
+    }
 }
 
 @media (max-width: 640px) {

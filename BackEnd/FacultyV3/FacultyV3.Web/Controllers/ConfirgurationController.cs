@@ -1,5 +1,6 @@
 ﻿using FacultyV3.Core.Constants;
 using FacultyV3.Core.Interfaces.IServices;
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -31,6 +32,19 @@ namespace FacultyV3.Web.Controllers
                 return PartialView(model);
             }
             return PartialView(null);
+        }
+
+        public JsonResult UpdateTotal()
+        {
+            var data = confirgurationService.UpdateTotal();
+            var total = confirgurationService.GetConfirgurationByName(Constant.TOTAL_ACCESS);
+           return Json(new { success = true, total = total.Meta_Value }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ShowTotal()
+        {
+            var total = confirgurationService.GetConfirgurationByName(Constant.TOTAL_ACCESS);
+            return Json(new { success = true, total = total.Meta_Value }, JsonRequestBehavior.AllowGet);
         }
     }
 }
