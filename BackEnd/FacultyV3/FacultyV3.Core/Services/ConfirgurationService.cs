@@ -53,6 +53,8 @@ namespace FacultyV3.Core.Services
             return null;
         }
 
+
+
         public bool UpdateTotal()
         {
             try

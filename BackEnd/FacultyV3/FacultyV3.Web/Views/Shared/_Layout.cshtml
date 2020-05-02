@@ -75,47 +75,19 @@
 
         $(function () {
             var cHub = $.connection.HitCounter;
-            cHub.client.UpdateCount = function (count) {
+            $.connection.hub.start().done(function () {
+            });
+
+            cHub.client.UpdateCount = function (count, totalAccess) {
                 $('#counter').text(count);
-                ShowTotal();
+                $('#total').text(totalAccess);
+
             }
-
-            setTimeout(function () {
-                $.connection.hub.start().done(function () {
-             
-                    console.log($.connection.hub.id);
-                    TotalAccess();
-                });
-            },
-                0);
-            $.connection.hub.logging = true;
         });
-
-        function TotalAccess() {
-            $.ajax({
-                type: "POST",
-                url: "/Confirguration/UpdateTotal",
-                success: function (response) {
-                    if (response.success) {
-                        $('#total').text(response.total);
-                    }
-                }
-            });
-            return false;
-        }
-
-        function ShowTotal() {
-            $.ajax({
-                type: "GET",
-                url: "/Confirguration/ShowTotal",
-                success: function (response) {
-                    if (response.success) {
-                        $('#total').text(response.total);
-                    }
-                }
-            });
-            return false;
-        }
+       
+        window.onbeforeunload = function (e) {
+            $.connection.hub.stop();
+        };
     </script>
 </body>
 </html>

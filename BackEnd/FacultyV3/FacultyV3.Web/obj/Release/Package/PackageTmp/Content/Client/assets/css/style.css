@@ -2648,7 +2648,7 @@ img {
         padding: 0;
     }
     .inline-block-content{
-        float: left;
+        /*float: left;*/
     }
     .mu-course-content-area .row{
         margin: 0 -10px !important;
@@ -2665,6 +2665,14 @@ img {
     }
     .mu-blog-meta span {
         font-size: 14px !important;
+    }
+
+    .mu-footer-bottom-area div{
+        text-align: center !important;
+    }
+
+    .mu-footer-bottom-area  .row > div:first-child {
+        margin-bottom: 10px;
     }
 }
 
