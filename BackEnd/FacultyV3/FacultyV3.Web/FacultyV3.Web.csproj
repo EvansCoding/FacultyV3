@@ -473,6 +473,12 @@
     <Content Include="Content\Client\assets\img\gallery\fancybox_overlay.png" />
     <Content Include="Content\Client\assets\img\gallery\fancybox_sprite%402x.png" />
     <Content Include="Content\Client\assets\img\gallery\fancybox_sprite.png" />
+    <Content Include="Content\Client\assets\img\icon\mail_account_24px-footer.png" />
+    <Content Include="Content\Client\assets\img\icon\mail_account_24px.png" />
+    <Content Include="Content\Client\assets\img\icon\phonelink_ring_50px.png" />
+    <Content Include="Content\Client\assets\img\icon\phone_24px_footer.png" />
+    <Content Include="Content\Client\assets\img\icon\visit_24px-footer.png" />
+    <Content Include="Content\Client\assets\img\icon\visit_50px.png" />
     <Content Include="Content\Client\assets\img\loader.gif" />
     <Content Include="Content\Client\assets\img\logo\logokonen.ico" />
     <Content Include="Content\Client\assets\img\logo\logokonen.png" />

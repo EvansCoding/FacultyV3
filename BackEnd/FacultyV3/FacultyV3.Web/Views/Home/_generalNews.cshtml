@@ -1,6 +1,12 @@
 ﻿@model List<FacultyV3.Core.Models.Entities.Detail_News>
 @using FacultyV3.Web.Common;
-
+<style>
+    a > .text-overflow-string {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
 <section id="mu-latest-courses">
     <div class="container">
         <div class="row">
@@ -41,10 +47,10 @@
                                             <span><i class="fa fa-clock-o"></i>@item.Update_At.ToString("dd/MM/yyyy")</span>
                                         </figcaption>
                                     </figure>
-                                    <div class="mu-latest-course-single-content" style="height: 144px">
+                                    <div class="mu-latest-course-single-content" style="height: 120px">
                                         <h4 style="height: 100%; text-align: left; font-family:Arial, Helvetica, sans-serif; font-size: 16px; padding-bottom: 20px">
 
-                                            <a href="@url" class="block-ellipsis" style="height: 100%">@item.Title</a>
+                                            <a href="@url" class="block-ellipsis text-overflow-string"  style="height: 100%">@item.Title</a>
                                         </h4>
                    
                                     </div>

@@ -53,12 +53,12 @@
                                     var phone = "tel:" + contact[4].Meta_Value;
                                     var email = "mailto:" + contact[1].Meta_Value;
                                     <address>
-                                        <p>@contact[0].Meta_Value</p>
+                                        <p><img src="~/Content/Client/assets/img/icon/visit_24px-footer.png" class="icon-contact" /> @contact[0].Meta_Value</p>
                                         <a href="@phone">
-                                            <p>Phone: @contact[4].Meta_Value</p>
+                                            <p><img src="~/Content/Client/assets/img/icon/phone_24px_footer.png" class="icon-contact" /> @contact[4].Meta_Value</p>
                                         </a>
                                         <a href="@email">
-                                            <p>@contact[1].Meta_Value</p>
+                                            <p><img src="~/Content/Client/assets/img/icon/mail_account_24px-footer.png" class="icon-contact" /> @contact[1].Meta_Value</p>
                                         </a>
                                     </address>
                                 }
@@ -76,7 +76,7 @@
             <div class="mu-footer-bottom-area">
                 <div class="row">
                     <div class="col-sm-6" style="text-align: left"><p>Đã truy cập: <span id="total"> @ViewBag.Total </span> | Đang online: <span id="counter"> 1 </span> </p> </div>
-                    <div class="col-sm-6" style="text-align: right"><p>Copyright &copy; Khoa Kỹ Thuật - Công Nghệ</p></div>
+                    <div class="col-sm-6" style="text-align: right"><p>Copyright &copy; 2020 Khoa Kỹ Thuật - Công Nghệ</p></div>
                 </div>
             </div>
         </div>

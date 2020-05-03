@@ -9,9 +9,16 @@
         max-width: 100%;
         height: auto;
     }
-    .mu-blog-description table {
+    /*.mu-blog-description table {
         width: auto !important;
+    }*/
+    .mu-blog-description table {
+        table-layout: fixed;
     }
+
+        .mu-blog-description table td {
+            word-wrap: break-word
+        }
     .mu-blog-description > ol > li > a {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
@@ -65,12 +72,12 @@
                                                 {
                                                     if (!Model.Url_Image.Equals("#"))
                                                     {
-                                                        <a href="#"><img alt="img" src="@Model.Url_Image" style="height: 480px"/></a>
+                                                        <a href="javascript:void(0)"><img alt="img" src="@Model.Url_Image" style="height: 480px"/></a>
                                                     }
                                                 }
                                                 <figcaption class="mu-blog-caption">
                                                     <h3>
-                                                        <a href="#">@Model.Title</a>
+                                                        <a href="javascript:void(0);">@Model.Title</a>
                                                     </h3>
                                                 </figcaption>
                                             </figure>

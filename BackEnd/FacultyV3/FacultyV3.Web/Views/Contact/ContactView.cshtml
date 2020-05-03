@@ -3,7 +3,6 @@
     ViewBag.Title = "ContactView";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!-- Start contact  -->
 <section id="mu-contact" style="padding-top: 40px;">
     <div class="container">
@@ -18,7 +17,7 @@
                     <!-- end title -->
                     <!-- start contact content -->
                     <div class="mu-contact-content">
-                        <div class="row"  >
+                        <div class="row">
 
                             @if (ViewBag.Contact != null)
                             {
@@ -36,22 +35,22 @@
 
 
                                             <p style="margin: 0 0 5px">
-                                                Địa chỉ : @contact[0].Meta_Value
+                                               <img src="~/Content/Client/assets/img/icon/visit_50px.png" class="icon-contact"/> @contact[0].Meta_Value
                                             </p>
                                             <a href="@phone">
-                                                <p style="margin: 0 0 5px">Điện thoại: @contact[4].Meta_Value</p>
+                                                <p style="margin: 0 0 5px">  <img src="~/Content/Client/assets/img/icon/phonelink_ring_50px.png" class="icon-contact" /> @contact[4].Meta_Value</p>
                                             </a>
 
                                             <a href="@email">
-                                                <p style="margin: 0 0 5px">Email: @contact[1].Meta_Value</p>
+                                                <p style="margin: 0 0 5px">  <img src="~/Content/Client/assets/img/icon/mail_account_24px.png" class="icon-contact" /> @contact[1].Meta_Value</p>
                                             </a>
 
-                                            <img src="@contact[3].Meta_Value" style="width: inherit; object-fit:cover; height: 400px" alt="" />
+                                            <img src="@contact[3].Meta_Value" style="width: inherit; object-fit:cover; height: 390px" alt="image address faculty" />
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="mu-contact-right" >
+                                        <div class="mu-contact-right">
                                             <iframe src="@contact[2].Meta_Value" width="100%" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
                                         </div>
                                     </div>
