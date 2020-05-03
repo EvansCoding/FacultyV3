@@ -13,6 +13,7 @@ namespace FacultyV3.Web.Common
 
         public override System.Threading.Tasks.Task OnConnected()
         {
+            var context = GlobalHost.ConnectionManager.GetHubContext<HitCounter>();
             string totalAccess = "";
             try
             {
@@ -26,18 +27,27 @@ namespace FacultyV3.Web.Common
             {
             }
 
-            counter = counter + 1;
-            var context = GlobalHost.ConnectionManager.GetHubContext<HitCounter>();
-            context.Clients.All.UpdateCount(counter, totalAccess);
+                counter = counter + 1;
+             context.Clients.All.UpdateCount(counter, totalAccess);
+           
             return base.OnConnected();
         }
 
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {
-            if(counter > 0)
-                counter = counter - 1;
             var context = GlobalHost.ConnectionManager.GetHubContext<HitCounter>();
-            context.Clients.All.UpdateCount(counter);
+            if (counter > 0)
+                counter = counter - 1;
+            if (counter == 0)
+            {
+                var counter = 1;
+                context.Clients.All.UpdateCount(counter);
+            }
+            else
+            {
+                context.Clients.All.UpdateCount(counter);
+            }
+
             return base.OnDisconnected(stopCalled);
         }
     }

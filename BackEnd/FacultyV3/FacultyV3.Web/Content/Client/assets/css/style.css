@@ -1617,7 +1617,7 @@ img {
 
 .mu-blog-single .mu-blog-single-item {
     background-color: #FFF;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .mu-blog-single .mu-blog-single-item .mu-blog-caption {
@@ -1629,7 +1629,7 @@ img {
 }
 
 .mu-blog-single .mu-blog-single-item .mu-blog-description {
-    padding: 0 15px 30px;
+    padding: 0 15px 0px;
 }
 
 .mu-blog-single .mu-blog-single-item .mu-blog-description ul {
@@ -2284,7 +2284,7 @@ img {
     background-color: #075794;
     display: inline;
     float: left;
-    padding: 50px 0;
+    padding: 50px 0 24px 0;
     width: 100%;
 }
 
@@ -2591,7 +2591,7 @@ img {
         margin-bottom: 30px;
     }
     #mu-footer .mu-footer-top .mu-footer-top-area .mu-footer-widget {
-        margin-bottom: 30px;
+        /*margin-bottom: 30px;*/
         text-align: center;
     }
     #mu-footer .mu-footer-top .mu-footer-top-area .mu-footer-widget .mu-subscribe-form input[type="email"] {
@@ -2868,15 +2868,15 @@ img {
     align-items: center;
 }
 
-.icons ul li {
-    height: 40px;
-    width: 40px;
-    list-style-type: none;
-    padding-left: 12px;
-    padding-top: 10px;
-    margin-top: 5px;
-    color: #fff;
-}
+    .icons ul li {
+        height: 30px;
+        width: 30px;
+        list-style-type: none;
+        padding-left: 8px;
+        padding-top: 4px;
+        margin-top: 5px;
+        color: #fff;
+    }
 
 .facebook {
     background: #3b5998;
@@ -2895,8 +2895,8 @@ img {
 }
 
 .icons ul li:hover {
-    padding-left: 30px;
-    width: 80px;
+    padding-left: 20px;
+    width: 60px;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;

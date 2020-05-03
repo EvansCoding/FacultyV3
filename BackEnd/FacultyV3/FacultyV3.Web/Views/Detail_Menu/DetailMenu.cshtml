@@ -9,7 +9,9 @@
         max-width: 100%;
         height: auto;
     }
-
+    .mu-blog-description table {
+        width: auto !important;
+    }
     .mu-blog-description > ol > li > a {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
@@ -63,7 +65,7 @@
                                                 {
                                                     if (!Model.Url_Image.Equals("#"))
                                                     {
-                                                        <a href="#"><img alt="img" src="@Model.Url_Image" /></a>
+                                                        <a href="#"><img alt="img" src="@Model.Url_Image" style="height: 480px"/></a>
                                                     }
                                                 }
                                                 <figcaption class="mu-blog-caption">
@@ -112,7 +114,7 @@
     </div>
 </section>
 
-@Scripts.Render("~/script/jquery");
+@Scripts.Render("~/script/jquery")
 <script>
     // Resize video on news
     var height = $("#videoIframe").width() / 1.7;
