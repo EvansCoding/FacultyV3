@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "AccountView";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="data1">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h4 class="page-title">Danh mục Tài khoản</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h6 class="">Tìm kiếm</h6>
+                            @using (@Html.BeginForm("SearchAccount", "Account", FormMethod.Post, new { onsubmit = "return SubmitSearch(this)" }))
+                            {
+                                <div class="form-row align-items-center">
+                                    <div class="col-auto">
+                                        <input id="search" class="form-control" type="text" name="search" placeholder="Từ khóa bất kỳ" />
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" id="searchByName" class="btn btn-icon waves-effect waves-light btn-primary">
+                                            <i class="fas fa-search "></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="button" class="btn btn-icon waves-effect waves-light btn-success" onclick="Popup('@Url.Action("AddOrEdit","Account")')">
+                                            <i class="fas fa-plus "></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" id="tableAjax">
+                        @{
+                            Html.RenderAction("LoadTable", "Account");
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-url="@Url.Action("AddorUpdate","Account")" style="margin: 10px 10px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" id="modalcontent" style="padding: 10px 10px">
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+            $('#search').keypress(function () {
+                var name = $(this).val();
+
+                $.ajax({
+                    type: "get",
+                    url: "/Admin/Account/LoadTable?search=" + name,
+                    contentType: "html",
+                    success: function (response) {
+                        $('#tableAjax').html(response);
+                    }
+                })
+            });
+            $("nav ul li a").addClass("page-link");
+            $("nav ul ").addClass("justify-content-end");
+        })
+
+        function SubmitSearch(form) {
+            var name = $("#search").val();
+            post_url = $(form).attr("action");
+            $.ajax({
+                type: "Get",
+                url: "/Admin/Account/LoadTable?search=" + name,
+                contentType: "html",
+                success: function (response) {
+                    $('#tableAjax').html(response);
+                }
+            });
+            return false;
+        }
+        function Popup(urlMem) {
+
+            var url = urlMem;
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (response) {
+                    $('#modalcontent').html(response);
+                    $("#exampleModal").modal("show");
+                },
+                error: function (xhr, status) {
+                    alert(status);
+                }
+            });
+        }
+
+        function Delete(url) {
+            swal({
+                title: "Bạn chắc chắn muốn xóa?",
+                text: "Nếu xóa dữ liệu sẽ không thể phục hồi được!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+
+                if (willDelete) {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        success: function (data) {
+
+                            if (data.success) {
+                                var name = $("#search").val();
+                                $("#tableAjax").load("@Url.Action("LoadTable", "Account")");
+
+                                swal("Xóa thành công", {
+                                    icon: "success",
+                                });
+                            } else {
+                                $("#tableAjax").load("@Url.Action("LoadTable", "Account")");
+
+                                swal("Xóa thất bại", {
+                                    icon: "error",
+                                });
+                            }
+                        }
+                    });
+                }
+                else {
+                     swal("Dữ liệu vẫn an toàn!");
+                }
+            });
+        }
+    </script>
+}

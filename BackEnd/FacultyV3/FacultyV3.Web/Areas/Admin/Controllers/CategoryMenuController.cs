@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Linq;
+
 namespace FacultyV3.Web.Areas.Admin.Controllers
 {
     public class CategoryMenuController : BaseController
@@ -42,14 +43,12 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     else
                         ViewBag.ListOfParent = new SelectList(ListParent, "Id", "Meta_Name", data.Parent.Id);
                     return PartialView("CRUDCategoryMenu", model);
-                
             }
             catch (Exception)
             {
             }
             ViewBag.ListOfParent = new SelectList(ListParent, "Id", "Meta_Name");
             return PartialView("CRUDCategoryMenu", new Category_MenuViewModel());
-
         }
 
         [HttpGet]
@@ -63,9 +62,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         public ActionResult AddOrUpdate(Category_MenuViewModel model)
         {
             var parent = categoryMenuService.GetCategoryByID(model.ParentID);
-            var meta_name = context.Category_Menus.Where(x => x.Meta_Name.Contains(model.Meta_Name)).ToList();
-
-
+            var meta_name = context.Category_Menus.Where(x => x.Meta_Name == model.Meta_Name).ToList();
 
             if (model.Id == null)
             {
@@ -114,8 +111,6 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             {
                 try
                 {
-
-
                     var category = categoryMenuService.GetCategoryByID(model.Id);
 
                     if (!category.Meta_Name.Equals(model.Meta_Name))

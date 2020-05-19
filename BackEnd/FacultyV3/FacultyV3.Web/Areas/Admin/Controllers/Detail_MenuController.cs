@@ -25,7 +25,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
         [HasCredential(RoleID = Constant.ADMIN)]
         public ActionResult Detail_MenuView()
         {
-            List<Category_Menu> ListCategory = categoryMenuService.GetCategories();
+            List<Category_Menu> ListCategory = categoryMenuService.GetBlockCategories();
             if (ListCategory != null)
                 ViewBag.ListOfCategory = new SelectList(ListCategory, "Id", "Meta_Name");
             return View();
@@ -157,6 +157,10 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             try
             {
                 var detail_Menu = context.Detail_Menus.Find(new Guid(Id));
+                if (detail_Menu.Block)
+                {
+                    return Json(new { success = false }, JsonRequestBehavior.AllowGet);
+                }
                 context.Detail_Menus.Remove(detail_Menu);
                 context.SaveChanges();
                 return Json(new { success = true }, JsonRequestBehavior.AllowGet);

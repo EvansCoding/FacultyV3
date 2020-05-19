@@ -26,6 +26,7 @@
         DbSet<Training_Process> Training_Processes { get; set; }
         DbSet<Confirguration> Confirgurations { get; set; }
         DbSet<Role> Roles { get; set; }
+        DbSet<Conference> Conferences { get; set; }
         int SaveChanges();
         Task<int> SaveChangesAsync();
         void RollBack();

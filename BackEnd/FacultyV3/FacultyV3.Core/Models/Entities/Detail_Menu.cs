@@ -20,6 +20,7 @@ namespace FacultyV3.Core.Models.Entities
         public string Url_Image { get; set; }
         public string Url_Video { get; set; }
         public string Url_LinkGoogle { get; set; }
+        public bool Block { get; set; }
         public DateTime Create_At { get; set; }
         public DateTime Update_At { get; set; }
 

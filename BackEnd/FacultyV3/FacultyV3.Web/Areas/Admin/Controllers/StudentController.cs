@@ -40,6 +40,11 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     model.FullName = data.FullName;
                     model.Url_Image = data.Url_Image;
                     model.Content = data.Content;
+                    model.Course = data.Course;
+                    model.Major = data.Major;
+                    model.Graduation_Year = data.Graduation_Year;
+                    model.Current_Job = data.Current_Job;
+                    model.Work_Place = data.Work_Place;
                     model.Serial = data.Serial;
                     return PartialView("CRUDStudent", model);
                 }
@@ -60,6 +65,11 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     FullName = model.FullName,
                     Url_Image = model.Url_Image,
                     Content = model.Content,
+                    Course = model.Course,
+                    Major = model.Major,
+                    Graduation_Year = model.Graduation_Year,
+                    Current_Job = model.Current_Job,
+                    Work_Place = model.Work_Place,
                     Serial = model.Serial,
                     Create_At = DateTime.Now,
                     Update_At = DateTime.Now
@@ -93,6 +103,12 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     student.FullName = model.FullName;
                     student.Url_Image = model.Url_Image;
                     student.Content = model.Content;
+                    student.Course = model.Course;
+                    student.Major = model.Major;
+                    student.Graduation_Year = model.Graduation_Year;
+                    student.Current_Job = model.Current_Job;
+                    student.Work_Place = model.Work_Place;
+
                     student.Serial = model.Serial;
                     student.Update_At = DateTime.Now;
 

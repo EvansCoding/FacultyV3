@@ -1,0 +1,88 @@
+﻿@model  FacultyV3.Web.ViewModels.AdsViewModel
+@using FacultyV3.Core.Models.Enums;
+@{
+    /**/
+
+    ViewBag.Title = "AdsView";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div id="data1">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h4 class="page-title">Quảng cáo</h4>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-body">
+                        @using (@Html.BeginForm("AddOrUpdate", "Ads", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.Id)
+
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Hình ảnh</label>
+                                <div class="input-group">
+                                    @Html.TextBoxFor(model => model.Url_Image, new { @id = "fieldID", @class = "form-control ", placeholder = "Đường dẫn hình ảnh" })
+                                    @Html.ValidationMessageFor(x => x.Url_Image, "", new { @class = "text-danger" })
+                                    <div class="input-group-append btn-upfle">
+                                        <a data-toggle="modal" data-target="#myModal1" class="btn btn-dark " style="color: white">
+                                            <i class="fa fa-upload" style="color: white"></i>
+                                            Browse
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Liên kết</label>
+                                @Html.EditorFor(model => model.Url_Link, new { htmlAttributes = new { @class = "form-control", placeholder = "#" } })
+                                @Html.ValidationMessageFor(x => x.Url_Link, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Trạng thái <span class="text-danger"> *</span></label>
+                                @Html.DropDownListFor(model => model.Status, new SelectList(Enum.GetValues(typeof(Status)), Status.Publish), new { @id = "DropDwnState", @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Ngày tạo</label>
+                                @Html.EditorFor(model => model.Create_At, new { htmlAttributes = new { @class = "form-control", placeholder = "#", disabled = "disabled" } })
+                                @Html.ValidationMessageFor(x => x.Create_At, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Ngày cập nhật</label>
+                                @Html.EditorFor(model => model.Update_At, new { htmlAttributes = new { @class = "form-control", placeholder = "#", disabled = "disabled" } })
+                                @Html.ValidationMessageFor(x => x.Update_At, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group text-right mb-0">
+                                <button class="btn btn-primary" type="submit">Lưu</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Quản lý tệp tin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe src="/filemanager/dialog.php?type=1&fldr=&field_id=fieldID" frameborder="0" style="overflow:hidden; min-height:600px; height:100%;width:100%" height="100%" width="100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+

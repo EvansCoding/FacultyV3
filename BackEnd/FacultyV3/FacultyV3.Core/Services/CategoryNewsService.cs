@@ -43,7 +43,7 @@ namespace FacultyV3.Core.Services
         {
             try
             {
-                return context.Category_News.Select(x => x).OrderBy(x => x.Meta_Name).ToList();
+                return context.Category_News.Where(x => !x.Block).Select(x => x).OrderBy(x => x.Meta_Name).ToList();
             }
             catch (Exception)
             {

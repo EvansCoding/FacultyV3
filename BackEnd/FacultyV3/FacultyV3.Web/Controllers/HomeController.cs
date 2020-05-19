@@ -2,6 +2,7 @@
 using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace FacultyV3.Web.Controllers
 {
@@ -22,11 +23,12 @@ namespace FacultyV3.Web.Controllers
         private readonly IAdsService adsService;
         private readonly IDetailNewsService detailNewsService;
         private readonly IConfirgurationService confirgurationService;
+        private readonly IConferenceService conferenceService;
 
         public HomeController(IDataContext context, IAbout_UsService about_UsService, IBannerService bannerService, ICategoryMenuService categoryMenuService,
             ICategoryNewsService categoryNewsService, IContactService contactService, ICountService countService, IDescriptionService descriptionService,
             ILecturerService lecturerService, IStickyService stickyService, IStudentService studentService, IVideoService videoService, IAdsService adsService, 
-            IDetailNewsService detailNewsService, IConfirgurationService confirgurationService)
+            IDetailNewsService detailNewsService, IConfirgurationService confirgurationService, IConferenceService conferenceService)
         {
             this.context = context;
             this.about_UsService = about_UsService;
@@ -43,6 +45,7 @@ namespace FacultyV3.Web.Controllers
             this.adsService = adsService;
             this.detailNewsService = detailNewsService;
             this.confirgurationService = confirgurationService;
+            this.conferenceService = conferenceService;
         }
         public ActionResult Index()
         {
@@ -110,7 +113,12 @@ namespace FacultyV3.Web.Controllers
             var model = videoService.GetVideosOrderBySerial(3);
             return PartialView(model);
         }
-
+       
+        public ActionResult _conference()
+        {
+            var model = conferenceService.GetConferencesOrderBySerial(3);
+            return PartialView(model);
+        }
         public ActionResult _menu()
         {
             // Get Children Category Intro
@@ -138,7 +146,7 @@ namespace FacultyV3.Web.Controllers
             if (party_cell != null)
                 ViewBag.party_cell = party_cell;
 
-            var alumni = categoryMenuService.GetCategoriesByParent(Constant.ALUMNI);
+            var alumni = categoryMenuService.GetCategoriesByParent(Constant.STUDENT);
             if (alumni != null)
                 ViewBag.alumni = alumni;
 

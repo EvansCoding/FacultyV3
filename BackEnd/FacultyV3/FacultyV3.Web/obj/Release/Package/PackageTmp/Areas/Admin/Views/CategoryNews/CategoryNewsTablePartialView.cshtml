@@ -7,13 +7,13 @@
             <th style="width:5%;">
                 #
             </th>
-            <th style="width:45%;">
+            <th style="width:60%;">
                 Tên
             </th>
             <th>
                 Thời gian cập nhật
             </th>
-            <th>Thao tác</th>
+            @*<th>Thao tác</th>*@
         </tr>
     </thead>
     <tbody id="DataSearching">
@@ -31,7 +31,7 @@
                         namePublish.Add(item.Meta_Name);
                     }
                     <td>@item.Update_At</td>
-                    <td>
+                    @*<td>
                         <div class="button-list">
                             @{
                                 var uEdit = @Url.Action("AddOrEdit", "CategoryNews") + "/" + item.Id;
@@ -48,7 +48,7 @@
                                 </a>
                             }
                         </div>
-                    </td>
+                    </td>*@
                 </tr>
 
                 if (item.Children.ToList().Count() > 0)
@@ -63,7 +63,7 @@
                                 namePublish.Add(chil.Meta_Name);
                             }
                             <td>@chil.Update_At</td>
-                            <td>
+                            @*<td>
                                 <div class="button-list">
                                     @{
                                         var uEditChil = @Url.Action("AddOrEdit", "CategoryNews") + "/" + chil.Id;
@@ -80,7 +80,7 @@
                                         </a>
                                     }
                                 </div>
-                            </td>
+                            </td>*@
                         </tr>
 
                         if (chil.Children.ToList().Count() > 0)
@@ -95,7 +95,7 @@
                                         namePublish.Add(son.Meta_Name);
                                     }
                                     <td>@son.Update_At</td>
-                                    <td>
+                                    @*<td>
                                         <div class="button-list">
                                             @{
                                                 var uEditSon = @Url.Action("AddOrEdit", "CategoryNews") + "/" + son.Id;
@@ -112,7 +112,7 @@
                                                 </a>
                                             }
                                         </div>
-                                    </td>
+                                    </td>*@
                                 </tr>
                             }
                         }

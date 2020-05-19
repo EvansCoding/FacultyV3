@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "LecturerView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page breadcrumb -->
+<section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-page-breadcrumb-area">
+                    <h2>Cán bộ - Giảng viên</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- End breadcrumb -->
+
+
+
+
+<section id="mu-course-content">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12" style="margin-bottom: 10px">
+                <div class="form-row align-items-center">
+                    <div class="col-md-9">
+                        <input id="search" class="form-control" type="text" name="search" placeholder="Từ khóa bất kỳ" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-9" id="tableAjax">
+                            <!-- start course content container -->
+                            @{
+                                Html.RenderAction("LoadTable", "Lecturer");
+                            }
+                            <!-- end course content container -->
+                            @*<!-- start course pagination -->
+                        <div class="mu-pagination">
+                            <nav>
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span class="fa fa-angle-left"></span> Prev
+                                        </a>
+                                    </li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            Next <span class="fa fa-angle-right"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- end course pagination -->*@
+                        </div>
+                        <!--Start Left Category-->
+                        @{
+                            Html.RenderAction("_leftCategory", "Common");
+                        }
+                        <!--End Left Category-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#search').keypress(function () {
+            var name = $(this).val();
+
+            $.ajax({
+                type: "get",
+                url: "/Lecturer/LoadTable?search=" + name,
+                contentType: "html",
+                success: function (response) {
+                    $('#tableAjax').html(response);
+                }
+            })
+        });
+        $("nav ul li a").addClass("page-link");
+        $("nav ul ").addClass("justify-content-end");
+    })
+</script>
+

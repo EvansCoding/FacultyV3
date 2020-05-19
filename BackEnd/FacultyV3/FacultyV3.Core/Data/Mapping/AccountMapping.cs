@@ -13,7 +13,7 @@ namespace FacultyV3.Core.Data.Mapping
             Property(x => x.FullName).IsRequired().HasMaxLength(200);
             Property(x => x.Create_At).IsRequired();
             Property(x => x.Update_At).IsRequired();
-
+            Property(x => x.Block).IsRequired();
             HasMany(x => x.Detail_Menus)
                 .WithRequired(x => x.Account)
                 .Map(x => x.MapKey("Account_ID"))

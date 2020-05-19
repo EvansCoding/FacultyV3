@@ -1,0 +1,78 @@
+﻿@model PagedList.IPagedList<FacultyV3.Core.Models.Entities.Lecturer>
+
+@using PagedList.Mvc;
+@using FacultyV3.Web.Common;
+<div class="mu-course-container mu-blog-archive">
+    <div class="row">
+        @{
+            int index = 0;
+        }
+
+        @foreach (var item in Model)
+        {
+
+            //var url = Url.Action("DetailLecturer", "Lecturer", new { id = item.Id, Area = String.Empty });
+
+            var url = Url.RouteUrl("LECTURER DETAIL", new { title = utf8Convert.Instance.ToUrlFriendly(item.FullName), code = item.Code.Replace(".", "-").ToString() });
+
+            <div class="col-md-3 col-sm-3">
+                <article class="mu-blog-single-item">
+                    <figure class="mu-blog-single-img">
+                        @if (!item.Url_Image.Equals("#"))
+                        {
+                            <a href="@url"><img src="@item.Url_Image" width="100px" height="200px" alt="img"></a>
+                        }
+                        else
+                        {
+                            <a href="@url"><img src="~/Content/image.png" width="150px" height="200px" alt="img"></a>
+                        }
+
+                        <figcaption class="mu-blog-caption" style="height: 50px">
+                            <h4><a href="@url">@item.FullName</a></h4>
+                        </figcaption>
+                    </figure>
+                    @*<div class="mu-blog-meta">
+                            <a href="#">@item.Account.FullName</a>
+                            <a href="#">@item.Update_At.ToShortDateString()</a>
+                            <span><i class="fa fa-comments-o"></i>87</span>
+                        </div>*@
+                    <div class="mu-blog-description">
+                        <p style="height: 10px">@item.Position</p>
+                    </div>
+                </article>
+            </div>
+
+            if (index++ == 3)
+            {
+                <div class="row">
+                    <div class="col-md-6 col-sm-6"></div>
+                </div>
+                {
+                    index = 0;
+                }
+            }
+
+        }
+
+    </div>
+</div>
+
+
+<hr />
+<div style="float: right">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) - @Model.PageCount
+</div>
+
+<div class="clearfix"></div>
+<br />
+
+
+<div class="mu-pagination">
+    <nav>
+        @Html.PagedListPager(Model, page => Url.Action("LecturerView", "Lecturer", new { page }),
+           new PagedListRenderOptions
+           {
+               LiElementClasses = new string[] { "page-item" }
+           })
+    </nav>
+</div>

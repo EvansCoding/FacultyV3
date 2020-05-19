@@ -46,7 +46,7 @@ namespace FacultyV3.Core.Services
             try
             {
                 return context.Students
-                    .OrderBy(x => x.Serial)
+                    .OrderByDescending(x => x.Serial)
                     .Select(x => x).Take(amount)
                     .ToList();
             }

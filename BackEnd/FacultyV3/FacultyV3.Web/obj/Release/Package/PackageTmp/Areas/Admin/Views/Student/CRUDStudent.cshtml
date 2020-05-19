@@ -53,11 +53,43 @@
                         @Html.TextAreaFor(model => model.Content, new { placeholder = "Hãy nhập nội dung", @class = "form-control", required = "required", @style = "height: 200px" })
                         @Html.ValidationMessageFor(x => x.Content, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Số thứ tự</label>
-                        @Html.EditorFor(model => model.Serial, new { @id = "Serial", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Serial) }, required = "required" })
-                        @Html.ValidationMessageFor(x => x.Serial, "", new { @class = "text-danger" })
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Khóa học</label>
+                            @Html.EditorFor(model => model.Course, new { @id = "Course", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Course) } })
+                            @Html.ValidationMessageFor(x => x.Course, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Ngành học</label>
+                            @Html.EditorFor(model => model.Major, new { @id = "Major", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Major) } })
+                            @Html.ValidationMessageFor(x => x.Major, "", new { @class = "text-danger" })
+                        </div>
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Năm tốt nghiệp</label>
+                            @Html.EditorFor(model => model.Graduation_Year, new { @id = "Graduation_Year", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Graduation_Year) } })
+                            @Html.ValidationMessageFor(x => x.Graduation_Year, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Công việc hiện tại</label>
+                            @Html.EditorFor(model => model.Current_Job, new { @id = "Current_Job", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Current_Job) } })
+                            @Html.ValidationMessageFor(x => x.Current_Job, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Địa chỉ công tác</label>
+                            @Html.EditorFor(model => model.Work_Place, new { @id = "Work_Place", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Work_Place) } })
+                            @Html.ValidationMessageFor(x => x.Work_Place, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="recipient-name" class="col-form-label">Số thứ tự</label>
+                            @Html.EditorFor(model => model.Serial, new { @id = "Serial", htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayFor(model => model.Serial) }, required = "required" })
+                            @Html.ValidationMessageFor(x => x.Serial, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
 
                     <div class="form-group text-right mb-0">
                         <button class="btn btn-primary" type="submit">Lưu</button>

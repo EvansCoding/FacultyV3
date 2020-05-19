@@ -1,6 +1,7 @@
 ﻿using FacultyV3.Core.Constants;
 using FacultyV3.Core.Interfaces;
 using FacultyV3.Core.Interfaces.IServices;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace FacultyV3.Web.Controllers
@@ -24,6 +25,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailMenuService.GetPostByID(id);
+                if(model != null)
                 return View(model);
             }
             catch (System.Exception)
@@ -51,7 +53,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailMenuService.PageListFE(Constant.DEPARTMENT, page, pageSize);
-                if (model != null)
+                if (Enumerable.Count(model) > 0)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)
@@ -65,7 +67,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailMenuService.PageListFE(Constant.EDUCATION_PROGRAM, page, pageSize);
-                if (model != null)
+                if (Enumerable.Count(model) > 0)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)
@@ -79,7 +81,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailMenuService.PageListFE(Constant.TRAINING_SECTOR, page, pageSize);
-                if (model != null)
+                if (Enumerable.Count(model) > 0)
                     return View("ListDetailMenu", model);
             }
             catch (System.Exception)
@@ -93,7 +95,7 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailMenuService.PageListFE(Constant.RESOURCE, page, pageSize);
-                if (model != null)
+                if (Enumerable.Count(model) > 0)
                     return View("ListDetailResource", model);
             }
             catch (System.Exception)
@@ -107,8 +109,36 @@ namespace FacultyV3.Web.Controllers
             try
             {
                 var model = detailMenuService.PageListFE(Constant.ADMISSION, page, pageSize);
-                if (model != null)
+                if (Enumerable.Count(model) > 0)
                     return View("ListDetailMenu", model);
+            }
+            catch (System.Exception)
+            {
+            }
+            return View("~/Views/Shared/Error.cshtml");
+        }
+
+        public ActionResult ListConference(int page = 1, int pageSize = Constant.PAGESIZE)
+        {
+            try
+            {
+                var model = detailMenuService.PageListFE(Constant.CONFERENCE, page, pageSize);
+                if (Enumerable.Count( model) > 0)
+                    return View("ListDetailConference", model);
+            }
+            catch (System.Exception)
+            {
+            }
+            return View("~/Views/Shared/Error.cshtml");
+        }
+
+        public ActionResult ListForm(int page = 1, int pageSize = Constant.PAGESIZE)
+        {
+            try
+            {
+                var model = detailMenuService.PageListFE(Constant.FORM, page, pageSize);
+                if (Enumerable.Count(model) > 0)
+                    return View("ListDetailForm", model);
             }
             catch (System.Exception)
             {

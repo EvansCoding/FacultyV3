@@ -42,7 +42,7 @@ namespace FacultyV3.Core.Services
         {
             try
             {
-                return context.Videos.OrderBy(x => x.Serial).Select(x => x).ToList();
+                return context.Videos.OrderByDescending(x => x.Serial).Take(amount).Select(x => x).ToList();
             }
             catch (Exception)
             {

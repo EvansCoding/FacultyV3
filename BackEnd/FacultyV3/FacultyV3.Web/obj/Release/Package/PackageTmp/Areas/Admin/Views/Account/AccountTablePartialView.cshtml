@@ -19,39 +19,77 @@
             <th>Thao tác</th>
         </tr>
     </thead>
+    @{ 
+        var checkUser = (ViewBag.CheckUser as string);
+    }
     <tbody id="DataSearching">
         @{
             List<string> namePublish = new List<string>();
             var index = 1;
             foreach (var item in Model)
             {
-                <tr>
-                    <th scope="row">
-                        @((Model.PageNumber <= 1 ? (index++) : (index++ + ((Model.PageNumber * 10) - 10))))
-                    </th>
-                    <td>@item.Email</td>
-                    <td>@item.Role.Name</td>
+                if (checkUser == item.Id.ToString())
+                {
+                    <tr >
+                        <th scope="row">
+                            @((Model.PageNumber <= 1 ? (index++) : (index++ + ((Model.PageNumber * 10) - 10))))
+                        </th>
+                        <td>@item.Email</td>
+                        <td>@item.Role.Name</td>
 
-                    <td>@item.Update_At</td>
-                    <td>
-                        <div class="button-list">
-                            @{
-                                var uEdit = @Url.Action("AddOrEdit", "Account") + "/" + item.Id;
-                                var urlEdit = @"Popup('" + uEdit + "')";
-                                <a title="Chỉnh sửa" onclick="@urlEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
-                                    <i class="fa fa-edit" style="color: white"></i>
-                                </a>
+                        <td>@item.Update_At</td>
+                        <td>
+                            <div class="button-list">
+                                @{
+                                    var uEdit = @Url.Action("AddOrEdit", "Account") + "/" + item.Id;
+                                    var urlEdit = @"Popup('" + uEdit + "')";
+                                    <a title="Chỉnh sửa" onclick="@urlEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                        <i class="fa fa-edit" style="color: white"></i>
+                                    </a>
 
-                                var uDelete = @Url.Action("Delete", "Account") + "/" + item.Id;
-                                var urluDelete = @"Delete('" + uDelete + "')";
+                                    @*var uDelete = @Url.Action("Delete", "Account") + "/" + item.Id;
+                                    var urluDelete = @"Delete('" + uDelete + "')";
 
-                                <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
-                                    <i class="fa fa-trash" style="color: white"></i>
-                                </a>
-                            }
-                        </div>
-                    </td>
-                </tr>
+                                    <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
+                                        <i class="fa fa-trash" style="color: white"></i>
+                                    </a>*@
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                 
+                }
+                else
+                {
+                    <tr>
+                        <th scope="row">
+                            @((Model.PageNumber <= 1 ? (index++) : (index++ + ((Model.PageNumber * 10) - 10))))
+                        </th>
+                        <td>@item.Email</td>
+                        <td>@item.Role.Name</td>
+
+                        <td>@item.Update_At</td>
+                        <td>
+                            <div class="button-list">
+                                @{
+                                    var uEdit = @Url.Action("AddOrEdit", "Account") + "/" + item.Id;
+                                    var urlEdit = @"Popup('" + uEdit + "')";
+                                    <a title="Chỉnh sửa" onclick="@urlEdit" class="btn btn-icon waves-effect waves-light btn-primary btn-sm">
+                                        <i class="fa fa-edit" style="color: white"></i>
+                                    </a>
+
+                                    var uDelete = @Url.Action("Delete", "Account") + "/" + item.Id;
+                                    var urluDelete = @"Delete('" + uDelete + "')";
+
+                                    <a title="Xóa" onclick="@urluDelete" class="btn btn-icon waves-effect waves-light btn-danger btn-sm btn-delete">
+                                        <i class="fa fa-trash" style="color: white"></i>
+                                    </a>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+
             }
         }
     </tbody>

@@ -1,0 +1,94 @@
+﻿@model List<FacultyV3.Core.Models.Entities.Student>
+@{
+    ViewBag.Title = "StudentView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #mu-course-content .mu-course-content-area .mu-course-details .mu-latest-course-single .mu-latest-course-single-content h4 {
+        border-bottom: 0px solid #ccc;
+        padding-bottom: 2px;
+    }
+
+</style>
+<!-- Page breadcrumb -->
+<section id="mu-page-breadcrumb" style="margin-bottom: 5px; padding: 14px 0px; background-color: #087ECB">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-page-breadcrumb-area">
+                    <h2>CỰU SINH VIÊN</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- End breadcrumb -->
+
+<section id="mu-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <!-- start course content container -->
+                            <div class="mu-course-container mu-course-details">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mu-latest-course-single">
+
+                                            <div class="mu-latest-course-single-content">
+
+                                                <div class="table-responsive">
+                                                    <table class="table" id="myStudent">
+                                                        <thead style="display: none">
+                                                            <tr>
+                                                                <th>title-1</th>
+                                                                <th>title-2</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var item in Model)
+                                                            {
+                                                                <tr s>
+                                                                    <td style="text-align: center; vertical-align: middle; width:30%;">
+                                                                        <img src="@item.Url_Image" height="200px" width="auto" />
+                                                                    </td>
+                                                                    <td tyle="width: 200px">
+                                                                        <h4> Họ và tên: @item.FullName </h4>
+                                                                        <h4>
+                                                                            Khóa học: @item.Course
+                                                                        </h4>
+                                                                        <h4> Ngành học: @item.Major</h4>
+                                                                        <h4>Năm tốt nghiệp: @item.Graduation_Year</h4>
+                                                                        <h4>Công việc hiện tại: @item.Current_Job</h4>
+                                                                        <h4>Nơi làm việc: @item.Work_Place</h4>
+                                                                    </td>
+                                                                </tr>
+                                                            }
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end course content container -->
+                            <!-- start related course item -->
+                            <!-- end start related course item -->
+                        </div>
+                        @{
+                            Html.RenderAction("_leftCategory", "Common");
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*<script src="~/Content/Client/assets/js/jquery.min.js"></script>*@

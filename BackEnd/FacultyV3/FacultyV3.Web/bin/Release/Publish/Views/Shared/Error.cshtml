@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Start error section  -->
+<section id="mu-error">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-error-area">
+                    <p>Lỗi! Không tìm thấy trang</p>
+                    <span>
+                        Trang bạn tìm không có sẵn, đã bị xóa hoặc đã bị thay
+                        đổi.
+                    </span>
+                    <h2>404</h2>
+                    <a class="mu-post-btn" href="@Url.Action("Index","Home")">Về trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End error section  -->

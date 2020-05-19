@@ -366,3 +366,7 @@ E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\
 E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Release\FacultyV3.Core.csproj.CopyComplete
 E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Release\FacultyV3.Core.dll
 E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Release\FacultyV3.Core.pdb
+E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Release\FacultyV3.Core.Migrations.Initialize_22.resources
+E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Release\FacultyV3.Core.Migrations.Initialize_23.resources
+E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Release\FacultyV3.Core.Migrations.Initialize_24.resources
+E:\Projects\ASP .Net MVC\Faculty\FacultyV3\BackEnd\FacultyV3\FacultyV3.Core\obj\Release\FacultyV3.Core.Migrations.Initialize_25.resources

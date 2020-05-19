@@ -12,11 +12,14 @@ namespace FacultyV3.Core.Constants
         public const string INTRODUCE = "Giới thiệu";
         public const string ADMISSION = "Tuyển sinh";
         public const string EDUCATE = "Đào tạo";
-        public const string RESEARCH = "Nghiên cứu";
+        public const string RESEARCH = "Nghiên cứu khoa học";
         public const string RESOURCE = "Học liệu";
         public const string PARTY_CELL = "Chi bộ";
-        public const string ALUMNI = "Cựu sinh viên";
+        public const string STUDENT = "Sinh viên";
         public const string NEWS = "THÔNG BÁO";
+
+        public const string CONFERENCE = "Hội nghị khoa học";
+        public const string FORM = "Biểu mẫu";
 
         // EDUCATE
         public const string EDUCATION_PROGRAM = "CHƯƠNG TRÌNH ĐÀO TẠO";
@@ -27,7 +30,7 @@ namespace FacultyV3.Core.Constants
         // NEWS
         public const string NEWSS = "THÔNG TIN - THÔNG BÁO";
         public const string WORK = "TUYỂN DỤNG - VIỆC LÀM";
-        public const string NEWS_FROM_THE_MINISTRY = "TIN TỪ BỘ MÔN";
+        public const string NEWS_FROM_THE_MINISTRY = "Tin tức Chuyên ngành";
         public const string NEWS_FROM_FACULTY = "TIN TỪ KHOA";
         public const string NEWS_FROM_UNIVERSITY = "TIN TỪ TRƯỜNG";
         public const string YOUTH_GROUP = "Tin từ Đoàn thanh niên";
@@ -56,7 +59,7 @@ namespace FacultyV3.Core.Constants
 
         public static IDictionary<string, string> ListActionPage = new Dictionary<string, string>() {
 
-            { "Tin từ Bộ môn", "tin-tu-bo-mon" },
+            { "Tin từ Bộ môn", "tin-tuc-chuyen-nganh" },
             { "Thông Tin - Thông Báo", "thong-tin-thong-bao" },
             { "Tin từ Khoa", "tin-tu-khoa" },
             { "Tuyển dụng - Việc làm", "tuyen-dung-viec-lam" },

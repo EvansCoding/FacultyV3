@@ -1,0 +1,46 @@
+﻿@model List<FacultyV3.Core.Models.Entities.Banner>
+<link href="~/Content/Client/assets/css/buttonAnimation.css" rel="stylesheet" />
+<style>
+    /** {
+        box-sizing: border-box;
+    }*/
+
+    .pulsing:before, .pulsing:after {
+        content: "";
+        position: absolute;
+    }
+
+    .button-jittery {
+        margin-top: 10px;
+        position: absolute;
+        float: left;
+        margin-left: 20px;
+    }
+
+    /*.button__wrapper {
+        border-radius: 50% !important;
+    }*/
+</style>
+<section id="mu-slider">
+    <!-- Start single slider item -->
+    @foreach (var item in Model)
+    {
+        <div class="mu-slider-single" style="width: 200px !important">
+            <a href="@item.Url_Link" target="_blank">
+
+                <div class="mu-slider-img">
+                    <figure>
+                        <img src="@item.Url_Image" alt="img" />
+                    </figure>
+                </div>
+                @if (item.Url_Link != null)
+                {
+                    <div class="item button-jittery" style="--bg-color: #f1c40f;">
+                        <button style="background-color: #0376C3">@item.Title</button>
+                    </div>
+                }
+
+            </a>
+        </div>
+    }
+</section>

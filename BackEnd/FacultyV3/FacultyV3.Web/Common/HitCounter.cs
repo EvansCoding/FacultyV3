@@ -38,15 +38,14 @@ namespace FacultyV3.Web.Common
             var context = GlobalHost.ConnectionManager.GetHubContext<HitCounter>();
             if (counter > 0)
                 counter = counter - 1;
-            if (counter == 0)
-            {
-                var counter = 1;
-                context.Clients.All.UpdateCount(counter);
-            }
-            else
+            if (counter > 0)
             {
                 context.Clients.All.UpdateCount(counter);
             }
+            //else
+            //{
+            //    context.Clients.All.UpdateCount(counter);
+            //}
 
             return base.OnDisconnected(stopCalled);
         }

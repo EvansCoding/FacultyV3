@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -115,6 +116,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -126,17 +128,14 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -181,6 +180,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.Abstractions.3.3.0\lib\net45\Unity.Abstractions.dll</HintPath>
     </Reference>
@@ -220,6 +220,7 @@
     <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryMenuController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryNewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ConferenceController.cs" />
     <Compile Include="Areas\Admin\Controllers\ConfirgurationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\CountController.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Controllers\Detail_NewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LecturerController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -257,6 +259,7 @@
     <Compile Include="ViewModels\BannerViewModel.cs" />
     <Compile Include="ViewModels\Category_MenuViewModel.cs" />
     <Compile Include="ViewModels\Category_NewsViewModel.cs" />
+    <Compile Include="ViewModels\ConferenceViewModel.cs" />
     <Compile Include="ViewModels\ConfirgurationViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\CountViewModel.cs" />
@@ -434,8 +437,12 @@
     <Content Include="Content\Admin\assets\libs\x-editable\bootstrap-editable.min.js" />
     <Content Include="Content\Client\assets\css\bootstrap.css" />
     <Content Include="Content\Client\assets\css\buttonAnimation.css" />
+    <Content Include="Content\Client\assets\css\datatables.css" />
+    <Content Include="Content\Client\assets\css\datatables.min.css" />
     <Content Include="Content\Client\assets\css\font-awesome.css" />
     <Content Include="Content\Client\assets\css\jquery.fancybox.css" />
+    <Content Include="Content\Client\assets\css\owl.carousel.min.css" />
+    <Content Include="Content\Client\assets\css\owl.theme.default.min.css" />
     <Content Include="Content\Client\assets\css\slick.css" />
     <Content Include="Content\Client\assets\css\style.css" />
     <Content Include="Content\Client\assets\css\swc.css" />
@@ -454,6 +461,9 @@
     <Content Include="Content\Client\assets\img\1920x1080_dai-hoc-dong-thap.jpg" />
     <Content Include="Content\Client\assets\img\ads\close-icon.png" />
     <Content Include="Content\Client\assets\img\Banner1.jpg" />
+    <Content Include="Content\Client\assets\img\cooperation\1.jpg" />
+    <Content Include="Content\Client\assets\img\cooperation\2.jpg" />
+    <Content Include="Content\Client\assets\img\cooperation\3.jpg" />
     <Content Include="Content\Client\assets\img\count\milestones_background.jpg" />
     <Content Include="Content\Client\assets\img\courses\1.jpg" />
     <Content Include="Content\Client\assets\img\courses\2.jpg" />
@@ -487,10 +497,13 @@
     <Content Include="Content\Client\assets\img\slider\ajax-loader.gif" />
     <Content Include="Content\Client\assets\js\bootstrap.js" />
     <Content Include="Content\Client\assets\js\custom.js" />
+    <Content Include="Content\Client\assets\js\datatables.js" />
+    <Content Include="Content\Client\assets\js\datatables.min.js" />
     <Content Include="Content\Client\assets\js\jquery.counterup.js" />
     <Content Include="Content\Client\assets\js\jquery.fancybox.pack.js" />
     <Content Include="Content\Client\assets\js\jquery.min.js" />
     <Content Include="Content\Client\assets\js\jquery.mixitup.js" />
+    <Content Include="Content\Client\assets\js\owl.carousel.min.js" />
     <Content Include="Content\Client\assets\js\slick.js" />
     <Content Include="Content\Client\assets\js\swc.js" />
     <Content Include="Content\Client\assets\js\waypoints.js" />
@@ -1069,6 +1082,9 @@
     <Content Include="Areas\Admin\Views\Login\LoginView.cshtml" />
     <Content Include="Areas\Admin\Views\Profile\ProfileView.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Error401.cshtml" />
+    <Content Include="Areas\Admin\Views\Conference\ConferenceTablePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Conference\ConferenceView.cshtml" />
+    <Content Include="Areas\Admin\Views\Conference\CRUDConference.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-mobile.woff" />
@@ -1112,6 +1128,10 @@
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />
     <Content Include="Views\Detail_Menu\ListDetailResource.cshtml" />
+    <Content Include="Views\Detail_Menu\ListDetailConference.cshtml" />
+    <Content Include="Views\Detail_Menu\ListDetailForm.cshtml" />
+    <Content Include="Views\Home\_conference.cshtml" />
+    <Content Include="Views\Student\StudentView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FacultyV3.Core\FacultyV3.Core.csproj">

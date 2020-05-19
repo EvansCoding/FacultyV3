@@ -70,6 +70,18 @@ namespace FacultyV3.Core.Services
         {
             try
             {
+                return context.Category_Menus.Where(x => !x.Block).Select(x => x).OrderBy(x => x.Meta_Name).ToList();
+            }
+            catch (Exception)
+            {
+            }
+            return null;
+        }
+
+        public List<Category_Menu> GetBlockCategories()
+        {
+            try
+            {
                 return context.Category_Menus.Select(x => x).OrderBy(x => x.Meta_Name).ToList();
             }
             catch (Exception)

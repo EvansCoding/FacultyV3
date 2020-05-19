@@ -1,0 +1,8 @@
+﻿
+@model FacultyV3.Core.Models.Entities.Confirguration
+
+@if (!Model.Meta_Value.Equals("#"))
+{
+    @Html.Raw(Model.Meta_Value);
+}
+

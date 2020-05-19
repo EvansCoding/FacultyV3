@@ -7,6 +7,9 @@ namespace FacultyV3.Web
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            RouteTable.Routes.LowercaseUrls = true;
+            RouteTable.Routes.AppendTrailingSlash = true;
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
@@ -31,14 +34,14 @@ namespace FacultyV3.Web
 
             routes.MapRoute(
                 name: "scientific regulations ",
-                url: "nghien-cuu/quy-dinh-khoa-hoc/{id}",
+                url: "nghien-cuu-khoa-hoc/quy-dinh-khoa-hoc/{id}",
                 defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "aa2f7477-227b-4147-815b-ab7a006f8205" },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
 
             routes.MapRoute(
                 name: "general information",
-                url: "nghien-cuu/thong-tin-chung/{id}",
+                url: "nghien-cuu-khoa-hoc/bieu-mau-khoa-hoc/{id}",
                 defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "df6f8012-7463-452c-a058-ab7a006eb9e4" },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
@@ -71,6 +74,46 @@ namespace FacultyV3.Web
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
 
+            //routes.MapRoute(
+            //    name: "group",
+            //    url: "sinh-vien/doan-thanh-nien/{id}",
+            //    defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "F83DE66C-CA9D-4E6E-B8BC-AB7900F16AC6" },
+            //    namespaces: new[] { "FacultyV3.Web.Controllers" }
+            //);
+
+            routes.MapRoute(
+                name: "doan-thanh-nien",
+                url: "sinh-vien/doan-thanh-nien/{id}",
+                defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "F4720E44-9366-49DD-82BD-ABBF010B367D" },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "so-tay-sinh-vien",
+                url: "sinh-vien/so-tay-sinh-vien/{id}",
+                defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "FC1E3B28-1012-4BE7-90B3-ABBF0109AC69" },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "CONFERENCE",
+                url: "hoi-nghi-khoa-hoc",
+                defaults: new { controller = "Detail_Menu", action = "ListConference" },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "FORM",
+                url: "sinh-vien/bieu-mau",
+                defaults: new { controller = "Detail_Menu", action = "ListForm" },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "OLD STUDENT",
+                url: "sinh-vien/cuu-sinh-vien",
+                defaults: new { controller = "Student", action = "StudentView" },
+                namespaces: new[] { "FacultyV3.Web.Controllers" }
+            );
             routes.MapRoute(
                 name: "MENU",
                 url: "home/{category}/{title}/{id}",
@@ -94,27 +137,27 @@ namespace FacultyV3.Web
 
             routes.MapRoute(
                 name: "NEWSS",
-                url: "thong-tin-thong-bao/{id}",
-                defaults: new { controller = "Detail_News", action = "ListNewss", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                url: "thong-tin-thong-bao/",
+                defaults: new { controller = "Detail_News", action = "ListNewss" },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
             routes.MapRoute(
                 name: "WORK",
-                url: "tuyen-dung-viec-lam/{id}",
-                defaults: new { controller = "Detail_News", action = "ListWorks", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                url: "tuyen-dung-viec-lam",
+                defaults: new { controller = "Detail_News", action = "ListWorks" },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
 
             routes.MapRoute(
                 name: "YOUTH_GROUP",
-                url: "doan-thanh-nien/{id}",
-                defaults: new { controller = "Detail_News", action = "ListYouth_Group", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                url: "doan-thanh-nien",
+                defaults: new { controller = "Detail_News", action = "ListYouth_Group" },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
             routes.MapRoute(
                 name: "NEWS_FROM_THE_MINISTRY",
-                url: "tin-tu-bo-mon/{id}",
-                defaults: new { controller = "Detail_News", action = "ListMinistry", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
+                url: "tin-tuc-chuyen-nganh",
+                defaults: new { controller = "Detail_News", action = "ListMinistry" },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
             routes.MapRoute(
@@ -165,6 +208,7 @@ namespace FacultyV3.Web
                 defaults: new { controller = "Detail_News", action = "DetailNews", category = UrlParameter.Optional, title = UrlParameter.Optional, id = UrlParameter.Optional },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
