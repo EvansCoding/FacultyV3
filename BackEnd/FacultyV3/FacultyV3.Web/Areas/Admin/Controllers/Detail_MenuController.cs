@@ -7,6 +7,7 @@ using FacultyV3.Web.Common;
 using FacultyV3.Web.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace FacultyV3.Web.Areas.Admin.Controllers
@@ -41,7 +42,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
 
         public ActionResult AddOrEdit(string Id = "")
         {
-            List<Category_Menu> ListCategory = categoryMenuService.GetCategories();
+            List<Category_Menu> ListCategory = context.Category_Menus.Where(x => !x.Block).ToList();
 
             try
             {
@@ -58,9 +59,10 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
                     model.Url_Video = data.Url_Video;
                     model.Url_LinkGoogle = data.Url_LinkGoogle;
 
-                    if (data.Category_Menu == null)
-                        ViewBag.ListOfCategory = new SelectList(ListCategory, "Id", "Meta_Name");
-                    else
+                    if (data.Category_Menu.Block)
+                    {
+                        ListCategory = context.Category_Menus.Where(x => x.Id == data.Category_Menu.Id).ToList();
+                    }
                         ViewBag.ListOfCategory = new SelectList(ListCategory, "Id", "Meta_Name", data.Category_Menu.Id);
                     return PartialView("CRUDDetail_Menu", model);
                 }
@@ -68,6 +70,7 @@ namespace FacultyV3.Web.Areas.Admin.Controllers
             catch (Exception)
             {
             }
+
             ViewBag.ListOfCategory = new SelectList(ListCategory, "Id", "Meta_Name");
             return PartialView("CRUDDetail_Menu", new DetailViewModel());
         }
