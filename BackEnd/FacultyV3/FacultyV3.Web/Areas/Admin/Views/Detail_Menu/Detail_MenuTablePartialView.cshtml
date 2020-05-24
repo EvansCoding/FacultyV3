@@ -40,7 +40,7 @@
                     <td>
                         @item.Title
                         @{
-                            var uLink = Url.Action("DetailMenu", "Detail_Menu", new { Area = String.Empty, id = item.Id });
+                            var uLink = "/Detail_Menu/DetailMenu/"+ item.Id ;
                             var urluLink = @"GetDetail('" + uLink + "')";
                         }
                         <a onclick="@urluLink" style="cursor:pointer">

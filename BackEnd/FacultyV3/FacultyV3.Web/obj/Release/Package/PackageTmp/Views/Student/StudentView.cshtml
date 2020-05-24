@@ -52,19 +52,19 @@
                                                         <tbody>
                                                             @foreach (var item in Model)
                                                             {
-                                                                <tr s>
+                                                                <tr style="width: 180px">
                                                                     <td style="text-align: center; vertical-align: middle; width:30%;">
-                                                                        <img src="@item.Url_Image" height="200px" width="auto" />
+                                                                        <img src="@item.Url_Image" height="140px" width="auto" />
                                                                     </td>
-                                                                    <td tyle="width: 200px">
-                                                                        <h4> Họ và tên: @item.FullName </h4>
-                                                                        <h4>
+                                                                    <td style="width: auto; white-space: nowrap">
+                                                                        <h5 style="font-size: 15px" > Họ và tên: @item.FullName </h5>
+                                                                        <h5 style="font-size: 15px">
                                                                             Khóa học: @item.Course
-                                                                        </h4>
-                                                                        <h4> Ngành học: @item.Major</h4>
-                                                                        <h4>Năm tốt nghiệp: @item.Graduation_Year</h4>
-                                                                        <h4>Công việc hiện tại: @item.Current_Job</h4>
-                                                                        <h4>Nơi làm việc: @item.Work_Place</h4>
+                                                                        </h5>
+                                                                        <h5 style="font-size: 15px"> Ngành học: @item.Major</h5>
+                                                                        <h5 style="font-size: 15px">Năm tốt nghiệp: @item.Graduation_Year</h5>
+                                                                        <h5 style="font-size: 15px">Công việc hiện tại: @item.Current_Job</h5>
+                                                                        <h5 style="font-size: 15px">Nơi làm việc: @item.Work_Place</h5>
                                                                     </td>
                                                                 </tr>
                                                             }
