@@ -90,8 +90,8 @@ namespace FacultyV3.Web
 
             routes.MapRoute(
                 name: "so-tay-sinh-vien",
-                url: "sinh-vien/so-tay-sinh-vien/{id}",
-                defaults: new { controller = "Detail_Menu", action = "DetailMenu", id = "FC1E3B28-1012-4BE7-90B3-ABBF0109AC69" },
+                url: "sinh-vien/so-tay-sinh-vien",
+                defaults: new { controller = "Detail_Menu", action = "ListNoteBook" },
                 namespaces: new[] { "FacultyV3.Web.Controllers" }
             );
 

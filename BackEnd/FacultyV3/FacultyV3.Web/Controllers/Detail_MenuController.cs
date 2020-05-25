@@ -145,5 +145,19 @@ namespace FacultyV3.Web.Controllers
             }
             return View("~/Views/Shared/Error.cshtml");
         }
+
+        public ActionResult ListNoteBook(int page = 1, int pageSize = Constant.PAGESIZE)
+        {
+            try
+            {
+                var model = detailMenuService.PageListFE(Constant.NOTEBOOK, page, pageSize);
+                if (Enumerable.Count(model) > 0)
+                    return View("ListDetailResource", model);
+            }
+            catch (System.Exception)
+            {
+            }
+            return View("~/Views/Shared/Error.cshtml");
+        }
     }
 }

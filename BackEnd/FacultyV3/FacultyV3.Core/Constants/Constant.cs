@@ -20,6 +20,7 @@ namespace FacultyV3.Core.Constants
 
         public const string CONFERENCE = "Hội nghị khoa học";
         public const string FORM = "Biểu mẫu";
+        public const string NOTEBOOK = "Sổ tay sinh viên";
 
         // EDUCATE
         public const string EDUCATION_PROGRAM = "CHƯƠNG TRÌNH ĐÀO TẠO";

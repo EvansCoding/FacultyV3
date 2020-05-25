@@ -51,9 +51,9 @@ namespace FacultyV3.Core.Services
         {
             if (!string.IsNullOrEmpty(name))
             {
-                return context.Conferences.Where(x => x.Title.Contains(name)).OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
+                return context.Conferences.Where(x => x.Title.Contains(name)).OrderByDescending(x => new { x.Serial, x.Update_At }).ToPagedList(page, pageSize);
             }
-            return context.Conferences.OrderBy(x => x.Update_At).ToPagedList(page, pageSize);
+            return context.Conferences.OrderByDescending(x => new { x.Serial, x.Update_At}).ToPagedList(page, pageSize);
         }
 
         public List<Conference> GetConferencesByName(string name)
